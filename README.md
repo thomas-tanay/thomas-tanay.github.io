@@ -1,109 +1,51 @@
-# The Cayman theme
+# *folio
+A simple theme for showcasing your work, emphasis on whitespace, transparency, and helvetica. 
 
-[![Build Status](https://travis-ci.org/pages-themes/cayman.svg?branch=master)](https://travis-ci.org/pages-themes/cayman) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-cayman.svg)](https://badge.fury.io/rb/jekyll-theme-cayman)
 
-*Cayman is a Jekyll theme for GitHub Pages. You can [preview the theme to see what it looks like](http://pages-themes.github.io/cayman), or even [use it today](#usage).*
+<a href="http://liabogoev.com/-folio">Live Demo</a>
 
-![Thumbnail of Cayman](thumbnail.png)
+<hr/>
 
-## Usage
 
-To use the Cayman theme:
+## Features
 
-1. Add the following to your site's `_config.yml`:
+### Collections
+This Jekyll theme implements collections to let you break up your work into categories. The example is divided into poetry and portfolio, but easily revamp this into recipes, apps, short stories, limmericks, whatever your creative work is. 
+> To do this, edit the collections in the config file, create a corresponding folder, and update the portfolio and poetry source files. 
 
-    ```yml
-    theme: jekyll-theme-cayman
-    ```
+Three different layouts are included—the poetry layout, for a simple list of entries, the blog layout (index.html), for more detailed descriptive list of entries, and the portfolio layout. The portfolio layout overlays a descriptive hoverover on a background image. If no image is provided, the square is auto-filled with the chosen theme color. Thumbnail sizing is not necessary, as the grid crops images perfectly. 
 
-2. Optionally, if you'd like to preview your site on your computer, add the following to your site's `Gemfile`:
+### Portfolio Specifics
+You can easily add full pages for each of the projects in your portfolio. If you want one to link to an external website, create a file for it in _portfolio, and  fil in the YAML front matter as you would for another, but with a redirect, like so: 
 
-    ```ruby
-    gem "github-pages", group: :jekyll_plugins
-    ```
+	---
+	layout: post
+	title: Project
+	description: a project that redirects to another website
+	img:
+	redirect: https://otherpage.com
+	--- 
 
-## Customizing
+### Theming
+Six beautiful theme colors have been selected to choose from. The default is red, but quickly change it by editing the _base.scss file in line 40. The color variable are listed there, as well. 
 
-### Configuration variables
+### Photos
+Photo formatting is made simple using rows of a 3-column system. Make photos 1/3, 2/3, or full width. Easily create beautiful grids within your blog posts and projects pages. 
 
-Cayman will respect the following variables, if set in your site's `_config.yml`:
+### Code Highlighting
+This theme implements Jekyll's built in code syntax highlighting with Pygments. Just use a liquid tag to delineate your code: 
+{% highlight python %}
+	code code code
+{% endhighlight %}
 
-```yml
-title: [The title of your site]
-description: [A short description of your site's purpose]
-```
 
-Additionally, you may choose to set the following optional variables:
+<hr/>
+The MIT License (MIT)
+Copyright (c) 2015 Lia Bogoev
 
-```yml
-show_downloads: ["true" or "false" to indicate whether to provide a download URL]
-google_analytics: [Your Google Analytics tracking ID]
-```
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-### Stylesheet
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-If you'd like to add your own custom styles:
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-1. Create a file called `/assets/css/style.scss` in your site
-2. Add the following content to the top of the file, exactly as shown:
-    ```scss
-    ---
-    ---
-
-    @import "{{ site.theme }}";
-    ```
-3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
-
-*Note: If you'd like to change the theme's Sass variables, you must set new values before the `@import` line in your stylesheet.*
-
-### Layouts
-
-If you'd like to change the theme's HTML layout:
-
-1. [Copy the original template](https://github.com/pages-themes/cayman/blob/master/_layouts/default.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
-2. Create a file called `/_layouts/default.html` in your site
-3. Paste the default layout content copied in the first step
-4. Customize the layout as you'd like
-
-### Overriding GitHub-generated URLs
-
-Templates often rely on URLs supplied by GitHub such as links to your repository or links to download your project. If you'd like to override one or more default URLs:
-
-1. Look at [the template source](https://github.com/pages-themes/cayman/blob/master/_layouts/default.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
-2. Specify the URL that you'd like the template to use in your site's `_config.yml`. For example, if the variable was `site.github.url`, you'd add the following:
-    ```yml
-    github:
-      zip_url: http://example.com/download.zip
-      another_url: another value
-    ```
-3. When your site is built, Jekyll will use the URL you specified, rather than the default one provided by GitHub.
-
-*Note: You must remove the `site.` prefix, and each variable name (after the `github.`) should be indent with two space below `github:`.*
-
-For more information, see [the Jekyll variables documentation](https://jekyllrb.com/docs/variables/).
-
-## Roadmap
-
-See the [open issues](https://github.com/pages-themes/cayman/issues) for a list of proposed features (and known issues).
-
-## Project philosophy
-
-The Cayman theme is intended to make it quick and easy for GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users' needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.
-
-## Contributing
-
-Interested in contributing to Cayman? We'd love your help. Cayman is an open source project, built one contribution at a time by users like you. See [the CONTRIBUTING file](docs/CONTRIBUTING.md) for instructions on how to contribute.
-
-### Previewing the theme locally
-
-If you'd like to preview the theme locally (for example, in the process of proposing a change):
-
-1. Clone down the theme's repository (`git clone https://github.com/pages-themes/cayman`)
-2. `cd` into the theme's directory
-3. Run `script/bootstrap` to install the necessary dependencies
-4. Run `bundle exec jekyll serve` to start the preview server
-5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
-
-### Running tests
-
-The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/cibuild`. You'll need to run `script/bootstrap` one before the test script will work.
