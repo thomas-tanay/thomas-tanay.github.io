@@ -4,7 +4,7 @@ title: Stochastic Diffusion Search <br/> applied to Trees
 permalink: /SDST/
 ---
 
-<img width="700" src="/img/gameTree.png">
+<img class="header-image" src="/img/gameTree.png">
 
 Location: Computing Department, Goldsmiths, University of London (UK).
 
@@ -24,8 +24,8 @@ of populations down the game-tree. SDST agents have a natural tendency to descen
 not contacted by an agent above.
 
 These simple rules lead to the emergence of complex dynamics characterized by a meta-level of swarm behaviour (a swarm of populations or a meta-population).
-As a two-leveled distributed system, this meta-population can be viewed as a loose metaphor for the hierarchical organization of the brain, 
-from neurons and cortical columns to Brodmann areas and cerebral lobes.  
+One can think of this two-leveled distributed system as a loose metaphor for the hierarchical organization of the brain, from neurons and cortical columns 
+to Brodmann areas and cerebral lobes.  
 
 <h1> Animation </h1>
 
@@ -47,8 +47,8 @@ However:
 Solving this game-tree requires good tactical play: moving <em>Right</em> is statistically better for <strong>Black</strong>, 
 but moving <em>Left</em> is the only guaranteed path to victory.
 
-In the animation, the width of each branch is proportional to the number of agents in the parent node population supporting the move leading to the child node population. 
-We see that at first, most of the agents are allocated to the exploration of the <em>Right</em> part of the game tree. This lasts until the winning strategy for 
+The width of each branch in the animation is proportional to the number of agents in the parent node population supporting the move leading to the child node population. 
+Initially, most of the agents are allocated to the exploration of the <em>Right</em> part of the game tree. This lasts until the winning strategy for 
 <strong>White</strong> is found (always playing <em>Left</em>) and the agents then shift to the exploration of the <em>Left</em> part of the game tree. At the end, the 
 winning strategy for <strong>Black</strong> is found (always playing <em>Left</em>). The fact that all the agents in the root node population converge to the <em>Left</em> 
 move indicates that <strong>Black</strong> should play <em>Left</em>.

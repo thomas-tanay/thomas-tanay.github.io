@@ -1,10 +1,14 @@
 ---
 layout: page
-title: Face verification and clustering
+title: Face Verification and Clustering
 permalink: /face-verification/
 ---
 
-<img width="700" src="/img/bill.png">
+<img class="header-image" src="/img/bill.png">
 
-<br/>
+Location: iProov, Elizabeth House, 39 York Road, SE1 7NQ, London (UK).
+
+Supervisor: Dr. Andrew Newell.
+
+<hr>
 

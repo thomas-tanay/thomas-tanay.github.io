@@ -1,10 +1,13 @@
 ---
 layout: page
-title: Tissue folding in the <br/> drosophila wing imaginal disc
+title: Tissue Folding in the <br/> Drosophila Wing Imaginal Disc
 permalink: /tissue-folding/
 ---
 
-<img width="700" src="/img/fold.png">
+<img class="header-image" src="/img/fold.png">
 
-<br/>
+Location: MRC Laboratory for Molecular Cell Biology, University College London (UK).
 
+Supervisors: Dr. Yanlan Mao and Dr. Melda Tozluoglu.
+
+<hr>

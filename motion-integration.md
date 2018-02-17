@@ -1,10 +1,14 @@
 ---
 layout: page
-title: Motion integration and <br/> harmonic vector average
+title: Motion Integration and <br/> Harmonic Vector Average
 permalink: /motion-integration/
 ---
 
-<img width="700" src="/img/motion.png">
+<img class="header-image" src="/img/motion.png">
 
-<br/>
+Location: Computer Science Department, University College London (UK).
+
+Supervisors: Dr. Lewis D. Griffin and Prof. Alan Johnston.
+
+<hr>
 

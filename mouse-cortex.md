@@ -1,10 +1,14 @@
 ---
 layout: page
-title: Mapping the visual cortex of the mouse
+title: Mapping the Visual Cortex <br/> of the Mouse
 permalink: /mouse-cortex/
 ---
 
-<img width="700" src="/img/cortex.png">
+<img class="header-image" src="/img/cortex.png">
 
-<br/>
+Location: Cortical Processing Laboratory, University College London (UK).
+
+Supervisors: Prof. Matteo Carandini and Prof. Kenneth Harris.
+
+<hr>
 

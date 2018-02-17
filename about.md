@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-<img width="700" src="/img/profile1.jpg">
+<img class="header-image" src="/img/profile1.jpg">
 
 <h1>PhD</h1>
 
