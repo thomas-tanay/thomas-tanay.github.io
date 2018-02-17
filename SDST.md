@@ -20,10 +20,10 @@ The repetition of these two phases leads to the emergence of high-quality soluti
 
 In Stochastic Diffusion Search applied to Trees (SDST), a meta-population of agents explores a game-tree in a Monte-Carlo Tree Search style &mdash; ultimately converging to the 
 optimal solution. Each node of the game-tree is solved through a standard application of SDS, but the convergence of the root node population is coupled to the convergence 
-of populations down the game-tree. SDST agents have a natural tendency to descend in the population pointed by their hypothesis, but they spontaneously move back up if they are
-not contacted by an agent above.
+of populations down the game-tree. SDST agents also have a natural tendency to descend in the population pointed by their hypothesis and they spontaneously move upward when 
+they are not contacted by other agents.
 
-These simple rules lead to the emergence of complex dynamics characterized by a meta-level of swarm behaviour (a swarm of populations or a meta-population).
+These simple rules result in complex dynamics characterized by a meta-level of swarm behaviour (a swarm of populations or a meta-population).
 One can think of this two-leveled distributed system as a loose metaphor for the hierarchical organization of the brain, from neurons and cortical columns 
 to Brodmann areas and cerebral lobes.  
 
