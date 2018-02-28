@@ -14,4 +14,4 @@ Supervisor: Dr. Andreas Fouras.
 
 <h1> Visualizations </h1>
 
-<iframe src="https://www.youtube.com/embed/GV2kor9R7QE?rel=0&amp;controls=0&amp;showinfo=0" width="700" height="394" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<iframe class="animation" src="https://www.youtube.com/embed/GV2kor9R7QE?rel=0&amp;controls=0&amp;showinfo=0" height="394" frameborder="0"></iframe>

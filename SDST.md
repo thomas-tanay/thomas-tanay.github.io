@@ -29,9 +29,7 @@ to Brodmann areas and cerebral lobes.
 
 <h1> Animation </h1>
 
-<iframe src="https://www.youtube.com/embed/gK1Pm0hozrw?rel=0&amp;controls=0&amp;showinfo=0" width="700" height="394" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-
-<br/>
+<iframe class="animation" src="https://www.youtube.com/embed/gK1Pm0hozrw?rel=0&amp;controls=0&amp;showinfo=0" height="394" frameborder="0"></iframe>
 
 In the animation above, SDST is applied to a binary game tree of depth 20 designed such that:
 <ul>

@@ -14,4 +14,4 @@ Lecturer: Dr. Marco Gillies.
 
 <h1> Animation </h1>
 
-<iframe src="https://www.youtube.com/embed/cEolYchqy4M?rel=0&amp;controls=0&amp;showinfo=0" width="700" height="437" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<iframe class="animation" src="https://www.youtube.com/embed/cEolYchqy4M?rel=0&amp;controls=0&amp;showinfo=0" height="437" frameborder="0"></iframe>
