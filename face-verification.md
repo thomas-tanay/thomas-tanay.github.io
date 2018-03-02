@@ -108,9 +108,9 @@ We show below the pairs of profile pictures corresponding to the smallest distan
 We can make two observations:
 <ul>
   <li> The two pairs of individuals who look most like each other are twins. </li>
-  <li> Most of the pairs of individuals found are women or belong to a Black or Asian ethnic group, <em>even though these groups are under-represented in the CASIA WebFace database</em>. <br/>
-  In other words, our pre-trained network is less sensitive to female and non-White facial features 
-  &mdash; a very serious algorithmic bias which is starting to be recognized: <br/>
+  <li> Most of the pairs of individuals found are either women or belong to Black and Asian ethnic groups, <em>even though these groups are under-represented in the CASIA WebFace database</em>. <br/>
+  In other words, the pre-trained network is less sensitive to female and non-White facial features 
+  &mdash; a very serious algorithmic bias more and more recognized: <br/>
   <a href="https://www.nytimes.com/2018/02/09/technology/facial-recognition-race-artificial-intelligence.html">
   Facial Recognition Is Accurate, if You’re a White Guy (New York Times)
   </a>
