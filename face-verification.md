@@ -83,7 +83,7 @@ Interestingly, we obtain a direction that separates the gender of individuals fa
 
 <img width="700" src="/img/1stPC.png">
 
-In other words, the network has spontaneously discovered the concept of gender: 
+The network has spontaneously discovered the concept of gender: 
 by learning to recognize identities, it has found that the population is constituted of two groups (women and men).
 
 <br/>
