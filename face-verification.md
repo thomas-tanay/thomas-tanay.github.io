@@ -15,17 +15,12 @@ Supervisor: Dr. Andrew Newell.
 <h1> Context </h1>
 
 The combination of efficient data collection techniques and the use of deep convolutional neural networks allowing end-to-end learning 
-has recently resulted in superhuman performance in face verification and clustering. Consider for instance the following three papers:
-<ul>
-  <li> <a href="https://arxiv.org/pdf/1411.7923.pdf"> Learning Face Representation from Scratch (2014) </a>  </li>
-  <li> <a href="https://arxiv.org/pdf/1503.03832.pdf"> Facenet: A unified embedding for face recognition and clustering (2015) </a>  </li>
-  <li> <a href="https://www.robots.ox.ac.uk/%7Evgg/publications/2015/Parkhi15/parkhi15.pdf"> Deep Face Recognition (2015) </a> </li>
-</ul>
+has recently resulted in superhuman performance in face verification and clustering [<a href="https://arxiv.org/pdf/1411.7923.pdf">1</a>,<a href="https://arxiv.org/pdf/1503.03832.pdf">2</a>,<a href="https://www.robots.ox.ac.uk/%7Evgg/publications/2015/Parkhi15/parkhi15.pdf">3</a>].
 
 This new approach is enabling new types of studies. 
 Below I briefly describe how to use a pre-trained network to perform automatic labeling of a new dataset,
 what the principal component of a standard dataset looks like in feature space, and who are the actresses and actors who most look like each other on the IMDb website
-(according to our network).
+(according to a given network).
 
 Note: these results were obtained in parallel to my actual work at iProov.
 
@@ -43,7 +38,7 @@ Note: these results were obtained in parallel to my actual work at iProov.
 
 <br/>
 
-<u> 2) Download loads of pictures: </u>
+<u> 2) Download many pictures: </u>
 
 For instance by Googling "Bill Murray".
 
@@ -61,17 +56,16 @@ For instance by using the simple Haar Cascades face detector from openCV.
 
 <u> 4) Remove the junk images: </u>
 
-The openCV face detector does not perform very well and a lot of "junk images" are recognized as faces. Fortunately, these images can easily be filtered out: 
-their feature representations through the face network are more "flat" that the feature representations of actual faces (their average activations are weaker
-and their norms d are smaller).
+The openCV face detector performs relatively poorly. Fortunately, the "junk images" can easily be filtered out: 
+their feature representations through the face network are "flatter" than the feature representations of actual faces (their norms d are smaller).
 
 <img width="600" src="/img/faces3.png">
 
 <br/>
 
-<u> 5) Remove the other faces: </u>
+<u> 5) Remove anyone who's not Bill Murray: </u>
 
-The "Bill Murray" cluster can finally be isolated by using a standard algorithm such as DBSCAN.
+The "Bill Murray" cluster can be isolated by using a standard algorithm such as DBSCAN.
 
 <img width="600" src="/img/faces4.png">
 
@@ -89,14 +83,14 @@ Interestingly, we obtain a direction that separates the gender of individuals fa
 
 <img width="700" src="/img/1stPC.png">
 
-In other words, the network has spontaneously rediscovered the concept of gender: 
-by learning to recognize identities, it has found that the population is divided into two groups: women and men.
+In other words, the network has spontaneously discovered the concept of gender: 
+by learning to recognize identities, it has found that the population is constituted of two groups (women and men).
 
 <br/>
 
 <h1> Face Similarities </h1>
 
-Let's now compute the pairwise distances between the feature representations of the profile pictures of actresses and actors on the IMDb website (more precisely,
+We now compute the pairwise distances between the feature representations of the profile pictures of actresses and actors on the IMDb website (more precisely,
 the actresses and actors in the <em>CASIA WebFace database</em>).
 
 We show below the pairs of profile pictures corresponding to the smallest distances (i.e. the individuals who look most like each other according to our pre-trained network):
@@ -109,8 +103,7 @@ We can make two observations:
 <ul>
   <li> The two pairs of individuals who look most like each other are twins. </li>
   <li> Most of the pairs of individuals found are either women or belong to Black and Asian ethnic groups, <em>even though these groups are under-represented in the CASIA WebFace database</em>. <br/>
-  In other words, the pre-trained network is less sensitive to female and non-White facial features 
-  &mdash; a very serious algorithmic bias more and more recognized: <br/>
+  In other words, the pre-trained network is less sensitive to female and non-White facial features&mdash;a very serious algorithmic bias more and more recognized: <br/>
   <a href="https://www.nytimes.com/2018/02/09/technology/facial-recognition-race-artificial-intelligence.html">
   Facial Recognition Is Accurate, if You’re a White Guy (New York Times)
   </a>

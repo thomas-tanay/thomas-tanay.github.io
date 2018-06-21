@@ -18,7 +18,7 @@ Stochastic Diffusion Search (SDS) is a swarm intelligence heuristic providing a 
 partial evaluations of candidate solutions (test phase) before sharing information about their hypotheses through direct one-to-one communication (diffusion phase).
 The repetition of these two phases leads to the emergence of high-quality solutions identifiable in clusters of agents sharing the same hypotheses. 
 
-In Stochastic Diffusion Search applied to Trees (SDST), a meta-population of agents explores a game-tree in a Monte-Carlo Tree Search style &mdash; ultimately converging to the 
+In Stochastic Diffusion Search applied to Trees (SDST), a meta-population of agents explores a game-tree in a Monte-Carlo Tree Search style, ultimately converging to the 
 optimal solution. Each node of the game-tree is solved through a standard application of SDS, but the convergence of the root node population is coupled to the convergence 
 of populations down the game-tree. SDST agents also have a natural tendency to descend in the population pointed by their hypothesis and they spontaneously move upward when 
 they are not contacted by other agents.
