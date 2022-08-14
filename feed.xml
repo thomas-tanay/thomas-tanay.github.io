@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2022-08-14T13:46:04+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">Explorable Stock-Flow Consistent Modelling</title><link href="http://localhost:4000/2022/08/01/stock-flow-consistent-modelling.html" rel="alternate" type="text/html" title="Explorable Stock-Flow Consistent Modelling" /><published>2022-08-01T00:00:00+01:00</published><updated>2022-08-01T00:00:00+01:00</updated><id>http://localhost:4000/2022/08/01/stock-flow-consistent-modelling</id><content type="html" xml:base="http://localhost:4000/2022/08/01/stock-flow-consistent-modelling.html"><![CDATA[]]></content><author><name></name></author><summary type="html"><![CDATA[A macroeconomic model from Wynne Godley and Marc Lavoie]]></summary></entry><entry><title type="html">A New Angle on L2 Regularization</title><link href="http://localhost:4000/posts/2018-L2regularization" rel="alternate" type="text/html" title="A New Angle on L2 Regularization" /><published>2018-06-01T00:00:00+01:00</published><updated>2018-06-01T00:00:00+01:00</updated><id>http://localhost:4000/posts/a-new-angle-on-l2-regularization</id><content type="html" xml:base="http://localhost:4000/posts/2018-L2regularization"><![CDATA[]]></content><author><name></name></author><summary type="html"><![CDATA[distill.pub submission]]></summary></entry><entry><title type="html">Face Verification and Clustering</title><link href="http://localhost:4000/posts/2015-Face-Verification-and-Clustering" rel="alternate" type="text/html" title="Face Verification and Clustering" /><published>2015-10-01T00:00:00+01:00</published><updated>2015-10-01T00:00:00+01:00</updated><id>http://localhost:4000/posts/face-verification</id><content type="html" xml:base="http://localhost:4000/posts/2015-Face-Verification-and-Clustering"><![CDATA[<figure>
+
+  <picture>
+    <!-- <source media="(max-width: 480px)" srcset="/assets/img/bill-480.webp" />
+    <source media="(max-width: 800px)" srcset="/assets/img/bill-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/assets/img/bill-1400.webp" />
+    Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/bill.png" title="header" />
+
+  </picture>
+
+</figure>
+
+<p>Location: iProov, Elizabeth House, 39 York Road, SE1 7NQ, London (UK).</p>
+
+<p>Supervisor: Dr. Andrew Newell.</p>
+
+<hr />
+
+<h1> Context </h1>
+
+<p>The combination of efficient data collection techniques and the use of deep convolutional neural networks allowing end-to-end learning 
+has recently resulted in superhuman performance in face verification and clustering [<a href="https://arxiv.org/pdf/1411.7923.pdf">1</a>,<a href="https://arxiv.org/pdf/1503.03832.pdf">2</a>,<a href="https://www.robots.ox.ac.uk/%7Evgg/publications/2015/Parkhi15/parkhi15.pdf">3</a>].</p>
+
+<p>This new approach is enabling new types of studies. 
+Below I briefly describe how to use a pre-trained network to perform automatic labeling of a new dataset,
+what the principal component of a standard dataset looks like in feature space, and who are the actresses and actors who most look like each other on the IMDb website
+(according to a given network).</p>
+
+<p>Note: these results were obtained in parallel to my actual work at iProov.</p>
+
+<p><br /></p>
+
+<h1> Automatic Labeling </h1>
+
+<p><u> 1) Download a pre-trained network: </u></p>
+
+<ul>
+  <li> <a href="https://cmusatyalab.github.io/openface/"> OpenFace (Torch) </a>  </li>
+  <li> <a href="https://github.com/davidsandberg/facenet/"> FaceNet (Tensor Flow) </a>  </li>
+  <li> <a href="http://www.vlfeat.org/matconvnet/pretrained/"> VGG-Face (MatConvNet) </a> </li>
+</ul>
+
+<p><br /></p>
+
+<p><u> 2) Download many pictures: </u></p>
+
+<p>For instance by Googling “Bill Murray”.</p>
+
+<figure>
+
+  <picture>
+    <!-- <source media="(max-width: 480px)" srcset="/assets/img/faces1-480.webp" />
+    <source media="(max-width: 800px)" srcset="/assets/img/faces1-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/assets/img/faces1-1400.webp" />
+    Fallback to the original file -->
+    <img class="img-fluid" src="/assets/img/faces1.png" title="faces1" />
+
+  </picture>
+
+</figure>
+
+<p><br /></p>
+
+<p><u> 3) Extract the faces: </u></p>
+
+<p>For instance by using the simple Haar Cascades face detector from openCV.</p>
+
+<figure>
+
+  <picture>
+    <!-- <source media="(max-width: 480px)" srcset="/assets/img/faces2-480.webp" />
+    <source media="(max-width: 800px)" srcset="/assets/img/faces2-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/assets/img/faces2-1400.webp" />
+    Fallback to the original file -->
+    <img class="img-fluid" src="/assets/img/faces2.png" title="faces2" />
+
+  </picture>
+
+</figure>
+
+<p><br /></p>
+
+<p><u> 4) Remove the junk images: </u></p>
+
+<p>The openCV face detector performs relatively poorly. Fortunately, the “junk images” can easily be filtered out: 
+their feature representations through the face network are “flatter” than the feature representations of actual faces (their norms d are smaller).</p>
+
+<figure>
+
+  <picture>
+    <!-- <source media="(max-width: 480px)" srcset="/assets/img/faces3-480.webp" />
+    <source media="(max-width: 800px)" srcset="/assets/img/faces3-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/assets/img/faces3-1400.webp" />
+    Fallback to the original file -->
+    <img class="img-fluid" src="/assets/img/faces3.png" title="faces3" />
+
+  </picture>
+
+</figure>
+
+<p><br /></p>
+
+<p><u> 5) Remove anyone who's not Bill Murray: </u></p>
+
+<p>The “Bill Murray” cluster can be isolated by using a standard algorithm such as DBSCAN.</p>
+
+<figure>
+
+  <picture>
+    <!-- <source media="(max-width: 480px)" srcset="/assets/img/faces4-480.webp" />
+    <source media="(max-width: 800px)" srcset="/assets/img/faces4-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/assets/img/faces4-1400.webp" />
+    Fallback to the original file -->
+    <img class="img-fluid" src="/assets/img/faces4.png" title="faces4" />
+
+  </picture>
+
+</figure>
+
+<p><br /></p>
+
+<h1> First Principal Component </h1>
+
+<p>Face networks are typically trained by enforcing <em>local</em> constraints in feature space: two pictures of a same individual should have feature representations which are close 
+from each other and two pictures of different individuals should have feature representations which are far from each other. 
+Here, we propose to study the <em>global</em> distribution resulting from these <em>local</em> constraints by computing the first principal component 
+of the entire <em>Labeled Faces in the Wild</em> dataset.</p>
+
+<p>Interestingly, we obtain a direction that separates the gender of individuals fairly reliably 
+(note that <em>Labeled Faces in the Wild</em> is strongly imbalanced in favor of men):</p>
+
+<figure>
+
+  <picture>
+    <!-- <source media="(max-width: 480px)" srcset="/assets/img/1stPC-480.webp" />
+    <source media="(max-width: 800px)" srcset="/assets/img/1stPC-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/assets/img/1stPC-1400.webp" />
+    Fallback to the original file -->
+    <img class="img-fluid" src="/assets/img/1stPC.png" title="1stPC" />
+
+  </picture>
+
+</figure>
+
+<p>The network has spontaneously discovered the concept of gender: 
+by learning to recognize identities, it has found that the population is constituted of two groups (women and men).</p>
+
+<p><br /></p>
+
+<h1> Face Similarities </h1>
+
+<p>We now compute the pairwise distances between the feature representations of the profile pictures of actresses and actors on the IMDb website (more precisely,
+the actresses and actors in the <em>CASIA WebFace database</em>).</p>
+
+<p>We show below the pairs of profile pictures corresponding to the smallest distances (i.e. the individuals who look most like each other according to our pre-trained network):</p>
+
+<pre style="margin-top: 30px; margin-bottom: 30px;">
+<img style="margin: 0px" width="1400" src="/assets/img/FaceSimilarities.png" />
+</pre>
+
+<p>We can make two observations:</p>
+<ul>
+  <li> The two pairs of individuals who look most like each other are twins. </li>
+  <li> Most of the pairs of individuals found are either women or belong to Black and Asian ethnic groups, <em>even though these groups are under-represented in the CASIA WebFace database</em>. <br />
+  In other words, the pre-trained network is less sensitive to female and non-White facial features&mdash;a very serious algorithmic bias more and more recognized: <br />
+  <a href="https://www.nytimes.com/2018/02/09/technology/facial-recognition-race-artificial-intelligence.html">
+  Facial Recognition Is Accurate, if You’re a White Guy (New York Times)
+  </a>
+  </li>
+</ul>]]></content><author><name></name></author><summary type="html"><![CDATA[PhD interruption]]></summary></entry><entry><title type="html">Stochastic Diffusion Search applied to Trees</title><link href="http://localhost:4000/posts/2013-SDST" rel="alternate" type="text/html" title="Stochastic Diffusion Search applied to Trees" /><published>2013-01-01T00:00:00+00:00</published><updated>2013-01-01T00:00:00+00:00</updated><id>http://localhost:4000/posts/SDST</id><content type="html" xml:base="http://localhost:4000/posts/2013-SDST"><![CDATA[<figure>
+
+  <picture>
+    <!-- <source media="(max-width: 480px)" srcset="/assets/img/gameTree-480.webp" />
+    <source media="(max-width: 800px)" srcset="/assets/img/gameTree-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/assets/img/gameTree-1400.webp" />
+    Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/gameTree.png" title="header" />
+
+  </picture>
+
+</figure>
+
+<p>Location: Computing Department, Goldsmiths, University of London (UK).</p>
+
+<p>Supervisor: Prof. Mark Bishop.</p>
+
+<hr />
+
+<h1> Abstract </h1>
+
+<p>Stochastic Diffusion Search (SDS) is a swarm intelligence heuristic providing a population-based solution to the exploration/exploitation dilemma. SDS agents perform cheap, 
+partial evaluations of candidate solutions (test phase) before sharing information about their hypotheses through direct one-to-one communication (diffusion phase).
+The repetition of these two phases leads to the emergence of high-quality solutions identifiable in clusters of agents sharing the same hypotheses.</p>
+
+<p>In Stochastic Diffusion Search applied to Trees (SDST), a meta-population of agents explores a game-tree in a Monte-Carlo Tree Search style, ultimately converging to the 
+optimal solution. Each node of the game-tree is solved through a standard application of SDS, but the convergence of the root node population is coupled to the convergence 
+of populations down the game-tree. SDST agents also have a natural tendency to descend in the population pointed by their hypothesis and they spontaneously move upward when 
+they are not contacted by other agents.</p>
+
+<p>These simple rules result in complex dynamics characterized by a meta-level of swarm behaviour (a swarm of populations or a meta-population).
+One can think of this two-leveled distributed system as a loose metaphor for the hierarchical organization of the brain, from neurons and cortical columns 
+to Brodmann areas and cerebral lobes.</p>
+
+<h1> Animation </h1>
+
+<iframe class="animation" src="https://www.youtube.com/embed/gK1Pm0hozrw?rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" width="100%" height="400"></iframe>
+
+<p>In the animation above, SDST is applied to a binary game tree of depth 20 designed such that:</p>
+<ul>
+ 	<li>If <strong>Black</strong> moves <em>Right</em>, most of the possible outcomes (90%) are favorable to <strong>Black</strong>.</li>
+ 	<li>If <strong>Black</strong> moves <em>Left</em>, most of the possible outcomes (90%) are favorable to <strong>White</strong>.</li>
+</ul>
+<p>However:</p>
+<ul>
+ 	<li>If <strong>Black</strong> moves <em>Right</em>, there exists a winning strategy for <strong>White</strong>.</li>
+ 	<li>If <strong>Black</strong> moves <em>Left</em>, there exists a winning strategy for <strong>Black</strong>.</li>
+</ul>
+
+<p>Solving this game-tree requires good tactical play: moving <em>Right</em> is statistically better for <strong>Black</strong>, 
+but moving <em>Left</em> is the only guaranteed path to victory.</p>
+
+<p>The width of each branch in the animation is proportional to the number of agents in the parent node population supporting the move leading to the child node population. 
+Initially, most of the agents are allocated to the exploration of the <em>Right</em> part of the game tree. This lasts until the winning strategy for 
+<strong>White</strong> is found (always playing <em>Left</em>) and the agents then shift to the exploration of the <em>Left</em> part of the game tree. At the end, the 
+winning strategy for <strong>Black</strong> is found (always playing <em>Left</em>). The fact that all the agents in the root node population converge to the <em>Left</em> 
+move indicates that <strong>Black</strong> should play <em>Left</em>.</p>
+
+<p>(coded in C++, animated using openFrameworks)</p>
+
+<h1> More </h1>
+
+<p><a href="/assets/pdf/tanay2013stochastic.pdf"> Tanay, T., Bishop, J. M., Nasuto, S. J., Roesch, E. B., &amp; Spencer, M. C. (2013). <i>Stochastic diffusion search applied to trees: a swarm intelligence heuristic performing monte-carlo tree search.</i> In Proceedings of the AISB. </a></p>
+
+<p><a href="/assets/pdf/tanay2012gametree.pdf"> Tanay, T. (2012). <i>Game-Tree Exploration using Stochastic Diffusion Search (Master’s thesis).</i> </a></p>]]></content><author><name></name></author><summary type="html"><![CDATA[MSc Thesis]]></summary></entry></feed>

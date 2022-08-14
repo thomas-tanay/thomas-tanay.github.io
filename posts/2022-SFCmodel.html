@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Thomas  Tanay | How government expenditures finance themselves</title>
+    <meta name="author" content="Thomas  Tanay" />
+    <meta name="description" content="And other observations from an explorable stock-flow consistent model" />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💡</text></svg>">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="http://localhost:4000/posts/2022-how-government-expenditures">
+
+    <!-- MathJax -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<script src="https://d3js.org/d3-color.v1.min.js"></script>
+<script src="https://d3js.org/d3-format.v1.min.js"></script>
+<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+<script src="https://d3js.org/d3-scale.v1.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+<script src="https://d3js.org/d3-collection.v1.min.js"></script>
+<script src="https://d3js.org/d3-dispatch.v1.min.js"></script>
+<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+<script src="https://d3js.org/d3-request.v1.min.js"></script>
+<script src="https://d3js.org/d3-queue.v3.min.js"></script>
+<script src="https://d3js.org/d3-path.v1.min.js"></script>
+<script src="https://d3js.org/d3-dispatch.v1.min.js"></script>
+<script src="https://d3js.org/d3-selection.v1.min.js"></script>
+<script src="https://d3js.org/d3-drag.v1.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.12.1/math.min.js"> </script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] },
+    TeX: { extensions: ["color.js"] }
+  });
+
+  MathJax.Hub.Register.StartupHook("TeX color Ready", function() {
+     MathJax.Extension["TeX/color"].colors["w"] = '#0099E5';
+     MathJax.Extension["TeX/color"].colors["c"] = '#34BF49';
+     MathJax.Extension["TeX/color"].colors["t"] = '#FF4C4C';
+     MathJax.Extension["TeX/color"].colors["G"] = '#FF4C4C';
+     MathJax.Extension["TeX/color"].colors["F"] = '#0099E5';
+     MathJax.Extension["TeX/color"].colors["H"] = '#34BF49';
+     MathJax.Extension["TeX/color"].colors["g"] = '#AA5151';
+     MathJax.Extension["TeX/color"].colors["theta"] = '#AA5151';
+     MathJax.Extension["TeX/color"].colors["darkG"] = '#AA5151';
+     MathJax.Extension["TeX/color"].colors["alpha"] = '#2B779D';
+     MathJax.Extension["TeX/color"].colors["darkF"] = '#2B779D';
+     MathJax.Extension["TeX/color"].colors["beta"] = '#458A4F';
+     MathJax.Extension["TeX/color"].colors["darkH"] = '#458A4F';
+});
+</script>
+
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+    <link rel="stylesheet" href="assets/additional_style.css">
+    <script src="assets/vis_functions.js"></script>
+
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "How government expenditures finance themselves",
+      "description": "And other observations from an explorable stock-flow consistent model",
+      "published": "March 1, 2022",
+      "authors": [
+        
+      ],
+    }</script>
+  </d-front-matter>
+
+  <body class="sticky-bottom-footer">
+
+    <!-- Header -->
+    <header>
+
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm sticky-top">
+        <div class="container">
+          <a class="navbar-brand title font-weight-lighter" href="http://localhost:4000/">Thomas   <span class="font-weight-bold">Tanay</span></a>
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/">about</a>
+              </li>
+
+              <!-- Other pages --><li class="nav-item active">
+                <a class="nav-link" href="/posts/">posts</a>
+              </li>
+<li class="nav-item ">
+                <a class="nav-link" href="/publications/">publications</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1>How government expenditures finance themselves</h1>
+        <p>And other observations from an explorable <span style="font-weight: 500; color: var(--G)">Stock</span>-<span style="font-weight: 500; color: var(--F)">Flow</span> <span style="font-weight: 500; color: var(--H)">Consistent</span> model</p>
+      </d-title>
+
+      <!-- <d-byline></d-byline>-->
+
+      <d-article>
+
+<div id="quote">
+"Whether the policy debate is health care, infrastructure, education, or climate change, the same question inevitably arises: But how are you going to pay for it?" Stephanie Kelton, <i>The deficit myth</i>, 2020.
+</div>
+
+        <d-contents>
+          <nav class="l-text figcaption">
+          <h3>Contents</h3>
+            <div><a href="#model-description">Model description</a></div>
+            <div><a href="#playtime">Playtime!</a></div>
+            <div><a href="#a-walk-through-different-model-states">A walk through different model states</a></div>
+            <div><a href="#equilibrium-analysis">Equilibrium analysis</a></div>
+            <div><a href="#going-further">Going further</a></div>
+            
+          </nav>
+        </d-contents>
+
+<p> This is a popular analogy: the finances of a sovereign state's government are like the finances of a household. A government receives tax revenues and spends on expenditure programs. It runs a fiscal deficit when its expenditures exceed its revenues, and this deficit needs to be covered by some form of borrowing. New borrowings increase future expenditures and can trigger unsustainable spirals of deficits and borrowings. Responsible governments should therefore always aim to produce balanced budgets. Whenever possible, they should even aim to produce fiscal surpluses and pay back their existing debts.</p>
+
+<p> In her bestselling book <i>The Deficit Myth</i> (2020), Stephanie Kelton calls this Government-Household analogy "udoubtly the most pernicious" of all the myths surrounding fiscal deficits. This analogy is wrong, she tells us, because households are currency users while the government is the currency issuer: it spends its currency into existence (Chapter 1). Of course, the fact that the government can manufacture its own currency does not mean there there are no limits to its spending. But deficits are not evidence of overspending, inflation is (Chapter 2). Once we fully aknowledge the role of the government as the currency issuer, it becomes clear that the sum of all past fiscal deficits&mdash;what we call the "National Debt"&mdash;really isn't a debt in the usual sense of the term. It is "nothing more than a footprint from the past", a statement of the total amount of currency issued by the government to date (Chapter 3). </p>
+
+<p> The currency user versus currency issuer distinction is an important starting point, but to really understand the difference between the finances of a government and those of an individual household, it is necessary to zoom out and look at the economy from the macro level. Stephanie Kelton brings us there by introducing the sector balance framework pioneered by British economist Wynne Godley (Chapter 4). This framework relies on one simple accounting axiom: "everything comes from somewhere and everything goes somewhere". Seen from the perspective of the government finances for instance, this leads to what Godley and Kelton playfully call the "one-equation model of the world":</p>
+
+<div class="text-equation">
+Government financial balance $+$ Nongovernment financial balance $=$ Zero.
+</div>
+
+<p>This equation may seem trivial, but it already uncovers a truth fundamentally different from what the Government-Household analogy suggests: instead of making us poorer, fiscal deficits increase our wealth and collective savings. To see it clearly, think in terms of "buckets" or <i>stocks</i>, and consider the <i>flows</i> of funds between them. Whenever the government bucket runs a fiscal deficit, the nongovernment bucket&mdash;that is, the rest of the economy including firms and households&mdash;receive a surplus of funds:</p>
+
+<img class="img" id="exhibit3" src="assets/exhibit3.jfif" alt="Exhibit 3">
+
+<p> The reverse is, of course, also true: whenever the government runs a fiscal surplus, the rest of the economy must be in deficit. And in practice, it is not obvious who really controls the government financial balance. Sure, the government might try to increase its revenues by reducing its spending and increasing its taxes. But the rest of the economy might refuse to go into deficit, and react by also cutting spending (wages for the firms and consumption for the households). Should the government double-down on deficit reduction, at the risk of triggering an austerity-driven recession? Or is a certain level of fiscal deficit desirable, to allow for the natural saving behaviour of firms and households to be satisfied?</p>
+
+<p>The aim of this blog post is to make this type of macroeconomic thinking more intuitive. It introduces an explorable stock-flow consistent model describing the economic activity between the government, firms and households as a function of controllable behavioural parameters. The reader can for instance test the various scenarios above by changing the spending behaviour of each economic entity and observe the system evolve to a new state. The model itself is a slighlty modified version of a model originally proposed by Wynne Godley and Marc Lavoie in their textbook on <i>Monetary Economics</i> (2006).</p>
+
+<!--Notwithstanding the extreme simplicity of this model we are already able to reach a supremely important policy conclusion which will survive throughout this book. Given the level of activity, the quantity of private wealth and the rate at which it accumulates are determined entirely by the propensities of the private sector, which the government cannot change. But this is to imply (again given the level of activity) that government deficits and debts (being identical to, respectively, private saving and wealth) are endogenous variables which cannot be controlled by governments. This conclusion totally contradicts many influencial, or even statutory, proposals regarding the regulation of fiscal policy which are made in abstraction from any consideration of how economies actually work -- for instance the European Maastricht rules, Gordon Brown's Golden Rule in the United Kingdom and, most important, the view widely held by ignorant politicians and members of the public that government budgets should be balanced.-->
+
+
+<h2  id="model-description">Model description </h2>
+
+<p> Let's consider an economy made of three entities: the <span style="font-weight: bold; color: var(--G)">Government</span>, a set of <span style="font-weight: bold; color: var(--F)">Firms</span> and a set of <span style="font-weight: bold; color: var(--H)">Households</span>. These entities own stocks and regularly exchange flows of funds over discrete economic cycles $0, 1, \ldots, i$. The model we are interested in rigorously accounts for the variation of the stocks and flows over time through <i>behavioural equations</i> describing the spending behaviour of each economic entity, and through <i>accounting identities</i> keeping track of each stock's inputs and outputs. </p>
+
+<h4>Notations</h4>
+
+<p> Let's start by familiarizing ourselves with the notations and the graphical representation of the model. For clarity, we exclusively use bold capital letters to refer to <i>stocks</i>, and bold small letters to refer to <i>flows</i>. </p>
+
+<div id="notations-container">
+<img id="notations-img" src="assets/model.svg" alt="model">
+<div id="notations">
+<p><span style="color: var(--G); font-weight: bold;">The Government</span><br>
+&#8226; It controls a flow of <i>expenditures</i> ${\color{g} \boldsymbol{g}}$ directed to the firms <br>
+&#8226; It controls a <i>tax rate</i> ${\color{theta} \theta}$ applied directly on the wages <br>
+&#8226; It deducts a flow of <i>tax revenues</i> ${\color{t} \boldsymbol{t}_i}$ from the households <br>
+&#8226; It owns a negative stock of <i>debt</i> ${\color{G} \boldsymbol{G}_i}$
+</p>
+
+<p><span style="color: var(--F); font-weight: bold;">The Firms</span><br>
+&#8226; They control a <i>level of spending on income</i> $\color{alpha} \alpha_1$ <br>
+&#8226; They control a <i>level of spending on savings</i> $\color{alpha} \alpha_2$ <br>
+&#8226; They pay <i>wages</i> ${\color{w} \boldsymbol{w}_i}$ directed to the households <br>
+&#8226; They own a positive stock of <i>savings</i> ${\color{F} \boldsymbol{F}_i}$
+</p>
+
+<p><span style="color: var(--H); font-weight: bold;">The Households</span><br>
+&#8226; They control a <i>level of spending on income</i> $\color{beta} \beta_1$ <br>
+&#8226; They control a <i>level of spending on savings</i> $\color{beta} \beta_2$ <br>
+&#8226; They spend on <i>consumption</i> ${\color{c} \boldsymbol{c}_i}$ directed to the firms <br>
+&#8226; They own a positive stock of <i>savings</i> ${\color{H} \boldsymbol{H}_i}$
+</p>
+
+</div>
+</div>
+
+<p> At this stage it is important to distinguish between the <i>model parameters</i> $\; \color{g} \boldsymbol{g}$ $\; \color{theta} \theta$ $\; \color{alpha} \alpha_1$ $\; \color{alpha} \alpha_2$ $\; \color{beta} \beta_1$ $\; \color{beta} \beta_2 \;$ and the <i>model variables</i> $\; {\color{t} \boldsymbol{t}_i}$ $\; {\color{G} \boldsymbol{G}_i}$ $\; {\color{w} \boldsymbol{w}_i}$ $\; {\color{F} \boldsymbol{F}_i}$ $\; {\color{c} \boldsymbol{c}_i}$ $\; {\color{H} \boldsymbol{H}_i}$. The parameters are directly controllable by each economic entity; their values represent policy decisions (by the government) or individual choices (by firms and households). The variables are not directly controllable; their values are functions of the parameters. Since there are six unknown variables in the present case, fully determining the model will require six independent equations. Running a simulation will then consist in fixing the parameters and observing how the variables evolve over multiple economic cycles. </p>
+
+<p> Already, we can make two important observations.<br>
+<em>1) Government expenditures $\color{g} \boldsymbol{g}$ are a parameter.</em>
+As the currency issuer, the government controls its level of spending $\color{g} \boldsymbol{g}$ directly in an unconstrained way.<br>
+<em>2) The tax revenues ${\color{t} \boldsymbol{t}_i}$ are a variable.</em>
+The government has direct control over the tax rate $\color{theta} \theta$ but this can translate into different levels of tax revenues ${\color{t} \boldsymbol{t}_i}$ depending on the size of the wages ${\color{w} \boldsymbol{w}_i}$.</p>
+
+<p><i> As we will see in the following, increasing government expenditures tends to result in higher tax revenues even when the tax rate remains fixed: government expenditures tend to finance themselves.</i> </p>
+
+<h4>Behavioural equations</h4>
+
+<p> Let's now describe the spending behaviour of the three economic entities in more details. For a start, we assume that the firms and households spend according to their disposable incomes and savings:</p>
+
+<div class="text-equation">
+spending $=$ <span>level of spending on income $\times$ disposable income</span> <span>+ level of spending on savings $\times$ disposable savings.</span>
+</div>
+
+<p> The firms spend on wages ${\color{w} \boldsymbol{w}_i}$ controlled by a level of spending on income $\color{alpha} \alpha_1$ and a level of spending on savings $\color{alpha} \alpha_2$. Their disposable income are the government expenditures ${\color{g} \boldsymbol{g}}$ plus the consumption ${\color{c} \boldsymbol{c}_i}$ and their disposable savings are the previous stock ${\color{F} \boldsymbol{F}_{i-1}}$. Hence we can write:
+$${\color{w} \boldsymbol{w}_i} = {\color{alpha} \alpha_1} \, ({\color{g} \boldsymbol{g}} + {\color{c} \boldsymbol{c}_i}) + {\color{alpha} \alpha_2} \, {\color{F} \boldsymbol{F}_{i-1}} . \tag{1} $$
+The households spend on consumption ${\color{c} \boldsymbol{c}_i}$ controlled by a level of spending on income $\color{beta} \beta_1$ and a level of spending on savings $\color{beta} \beta_2$. Their disposable income are the wages ${\color{w} \boldsymbol{w}_i}$ minus the taxes paid ${\color{t} \boldsymbol{t}_i}$ and their disposable savings are the previous stock ${\color{H} \boldsymbol{H}_{i-1}}$. Hence we can write:
+$${\color{H} \boldsymbol{c}_i} = {\color{beta} \beta_1} \, ({\color{w} \boldsymbol{w}_i} - {\color{t} \boldsymbol{t}_i}) + {\color{beta} \beta_2} \, {\color{H} \boldsymbol{H}_{i-1}} . \tag{2}$$
+For the government, the level of expenditures $\color{g} \boldsymbol{g}$ is a parameter controlled directly. The tax revenues ${\color{t} \boldsymbol{t}_i}$ are extracted from the wages ${\color{w} \boldsymbol{w}_i}$ with a tax rate ${\color{theta} \theta}$ such that:
+$${\color{t} \boldsymbol{t}_i} = {\color{theta} \theta} \, {\color{w} \boldsymbol{w}_i} . \tag{3}$$
+We now have one equation per flow variable. We focus next on the stock variables.</p>
+
+<h4>Accounting identities</h4>
+
+<p> Here, the idea is to apply a mass balance approach to our economic system and explicitly keep track of each stocks' inputs and outputs. This is done through the trivial accounting identity: </p>
+<div class="text-equation">
+current stock $=$ previous stock $-$ spending $+$ revenues.
+</div>
+
+<p> The firms spend on wages ${\color{w} \boldsymbol{w}_i}$ and receive expenditures ${\color{g} \boldsymbol{g}}$ and the consumption ${\color{c} \boldsymbol{c}_i}$. Hence we can write:
+$${\color{F} \boldsymbol{F}_i} = {\color{F} \boldsymbol{F}_{i-1}} - {\color{w} \boldsymbol{w}_i} + {\color{g} \boldsymbol{g}} + {\color{c} \boldsymbol{c}_i} . \tag{4}$$
+ The households spend on consumption ${\color{c} \boldsymbol{c}_i}$ and taxes ${\color{t} \boldsymbol{t}_i}$ and receive wages ${\color{w} \boldsymbol{w}_i}$. Hence we can write:
+$${\color{H} \boldsymbol{H}_i} = {\color{H} \boldsymbol{H}_{i-1}} - {\color{c} \boldsymbol{c}_i} - {\color{t} \boldsymbol{t}_i} + {\color{w} \boldsymbol{w}_i} . \tag{5}$$
+The government spends on expenditures ${\color{g} \boldsymbol{g}}$ and receives tax revenues ${\color{t} \boldsymbol{t}_i}$. Hence we can write:
+$$ {\color{G} \boldsymbol{G}_i} = {\color{G} \boldsymbol{G}_{i-1}} - {\color{g} \boldsymbol{g}} + {\color{t} \boldsymbol{t}_i} . \tag{6} $$
+We now have a system of six equations and six variables and the model is almost ready to be simulated.</p>
+
+<h4>Initial stocks</h4>
+
+<p> One particularity of the system of equations defined above is that it is recursive, meaning that the state of the model for an economic cycle $i$ depends on its state for the previous economic cycle $i-1$, which in turn depends on its state for previous the economic cycle $i-2$, etc. In practice, this means that initial stock values ${\color{F} \boldsymbol{F}_0} \;\; {\color{H} \boldsymbol{H}_0} \;\; {\color{G} \boldsymbol{G}_0}$ need to be defined, from which all the successive states of the model will result. For simplicity, the initial stocks are assumed to be null:
+$${\color{F} \boldsymbol{F}_0} = {\color{H} \boldsymbol{H}_0} = {\color{G} \boldsymbol{G}_0} = 0 . \tag{0}$$
+A couple of observations follow directly. First, <em>the sum of stocks remains null at all economic cycles $i$</em>. Indeed, summing equations $(4)+(5)+(6)$ shows that the sum of stocks remains constant over time:
+$$ {\color{F} \boldsymbol{F}_i} + {\color{H} \boldsymbol{H}_i} + {\color{G} \boldsymbol{G}_i} = {\color{F} \boldsymbol{F}_{i-1}} + {\color{H} \boldsymbol{H}_{i-1}} + {\color{G} \boldsymbol{G}_{i-1}} . $$
+This is just another formulation of Wynne Godley's "one-equation model of the world": <i>in a closed economy, a sector's deficit is necessarily another sector's surplus.</i> And this is true in particular for the initial state:
+$$ {\color{F} \boldsymbol{F}_i} + {\color{H} \boldsymbol{H}_i} + {\color{G} \boldsymbol{G}_i} = {\color{F} \boldsymbol{F}_0} + {\color{H} \boldsymbol{H}_0} + {\color{G} \boldsymbol{G}_0} = 0 .$$
+Second, <em>the government debt is the negative of the firms' and households' savings</em>. This is simply obtained by rearranging the equation above:
+$$ {\color{G} \boldsymbol{G}_i} = - {\color{F} \boldsymbol{F}_i} - {\color{H} \boldsymbol{H}_i} .$$
+A corrolary to which we'll come back later is that <i>a high government debt is not necessarily the sign of excessive government spending, but can also be the sign of excessive saving by other economic entities.</i></p>
+
+<h2 id="playtime">Playtime! </h2>
+
+<p> An explorable version of the model is implemented below.</p>
+
+<p> The graphical representation <span class="lg-view">on the left</span><span class="sm-view">at the top</span> is dynamically adjusted to show the current state of each variable. The stocks are represented by vertical bars of varying heights and the flows are represented by arrows of varying widths. The variables are also plotted as functions of time <span class="lg-view">on the right.</span><span class="sm-view">below.</span> </p> 
+
+<p> The parameters are directly controllable using sliders, and are initialized with reasonable values. The government spending is average, the tax rate is low, the firms and households spend most of their incomes and a lower proportion of their savings:
+$$\quad \begin{array}{ccc}
+  {\color{g} \boldsymbol{g} = 20} \quad & {\color{alpha} \alpha_1 = 0.8}  \quad & {\color{beta} \beta_1 = 0.7}\\
+  {\color{theta} \theta = 0.2}  \quad & {\color{alpha} \alpha_2 = 0.4}  \quad & {\color{beta} \beta_2 = 0.2}
+\end{array}\quad.$$
+ </p> 
+
+<p> Go ahead and explore the model yourself! You can start by clicking on the "reset stock" button and observe the model converge to its equilibrium state. Or you can increase government expenditures by moving the slider ${\color{g} \boldsymbol{g}}$ to the right and observe the model converge to a new equilibrium state, with larger flows and stocks. If you're not sure what to try, a guided tour is presented in the next section. </p>
+
+<div id="figure">
+<div id="svg">
+<button id="reset_stocks">reset stocks</button>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="drawing.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 145 145">
+  <defs
+     id="defs2">
+    <marker
+       inkscape:stockid="Arrow2Sstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker5094"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path5092"
+         style="fill:#34bf49;fill-opacity:1;fill-rule:evenodd;stroke:#34bf49;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(0.3,0,0,0.3,-0.69,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker5012"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path5010" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker4831"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#0099e5;fill-opacity:1;fill-rule:evenodd;stroke:#0099e5;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path4829" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Sstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Sstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path3757"
+         style="fill:#ff4c4c;fill-opacity:1;fill-rule:evenodd;stroke:#ff4c4c;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(0.3,0,0,0.3,-0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Send"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path3760"
+         style="fill:#aa5151;fill-opacity:1;fill-rule:evenodd;stroke:#aa5151;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Send"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path3742"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path3745"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(1.1,0,0,1.1,1.1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lend"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path3748"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path3730"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <rect
+       x="15.610859"
+       y="-8.3066959"
+       width="20.050644"
+       height="68.028969"
+       id="rect3526" />
+    <rect
+       x="18.974127"
+       y="-0.71353287"
+       width="30.648842"
+       height="36.950474"
+       id="rect3520" />
+    <rect
+       x="68.671082"
+       y="29.64887"
+       width="17.202053"
+       height="12.275153"
+       id="rect3458" />
+    <rect
+       x="8.5607061"
+       y="5.6179633"
+       width="0.13376103"
+       height="11.503449"
+       id="rect2970" />
+    <rect
+       x="36.650524"
+       y="12.573537"
+       width="17.14928"
+       height="8.7847919"
+       id="rect2964" />
+    <rect
+       x="9.7645559"
+       y="9.4970331"
+       width="14.417893"
+       height="13.183179"
+       id="rect2958" />
+    <rect
+       x="62.71278"
+       y="8.8307858"
+       width="1.0579928"
+       height="13.401242"
+       id="rect898" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="28.233909"
+       height="8.5454207"
+       id="rect890" />
+    <rect
+       id="rect890-0"
+       height="8.5833974"
+       width="28.306581"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       id="rect911"
+       height="16.398888"
+       width="33.679436"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       id="rect890-2"
+       height="2.6727552"
+       width="30.175215"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       id="rect939"
+       height="2.9056468"
+       width="19.112869"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="30.175215"
+       height="2.6727552"
+       id="rect890-2-1" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="30.175215"
+       height="2.6727552"
+       id="rect970" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="18.806204"
+       height="3.9789729"
+       id="rect890-0-1" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="18.806204"
+       height="3.9789729"
+       id="rect3110" />
+    <rect
+       id="rect2958-6"
+       height="12.573538"
+       width="11.369688"
+       y="9.4970331"
+       x="9.7645559" />
+    <rect
+       id="rect3113"
+       height="12.573538"
+       width="11.369688"
+       y="9.4970331"
+       x="9.7645559" />
+    <rect
+       id="rect890-8"
+       height="2.9056468"
+       width="19.112869"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       id="rect3116"
+       height="2.9056468"
+       width="19.112869"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       id="rect2964-9"
+       height="22.070572"
+       width="11.102166"
+       y="12.573537"
+       x="36.650524" />
+    <rect
+       id="rect3119"
+       height="22.070572"
+       width="11.102166"
+       y="12.573537"
+       x="36.650524" />
+    <rect
+       id="rect890-0-1-5"
+       height="3.9789729"
+       width="18.806204"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       id="rect3214"
+       height="3.9789729"
+       width="18.806204"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       x="9.7645559"
+       y="9.4970331"
+       width="11.369688"
+       height="12.573538"
+       id="rect2958-6-8" />
+    <rect
+       x="9.7645559"
+       y="9.4970331"
+       width="11.369688"
+       height="12.573538"
+       id="rect3217" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="19.112869"
+       height="2.9056468"
+       id="rect890-8-7" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="19.112869"
+       height="2.9056468"
+       id="rect3220" />
+    <rect
+       x="36.650524"
+       y="12.573537"
+       width="11.102166"
+       height="22.070572"
+       id="rect2964-9-6" />
+    <rect
+       x="36.650524"
+       y="12.573537"
+       width="11.102166"
+       height="22.070572"
+       id="rect3223" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="28.719801"
+       height="3.2684247"
+       id="rect890-0-7" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="18.806204"
+       height="3.9789729"
+       id="rect3323" />
+    <rect
+       id="rect2958-0"
+       height="12.573538"
+       width="11.369688"
+       y="9.4970331"
+       x="9.7645559" />
+    <rect
+       id="rect3326"
+       height="12.573538"
+       width="11.369688"
+       y="9.4970331"
+       x="9.7645559" />
+    <rect
+       id="rect890-5"
+       height="8.8469734"
+       width="16.996573"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       id="rect3329"
+       height="2.9056468"
+       width="19.112869"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       id="rect2964-8"
+       height="5.6934988"
+       width="17.601998"
+       y="12.573537"
+       x="36.650524" />
+    <rect
+       id="rect3332"
+       height="22.070572"
+       width="11.102166"
+       y="12.573537"
+       x="36.650524" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="27.779337"
+       height="4.3873382"
+       id="rect890-5-4" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="27.779337"
+       height="4.3873382"
+       id="rect3427" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="23.424567"
+       height="11.963576"
+       id="rect890-5-7" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="12.321669"
+       height="4.1720691"
+       id="rect3485" />
+    <rect
+       id="rect890-0-7-4"
+       height="3.2684247"
+       width="28.719801"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       id="rect3539"
+       height="3.2684247"
+       width="28.719801"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       x="9.7645559"
+       y="9.4970331"
+       width="11.369688"
+       height="12.573538"
+       id="rect2958-0-5" />
+    <rect
+       x="9.7645559"
+       y="9.4970331"
+       width="11.369688"
+       height="12.573538"
+       id="rect3542" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="19.399259"
+       height="8.374388"
+       id="rect890-5-1" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="12.321669"
+       height="4.1720691"
+       id="rect3545" />
+    <rect
+       x="36.650524"
+       y="12.573537"
+       width="14.176707"
+       height="8.4334287"
+       id="rect2964-8-5" />
+    <rect
+       x="36.650524"
+       y="12.573537"
+       width="10.274043"
+       height="5.4305477"
+       id="rect3548" />
+    <rect
+       id="rect3458-9"
+       height="12.275153"
+       width="17.202053"
+       y="29.64887"
+       x="68.671082" />
+    <rect
+       id="rect3551"
+       height="12.275153"
+       width="17.202053"
+       y="29.64887"
+       x="68.671082" />
+    <rect
+       id="rect890-5-7-0"
+       height="10.143786"
+       width="18.072211"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       id="rect3554"
+       height="4.1720691"
+       width="12.321669"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       id="rect3520-4"
+       height="36.950474"
+       width="30.648842"
+       y="-0.71353287"
+       x="18.974127" />
+    <rect
+       id="rect3557"
+       height="36.950474"
+       width="30.648842"
+       y="-0.71353287"
+       x="18.974127" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="Arrow2Lend-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lend">
+      <path
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#ff7f2a;fill-opacity:1;fill-rule:evenodd;stroke:#ff7f2a;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path3748-7" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4831-7"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path4829-2"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <rect
+       id="rect890-9"
+       height="6.5357289"
+       width="15.124216"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       id="rect1194"
+       height="2.9056468"
+       width="22.263685"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="16.267111"
+       height="11.062272"
+       id="rect890-9-4" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="22.263685"
+       height="2.9056468"
+       id="rect1272" />
+    <rect
+       id="rect890-9-4-4"
+       height="2.9056468"
+       width="22.263685"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       id="rect1302"
+       height="2.9056468"
+       width="22.263685"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="19.9563"
+       height="6.7198077"
+       id="rect890-5-3" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="12.321669"
+       height="4.1720691"
+       id="rect1350" />
+    <rect
+       id="rect890-5-3-3"
+       height="6.3916907"
+       width="19.9563"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       id="rect1388"
+       height="3.2612219"
+       width="5.6854959"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       id="rect890-5-1-8"
+       height="6.8342149"
+       width="19.9563"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       id="rect1418"
+       height="4.1720691"
+       width="12.321669"
+       y="-7.5681019"
+       x="31.325663" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="16.481448"
+       height="9.9759555"
+       id="rect890-5-1-8-6" />
+    <rect
+       x="31.325663"
+       y="-7.5681019"
+       width="7.6373115"
+       height="2.8708587"
+       id="rect1456" />
+    <rect
+       id="rect2958-9"
+       height="9.925185"
+       width="8.176186"
+       y="9.4970331"
+       x="9.7645559" />
+    <rect
+       id="rect238"
+       height="12.573538"
+       width="11.369688"
+       y="9.4970331"
+       x="9.7645559" />
+    <rect
+       x="9.7645559"
+       y="9.4970331"
+       width="10.284567"
+       height="12.844818"
+       id="rect2958-9-8" />
+    <rect
+       x="9.7645559"
+       y="9.4970331"
+       width="10.284567"
+       height="12.844818"
+       id="rect268" />
+    <rect
+       id="rect2958-9-8-7"
+       height="12.844818"
+       width="10.284567"
+       y="9.4970331"
+       x="9.7645559" />
+    <rect
+       id="rect298"
+       height="12.844818"
+       width="10.284567"
+       y="9.4970331"
+       x="9.7645559" />
+    <rect
+       x="9.7645559"
+       y="9.4970331"
+       width="10.284567"
+       height="12.844818"
+       id="rect2958-9-8-7-7" />
+    <rect
+       x="9.7645559"
+       y="9.4970331"
+       width="10.284567"
+       height="12.844818"
+       id="rect328" />
+    <rect
+       x="9.7645559"
+       y="9.4970331"
+       width="7.2022476"
+       height="9.1460342"
+       id="rect2958-9-7" />
+    <rect
+       x="9.7645559"
+       y="9.4970331"
+       width="7.2022476"
+       height="9.1460342"
+       id="rect1268" />
+    <rect
+       id="rect2958-9-7-5"
+       height="9.1460342"
+       width="7.2022476"
+       y="9.4970331"
+       x="9.7645559" />
+    <rect
+       id="rect1307"
+       height="9.1460342"
+       width="7.2022476"
+       y="9.4970331"
+       x="9.7645559" />
+    <rect
+       x="9.7645559"
+       y="9.4970331"
+       width="7.2022476"
+       height="9.1460342"
+       id="rect2958-9-7-5-3" />
+    <rect
+       x="9.7645559"
+       y="9.4970331"
+       width="7.2022476"
+       height="9.1460342"
+       id="rect1340" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="-11"
+     inkscape:window-x="-11"
+     inkscape:window-height="986"
+     inkscape:window-width="1920"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="75.850499"
+     inkscape:cx="71.151065"
+     inkscape:zoom="5.0266175"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     showguides="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     style="opacity:0.9999;mix-blend-mode:normal"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <path
+       style="opacity:0.9999;mix-blend-mode:normal;fill:none;stroke:#ff4c4c;stroke-width:1.0015748;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Sstart)"
+       d="m 51.177844,89.150854 v 20.823906 h 25.06644"
+       id="path3706-8"
+       sodipodi:nodetypes="ccc" />
+    <path
+       id="path3706"
+       d="M 51.030236,67.013892 V 45.134253 h 23.619478"
+       style="opacity:0.9999;mix-blend-mode:normal;fill:none;stroke:#aa5151;stroke-width:1.0015748;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send)"
+       sodipodi:nodetypes="ccc" />
+    <path
+       id="path4809-6"
+       d="M 108.10487,56.763549 V 100.17096"
+       style="opacity:0.9999;mix-blend-mode:normal;fill:#34bf49;stroke:#34bf49;stroke-width:1.0015748;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker5094);fill-opacity:1"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:#0099e5;stroke:#0099e5;stroke-width:1.0015748;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker4831);fill-opacity:1"
+       d="M 86.92854,54.535424 V 97.977752"
+       id="path4809"
+       sodipodi:nodetypes="cc" />
+    <rect
+       style="opacity:0.9999;mix-blend-mode:normal;fill:#f2f2f2;fill-rule:nonzero;stroke:#0099e5;stroke-width:0.522835;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1;paint-order:normal;fill-opacity:1"
+       id="rect1008-9"
+       width="59.477165"
+       height="20.010487"
+       x="76.43689"
+       y="34.902618"
+       rx="2.7706447"
+       ry="3.053802" />
+    <g
+       transform="translate(6.0614125,-11.600255)"
+       aria-label="wt"
+       id="text1213-24-2-4"
+       style="font-style:normal;font-weight:normal;font-size:5.33333px;line-height:1.25;font-family:sans-serif;opacity:0.9999;mix-blend-mode:normal;fill:#0099e5;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none">
+      <g
+         style="font-style:normal;font-weight:normal;font-size:9.33333px;line-height:1.25;font-family:sans-serif;fill:#0099e5;fill-opacity:1;stroke:none"
+         id="text1123-6-6"
+         aria-label="Fi">
+        <path
+           id="path1150"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.33333px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold Italic';fill:#0099e5;fill-opacity:1"
+           d="m 79.765148,55.259634 0.214666,-1.848 c -0.01867,-0.158666 -0.168,-0.158666 -0.298666,-0.158666 h -4.675999 c -0.158666,0 -0.317333,0 -0.317333,0.270666 0,0.168 0.158667,0.168 0.289333,0.168 h 0.205334 c 0.09333,0 0.401333,0.01867 0.457333,0.01867 l -1.316,5.282665 c -0.03733,0.130666 -0.04667,0.14 -0.214666,0.149333 -0.112,0.0093 -0.261334,0.01867 -0.373334,0.01867 h -0.205333 c -0.158666,0 -0.326666,0 -0.326666,0.270666 0,0.121334 0.102666,0.168 0.205333,0.168 0.476,0 0.970666,-0.028 1.446666,-0.028 0.541333,0 1.101333,0.028 1.633333,0.028 0.112,0 0.289333,0 0.289333,-0.270666 0,-0.168 -0.168,-0.168 -0.298667,-0.168 h -0.335999 c -0.336,0 -0.354667,0 -0.578667,-0.028 l 0.625333,-2.491999 h 0.42 c 0.541333,0 0.634667,0.112 0.634667,0.363999 0,0.09333 -0.028,0.28 -0.07467,0.429334 0,0.028 -0.01867,0.102666 -0.01867,0.130666 0,0.168 0.168,0.168 0.261333,0.168 0.158667,0 0.224,0 0.28,-0.224 l 0.522667,-2.109332 c 0.01867,-0.06533 0.028,-0.09333 0.028,-0.121334 0,-0.168 -0.168,-0.168 -0.261333,-0.168 -0.205334,0 -0.233334,0.028 -0.28,0.205334 -0.168,0.653333 -0.326667,0.886666 -1.064,0.886666 h -0.336 l 0.616,-2.491999 c 0.130667,-0.01867 0.476,-0.01867 0.718666,-0.01867 1.054667,0 1.652,0 1.652,0.970667 0,0.158666 -0.01867,0.382666 -0.03733,0.550666 -0.01867,0.07467 -0.01867,0.112 -0.01867,0.112 0,0.177333 0.168,0.177333 0.261333,0.177333 0.242667,0 0.252,-0.06533 0.270667,-0.242666 z" />
+        <path
+           id="path1152"
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.66667px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman,  Italic';baseline-shift:sub;fill:#0099e5;fill-opacity:1"
+           d="m 81.594399,60.512965 c 0,-0.06667 -0.05333,-0.06667 -0.1,-0.06667 -0.08667,0 -0.08667,0.01333 -0.113334,0.113333 -0.05333,0.193334 -0.233333,0.833334 -0.62,0.833334 -0.05333,0 -0.146667,-0.0067 -0.146667,-0.186667 0,-0.173333 0.08667,-0.393333 0.173334,-0.64 l 0.426667,-1.140001 c 0.06667,-0.193333 0.08,-0.246666 0.08,-0.373333 0,-0.366667 -0.253334,-0.533334 -0.500001,-0.533334 -0.626667,0 -0.853333,0.993334 -0.853333,1.026667 0,0.06667 0.06667,0.06667 0.1,0.06667 0.08667,0 0.09333,-0.01333 0.12,-0.106667 0.06,-0.22 0.233333,-0.84 0.62,-0.84 0.07333,0 0.146667,0.03333 0.146667,0.186667 0,0.16 -0.07333,0.353333 -0.12,0.48 l -0.2,0.553334 -0.246667,0.66 c -0.09333,0.253333 -0.12,0.326667 -0.12,0.46 0,0.26 0.16,0.533334 0.506667,0.533334 0.626667,0 0.846667,-1.000001 0.846667,-1.026667 z m 0.18,-3.120002 c 0,-0.14 -0.1,-0.286667 -0.3,-0.286667 -0.213334,0 -0.426667,0.206667 -0.426667,0.42 0,0.146667 0.106667,0.286667 0.3,0.286667 0.213333,0 0.426667,-0.206666 0.426667,-0.42 z" />
+      </g>
+    </g>
+    <g
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:5.33333px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';white-space:pre;shape-inside:url(#rect890-5);opacity:0.9999;mix-blend-mode:normal;fill:#005c89;fill-opacity:1;stroke:none"
+       id="text888-8"
+       transform="matrix(0.88685506,0,0,0.88685506,65.313806,42.426164)"
+       aria-label="α1 = ">
+      <path
+         id="path1210"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Italic';fill:#2b779d;fill-opacity:1"
+         d="m 33.508462,-3.959799 0.0026,-0.6015622 q 0.0026,-0.6145829 -0.460937,-0.6171871 -0.346354,-0.0026 -0.562499,0.2864582 -0.270834,0.3567706 -0.361979,0.8333328 -0.11198,0.5729163 0.02865,0.8463537 0.145834,0.2786456 0.460938,0.2786456 0.348958,0 0.643228,-0.5546871 z m -0.377604,-1.6249991 q 0.8125,-0.013021 0.802083,0.8281245 0,0 0.40625,-0.7630203 h 0.427083 l -0.841145,1.5807282 -0.0078,0.5703122 q 0,0.127604 0.07031,0.2343748 0.08073,0.1249999 0.164062,0.1249999 h 0.231771 l -0.07813,0.4062498 h -0.289063 q -0.244791,0 -0.421874,-0.2187499 -0.08333,-0.1093749 -0.08594,-0.3385414 -0.16927,0.2786456 -0.460937,0.5156247 -0.138021,0.1093749 -0.510416,0.1067707 -0.609375,-0.00521 -0.830729,-0.3958331 -0.226562,-0.4062497 -0.08594,-1.1249993 0.151041,-0.773437 0.546874,-1.1249993 0.445312,-0.393229 0.963541,-0.4010415 z" />
+      <path
+         id="path1212"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.66667px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';baseline-shift:sub;fill:#005c89;fill-opacity:1"
+         d="m 36.802338,-1.536363 v -0.1446668 h -0.149334 c -0.42,0 -0.434,-0.051333 -0.434,-0.2240001 v -2.6180018 c 0,-0.1120001 0,-0.1213334 -0.107333,-0.1213334 -0.289334,0.2986669 -0.700001,0.2986669 -0.849334,0.2986669 v 0.1446667 c 0.09333,0 0.368667,0 0.611334,-0.1213334 v 2.417335 c 0,0.1680001 -0.014,0.2240001 -0.434001,0.2240001 h -0.149333 v 0.1446668 c 0.163333,-0.014 0.569334,-0.014 0.756,-0.014 0.186667,0 0.592667,0 0.756001,0.014 z" />
+      <path
+         id="path1214"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';fill:#2b779d;fill-opacity:1"
+         d="m 42.584264,-4.4536946 c 0,-0.1066666 -0.101333,-0.1066666 -0.176,-0.1066666 h -3.194665 c -0.07467,0 -0.175999,0 -0.175999,0.1066666 0,0.1066666 0.101333,0.1066666 0.181333,0.1066666 h 3.183998 c 0.08,0 0.181333,0 0.181333,-0.1066666 z m 0,1.0346661 c 0,-0.1066666 -0.101333,-0.1066666 -0.181333,-0.1066666 h -3.183998 c -0.08,0 -0.181333,0 -0.181333,0.1066666 0,0.1066666 0.101333,0.1066666 0.175999,0.1066666 h 3.194665 c 0.07467,0 0.176,0 0.176,-0.1066666 z" />
+    </g>
+    <rect
+       ry="1.4437294"
+       rx="1.2953491"
+       y="-50.657166"
+       x="121.91254"
+       height="11.38901"
+       width="9.999999"
+       id="rect2987-8"
+       style="opacity:0.9999;mix-blend-mode:normal;fill:#0099e5;fill-opacity:1;fill-rule:nonzero;stroke:#0099e5;stroke-width:0;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       transform="scale(1,-1)" />
+    <rect
+       ry="0"
+       rx="0"
+       y="44.979912"
+       x="120.91254"
+       height="7.999999"
+       width="12"
+       id="rect3003-2"
+       style="opacity:0.9999;mix-blend-mode:normal;fill:#f2f2f2;fill-rule:nonzero;stroke:#ff0000;stroke-width:0;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal;fill-opacity:1" />
+    <g
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.93333px;line-height:1.25;font-family:Algerian;-inkscape-font-specification:Algerian;white-space:pre;shape-inside:url(#rect2964-8);opacity:0.9999;mix-blend-mode:normal;fill:#0099e5;fill-opacity:1;stroke:none"
+       id="text2962-2"
+       transform="translate(84.621958,33.492679)"
+       aria-label="savings">
+      <path
+         id="path1238"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.93333px;font-family:sans-serif;-inkscape-font-specification:sans-serif"
+         d="m 37.949478,13.7273 v 0.249219 q -0.111719,-0.05729 -0.232031,-0.08594 -0.120313,-0.02864 -0.249219,-0.02864 -0.196223,0 -0.295052,0.06016 -0.09739,0.06016 -0.09739,0.180468 0,0.09167 0.07018,0.144662 0.07018,0.05156 0.282161,0.09883 l 0.09023,0.02005 q 0.280729,0.06016 0.398177,0.170442 0.11888,0.108854 0.11888,0.305078 0,0.223437 -0.177604,0.353776 -0.176172,0.130338 -0.485546,0.130338 -0.128906,0 -0.269271,-0.02578 -0.138932,-0.02435 -0.293619,-0.07448 v -0.272135 q 0.146093,0.07591 0.28789,0.114583 0.141797,0.03724 0.280729,0.03724 0.186198,0 0.286458,-0.06302 0.10026,-0.06445 0.10026,-0.180469 0,-0.107422 -0.07305,-0.164713 -0.07162,-0.05729 -0.316537,-0.110287 l -0.09167,-0.02148 q -0.244922,-0.05156 -0.353776,-0.157552 -0.108854,-0.107422 -0.108854,-0.293619 0,-0.226302 0.160417,-0.349479 0.160416,-0.123177 0.455468,-0.123177 0.146093,0 0.275,0.02148 0.128906,0.02149 0.23776,0.06445 z" />
+      <path
+         id="path1240"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.93333px;font-family:sans-serif;-inkscape-font-specification:sans-serif"
+         d="m 39.185544,14.47782 q -0.319401,0 -0.442578,0.07305 -0.123177,0.07305 -0.123177,0.249219 0,0.140364 0.09167,0.223437 0.0931,0.08164 0.252083,0.08164 0.21914,0 0.350911,-0.154687 0.133203,-0.15612 0.133203,-0.413932 v -0.05872 z m 0.52565,-0.108854 V 15.2842 h -0.263541 v -0.24349 q -0.09023,0.146094 -0.224869,0.216276 -0.134636,0.06875 -0.329427,0.06875 -0.246354,0 -0.392448,-0.1375 -0.144661,-0.138932 -0.144661,-0.370963 0,-0.270703 0.180469,-0.408203 0.1819,-0.137499 0.541405,-0.137499 h 0.369531 v -0.02578 q 0,-0.181901 -0.120312,-0.280729 -0.11888,-0.10026 -0.335156,-0.10026 -0.1375,0 -0.267838,0.03294 -0.130339,0.03294 -0.250651,0.09883 v -0.243489 q 0.144661,-0.05586 0.280729,-0.08307 0.136067,-0.02865 0.264973,-0.02865 0.348047,0 0.519922,0.180468 0.171874,0.180469 0.171874,0.547135 z" />
+      <path
+         id="path1242"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.93333px;font-family:sans-serif;-inkscape-font-specification:sans-serif"
+         d="m 40.066402,13.680035 h 0.279297 l 0.501301,1.346352 0.501302,-1.346352 h 0.279296 L 41.026037,15.2842 h -0.358073 z" />
+      <path
+         id="path1244"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.93333px;font-family:sans-serif;-inkscape-font-specification:sans-serif"
+         d="m 41.9914,13.680035 h 0.263542 V 15.2842 H 41.9914 Z m 0,-0.624479 h 0.263542 V 13.38928 H 41.9914 Z" />
+      <path
+         id="path1246"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.93333px;font-family:sans-serif;-inkscape-font-specification:sans-serif"
+         d="M 44.138403,14.315972 V 15.2842 h -0.263541 v -0.959635 q 0,-0.227734 -0.0888,-0.340885 -0.0888,-0.113151 -0.266406,-0.113151 -0.213411,0 -0.336588,0.136068 -0.123177,0.136067 -0.123177,0.370963 v 0.90664 h -0.264974 v -1.604165 h 0.264974 v 0.249218 q 0.09453,-0.144661 0.222005,-0.216276 0.128906,-0.07161 0.296484,-0.07161 0.276432,0 0.418228,0.171875 0.141797,0.170442 0.141797,0.502734 z" />
+      <path
+         id="path1248"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.93333px;font-family:sans-serif;-inkscape-font-specification:sans-serif"
+         d="m 45.722516,14.463497 q 0,-0.286458 -0.11888,-0.44401 -0.117448,-0.157551 -0.330859,-0.157551 -0.211979,0 -0.330859,0.157551 -0.117448,0.157552 -0.117448,0.44401 0,0.285026 0.117448,0.442578 0.11888,0.157552 0.330859,0.157552 0.213411,0 0.330859,-0.157552 0.11888,-0.157552 0.11888,-0.442578 z m 0.263541,0.621614 q 0,0.409635 -0.1819,0.608724 -0.181901,0.20052 -0.557161,0.20052 -0.138932,0 -0.262109,-0.02148 -0.123177,-0.02005 -0.239193,-0.06302 v -0.25638 q 0.116016,0.06302 0.229167,0.0931 0.113151,0.03008 0.230598,0.03008 0.259245,0 0.388151,-0.136067 0.128906,-0.134636 0.128906,-0.408203 v -0.130339 q -0.08164,0.141797 -0.209114,0.211979 -0.127474,0.07018 -0.305078,0.07018 -0.295052,0 -0.47552,-0.22487 -0.180469,-0.224869 -0.180469,-0.595833 0,-0.372395 0.180469,-0.597265 0.180468,-0.224869 0.47552,-0.224869 0.177604,0 0.305078,0.07018 0.127473,0.07018 0.209114,0.211979 v -0.243489 h 0.263541 z" />
+      <path
+         id="path1250"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.93333px;font-family:sans-serif;-inkscape-font-specification:sans-serif"
+         d="m 47.55155,13.7273 v 0.249219 q -0.111718,-0.05729 -0.232031,-0.08594 -0.120312,-0.02864 -0.249218,-0.02864 -0.196224,0 -0.295052,0.06016 -0.0974,0.06016 -0.0974,0.180468 0,0.09167 0.07018,0.144662 0.07018,0.05156 0.282161,0.09883 l 0.09023,0.02005 q 0.280729,0.06016 0.398177,0.170442 0.11888,0.108854 0.11888,0.305078 0,0.223437 -0.177604,0.353776 -0.176172,0.130338 -0.485546,0.130338 -0.128907,0 -0.269271,-0.02578 -0.138932,-0.02435 -0.293619,-0.07448 v -0.272135 q 0.146093,0.07591 0.28789,0.114583 0.141797,0.03724 0.280729,0.03724 0.186197,0 0.286458,-0.06302 0.10026,-0.06445 0.10026,-0.180469 0,-0.107422 -0.07305,-0.164713 -0.07161,-0.05729 -0.316536,-0.110287 l -0.09167,-0.02148 q -0.244922,-0.05156 -0.353776,-0.157552 -0.108854,-0.107422 -0.108854,-0.293619 0,-0.226302 0.160416,-0.349479 0.160417,-0.123177 0.455469,-0.123177 0.146093,0 0.274999,0.02148 0.128906,0.02149 0.23776,0.06445 z" />
+    </g>
+    <path
+       id="path2983-5"
+       d="m 120.91266,44.907863 c 12.21411,0 11.99982,0 11.99982,0"
+       style="opacity:0.9999;mix-blend-mode:normal;fill:#333333;stroke:#333333;stroke-width:0.219089;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="opacity:0.9998;mix-blend-mode:normal;fill:#666666;fill-opacity:1;stroke:#333333;stroke-width:0.316228;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 92.658811,43.320362 H 117.65886"
+       id="path2983-8-3" />
+    <path
+       id="path2983-8-5-3"
+       d="M 92.658811,51.657788 H 117.65886"
+       style="opacity:0.9998;mix-blend-mode:normal;fill:#666666;fill-opacity:1;stroke:#333333;stroke-width:0.316227;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <g
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:5.33333px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';white-space:pre;shape-inside:url(#rect890-5-7);opacity:0.9998;mix-blend-mode:normal;fill:#2b779d;fill-opacity:1;stroke:none"
+       id="text888-8-36"
+       transform="matrix(0.8868544,0,0,0.8868544,65.164311,50.978904)"
+       aria-label="α2 = ">
+      <path
+         id="path1217"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Italic';fill:#2b779d;fill-opacity:1"
+         d="m 33.508462,-3.959799 0.0026,-0.6015622 q 0.0026,-0.6145829 -0.460937,-0.6171871 -0.346354,-0.0026 -0.562499,0.2864582 -0.270834,0.3567706 -0.361979,0.8333328 -0.11198,0.5729163 0.02865,0.8463537 0.145834,0.2786456 0.460938,0.2786456 0.348958,0 0.643228,-0.5546871 z m -0.377604,-1.6249991 q 0.8125,-0.013021 0.802083,0.8281245 0,0 0.40625,-0.7630203 h 0.427083 l -0.841145,1.5807282 -0.0078,0.5703122 q 0,0.127604 0.07031,0.2343748 0.08073,0.1249999 0.164062,0.1249999 h 0.231771 l -0.07813,0.4062498 h -0.289063 q -0.244791,0 -0.421874,-0.2187499 -0.08333,-0.1093749 -0.08594,-0.3385414 -0.16927,0.2786456 -0.460937,0.5156247 -0.138021,0.1093749 -0.510416,0.1067707 -0.609375,-0.00521 -0.830729,-0.3958331 -0.226562,-0.4062497 -0.08594,-1.1249993 0.151041,-0.773437 0.546874,-1.1249993 0.445312,-0.393229 0.963541,-0.4010415 z" />
+      <path
+         id="path1219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.66667px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';baseline-shift:sub;fill:#2b779d;fill-opacity:1"
+         d="m 36.942338,-2.3483635 h -0.116667 c -0.02333,0.14 -0.056,0.3453335 -0.102667,0.4153336 -0.03267,0.037333 -0.340666,0.037333 -0.443333,0.037333 H 35.43967 l 0.494667,-0.480667 c 0.728001,-0.6440004 1.008001,-0.8960006 1.008001,-1.3626676 0,-0.5320003 -0.42,-0.9053339 -0.989334,-0.9053339 -0.527334,0 -0.872667,0.4293336 -0.872667,0.8446672 0,0.2613335 0.233333,0.2613335 0.247333,0.2613335 0.07933,0 0.242667,-0.056 0.242667,-0.2473335 0,-0.1213334 -0.084,-0.2426668 -0.247333,-0.2426668 -0.03733,0 -0.04667,0 -0.06067,0.00467 0.107333,-0.3033336 0.359333,-0.4760003 0.63,-0.4760003 0.424667,0 0.625334,0.3780002 0.625334,0.7606671 0,0.3733336 -0.233333,0.7420005 -0.49,1.0313341 l -0.896001,0.9986673 c -0.05133,0.051333 -0.05133,0.060667 -0.05133,0.1726668 h 1.731334 z" />
+      <path
+         id="path1221"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';fill:#2b779d;fill-opacity:1"
+         d="m 42.806918,-4.4536946 c 0,-0.1066666 -0.101333,-0.1066666 -0.176,-0.1066666 h -3.194665 c -0.07467,0 -0.176,0 -0.176,0.1066666 0,0.1066666 0.101334,0.1066666 0.181334,0.1066666 h 3.183998 c 0.08,0 0.181333,0 0.181333,-0.1066666 z m 0,1.0346661 c 0,-0.1066666 -0.101333,-0.1066666 -0.181333,-0.1066666 h -3.183998 c -0.08,0 -0.181334,0 -0.181334,0.1066666 0,0.1066666 0.101334,0.1066666 0.176,0.1066666 h 3.194665 c 0.07467,0 0.176,0 0.176,-0.1066666 z" />
+    </g>
+    <text
+       transform="translate(73.879559,43.833759)"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.66667px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';white-space:pre;shape-inside:url(#rect890-5-3);opacity:0.9998;mix-blend-mode:normal;fill:#2b779d;fill-opacity:1;stroke:none;"
+       id="text888-8-7"
+       xml:space="preserve"><tspan
+         x="31.326172"
+         y="-3.2526012"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.66667px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';fill:#2b779d;fill-opacity:1">0.1</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text888-8-7-0"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.66667px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';white-space:pre;shape-inside:url(#rect890-5-3-3);opacity:0.9998;mix-blend-mode:normal;fill:#2b779d;fill-opacity:1;stroke:none;"
+       transform="translate(73.879559,52.386501)"><tspan
+         x="31.326172"
+         y="-3.2526012"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.66667px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';fill:#2b779d;fill-opacity:1">0.1</tspan></tspan></text>
+    <circle
+       style="fill:#ffffff;stroke:#ff4c4c;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path349"
+       cx="51.166924"
+       cy="45.308487"
+       r="5.0078735" />
+    <circle
+       r="5.0078735"
+       cy="110.03165"
+       cx="51.027397"
+       id="path349-4"
+       style="opacity:0.9999;mix-blend-mode:normal;fill:#ffffff;stroke:#0099e5;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       ry="3.0474701"
+       rx="3.2345452"
+       y="67.329681"
+       x="1.1702762"
+       height="19.968996"
+       width="69.435677"
+       id="rect1008"
+       style="fill:#f2f2f2;fill-rule:nonzero;stroke:#ff4c4c;stroke-width:0.564326;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1;paint-order:normal;fill-opacity:1" />
+    <g
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:5.33333px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';white-space:pre;shape-inside:url(#rect890-0);opacity:0.9999;mix-blend-mode:normal;fill:#aa5151;fill-opacity:1;stroke:none"
+       id="text888-9"
+       transform="matrix(0.88263276,0,0,0.88263276,15.89627,84.049015)"
+       aria-label="θ =">
+      <path
+         id="path1205"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Italic';fill:#aa5151;fill-opacity:1"
+         d="m 33.753254,-4.4519862 h -1.656249 q -0.111979,0.7786453 0.0026,1.1093743 0.143229,0.4062498 0.53125,0.4062498 0.390624,0 0.687499,-0.408854 0.260417,-0.3593747 0.434896,-1.1067701 z m 0.08073,-0.4427081 q 0.07031,-0.7395829 -0.02083,-0.9999994 -0.14323,-0.4114581 -0.526042,-0.4114581 -0.398437,0 -0.690104,0.4062498 -0.229166,0.3281248 -0.408853,1.0052077 z M 33.36263,-6.6967766 q 0.625,0 0.874999,0.552083 0.25,0.5494789 0.0599,1.5234366 -0.1875,0.9713536 -0.653645,1.5234366 -0.463542,0.5546872 -1.088541,0.5546872 -0.627604,0 -0.875,-0.5546872 -0.247395,-0.552083 -0.05989,-1.5234366 0.190104,-0.9739577 0.651041,-1.5234366 0.463541,-0.552083 1.091145,-0.552083 z" />
+      <path
+         id="path1207"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';fill:#aa5151;fill-opacity:1"
+         d="m 40.213167,-4.4536946 c 0,-0.1066666 -0.101334,-0.1066666 -0.176,-0.1066666 h -3.194665 c -0.07467,0 -0.176,0 -0.176,0.1066666 0,0.1066666 0.101333,0.1066666 0.181333,0.1066666 h 3.183998 c 0.08,0 0.181334,0 0.181334,-0.1066666 z m 0,1.0346661 c 0,-0.1066666 -0.101334,-0.1066666 -0.181334,-0.1066666 h -3.183998 c -0.08,0 -0.181333,0 -0.181333,0.1066666 0,0.1066666 0.101333,0.1066666 0.176,0.1066666 h 3.194665 c 0.07467,0 0.176,0 0.176,-0.1066666 z" />
+    </g>
+    <g
+       aria-label="et ="
+       id="text1213-20"
+       style="font-style:normal;font-weight:normal;font-size:4.66667px;line-height:1.25;font-family:sans-serif;opacity:0.9999;mix-blend-mode:normal;fill:#aa5151;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none">
+      <path
+         d="m 48.516773,72.127705 q 0.0046,-0.05697 0.09342,-0.05697 H 51.4699 q 0.134441,0 0.136719,0.05241 0,0.05697 -0.127604,0.05469 h -2.836916 q -0.125326,0.0023 -0.125326,-0.05013 z m 0,-0.911459 q 0,-0.05697 0.09798,-0.05469 h 2.850588 q 0.138998,0 0.141276,0.05469 0,0.05241 -0.118489,0.05241 h -2.877932 q -0.09342,0 -0.09342,-0.05241 z"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';fill:#aa5151;fill-opacity:1"
+         id="path1429" />
+    </g>
+    <rect
+       style="fill:#ff4c4c;fill-opacity:1;fill-rule:nonzero;stroke:#ff4c4c;stroke-width:0;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       id="rect2987"
+       width="19.999998"
+       height="11.338582"
+       x="17.007338"
+       y="71.357468"
+       rx="2.1135569"
+       ry="1.7039829" />
+    <rect
+       style="fill:#f2f2f2;fill-rule:nonzero;stroke:#ff0000;stroke-width:0;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal;fill-opacity:1"
+       id="rect3003"
+       width="21.999998"
+       height="7.9999986"
+       x="16.007338"
+       y="69.206009"
+       rx="0"
+       ry="0" />
+    <g
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect2964);fill:#ff4c4c;fill-opacity:1;stroke:none"
+       id="text2962"
+       transform="translate(-13.930287,59.363689)"
+       aria-label="debt">
+      <path
+         id="path1268"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4px;font-family:sans-serif;-inkscape-font-specification:sans-serif;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ff4c4c;fill-opacity:1"
+         d="m 38.466797,14.257813 v -1.183594 h 0.359375 v 3.039062 h -0.359375 v -0.328125 q -0.113281,0.195313 -0.28711,0.291016 -0.171875,0.09375 -0.414062,0.09375 -0.396484,0 -0.646484,-0.316406 -0.248047,-0.316407 -0.248047,-0.832032 0,-0.515625 0.248047,-0.832031 0.25,-0.316406 0.646484,-0.316406 0.242187,0 0.414062,0.0957 0.173829,0.09375 0.28711,0.289063 z m -1.22461,0.763671 q 0,0.396485 0.16211,0.623047 0.164062,0.22461 0.449219,0.22461 0.285156,0 0.449218,-0.22461 0.164063,-0.226562 0.164063,-0.623047 0,-0.396484 -0.164063,-0.621093 -0.164062,-0.226563 -0.449218,-0.226563 -0.285157,0 -0.449219,0.226563 -0.16211,0.224609 -0.16211,0.621093 z" />
+      <path
+         id="path1270"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4px;font-family:sans-serif;-inkscape-font-specification:sans-serif;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ff4c4c;fill-opacity:1"
+         d="m 41.4375,14.929688 v 0.175781 h -1.652344 q 0.02344,0.371094 0.222656,0.566406 0.201172,0.193359 0.558594,0.193359 0.207031,0 0.400391,-0.05078 0.195312,-0.05078 0.386719,-0.152344 v 0.339844 q -0.19336,0.08203 -0.396485,0.125 -0.203125,0.04297 -0.412109,0.04297 -0.523438,0 -0.830078,-0.304688 -0.304688,-0.304687 -0.304688,-0.824218 0,-0.53711 0.289063,-0.851563 0.291015,-0.316406 0.783203,-0.316406 0.441406,0 0.697265,0.285156 0.257813,0.283203 0.257813,0.771485 z m -0.359375,-0.105469 q -0.0039,-0.294922 -0.166016,-0.470703 -0.160156,-0.175782 -0.425781,-0.175782 -0.300781,0 -0.482422,0.169922 -0.179687,0.169922 -0.207031,0.478516 z" />
+      <path
+         id="path1272"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4px;font-family:sans-serif;-inkscape-font-specification:sans-serif;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ff4c4c;fill-opacity:1"
+         d="m 43.597656,15.021484 q 0,-0.396484 -0.164062,-0.621093 -0.16211,-0.226563 -0.447266,-0.226563 -0.285156,0 -0.449219,0.226563 Q 42.375,14.625 42.375,15.021484 q 0,0.396485 0.162109,0.623047 0.164063,0.22461 0.449219,0.22461 0.285156,0 0.447266,-0.22461 0.164062,-0.226562 0.164062,-0.623047 z M 42.375,14.257813 q 0.113281,-0.195313 0.285156,-0.289063 0.173828,-0.0957 0.414063,-0.0957 0.398437,0 0.646484,0.316406 0.25,0.316406 0.25,0.832031 0,0.515625 -0.25,0.832032 -0.248047,0.316406 -0.646484,0.316406 -0.240235,0 -0.414063,-0.09375 -0.171875,-0.0957 -0.285156,-0.291016 v 0.328125 H 42.013672 V 13.074219 H 42.375 Z" />
+      <path
+         id="path1274"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4px;font-family:sans-serif;-inkscape-font-specification:sans-serif;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ff4c4c;fill-opacity:1"
+         d="m 44.921875,13.304688 v 0.621093 h 0.740234 v 0.279297 h -0.740234 v 1.1875 q 0,0.267578 0.07227,0.34375 0.07422,0.07617 0.298828,0.07617 h 0.36914 v 0.300781 h -0.36914 q -0.416016,0 -0.574219,-0.154297 -0.158203,-0.15625 -0.158203,-0.566406 v -1.1875 h -0.263672 v -0.279297 h 0.263672 v -0.621093 z" />
+    </g>
+    <path
+       style="fill:#333333;stroke:#333333;stroke-width:0.296648;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 16.007352,77.314182 c 22.392396,0 21.999549,0 21.999549,0"
+       id="path2983" />
+    <path
+       id="path2983-8"
+       d="m 42.242305,75.726681 h 25"
+       style="opacity:0.9999;mix-blend-mode:normal;fill:#666666;fill-opacity:1;stroke:#333333;stroke-width:0.316228;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="opacity:0.9999;mix-blend-mode:normal;fill:#666666;fill-opacity:1;stroke:#333333;stroke-width:0.316227;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 42.242305,84.064107 h 25"
+       id="path2983-8-5" />
+    <text
+       xml:space="preserve"
+       id="text888-83"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.66667px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';white-space:pre;shape-inside:url(#rect890-9);opacity:0.9999;mix-blend-mode:normal;fill:#aa5151;fill-opacity:1;stroke:none;"
+       transform="translate(22.404965,76.277608)"><tspan
+         x="31.326172"
+         y="-3.2236897"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.66667px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';shape-inside:url(#rect890-9);fill:#aa5151;fill-opacity:1">20</tspan></tspan></text>
+    <text
+       transform="translate(22.070257,84.925385)"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.66667px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';white-space:pre;shape-inside:url(#rect890-9-4);opacity:0.9999;mix-blend-mode:normal;fill:#aa5151;fill-opacity:1;stroke:none;"
+       id="text888-83-5"
+       xml:space="preserve"><tspan
+         x="31.326172"
+         y="-3.2236897"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.66667px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';shape-inside:url(#rect890-9-4);fill:#aa5151;fill-opacity:1">0.2</tspan></tspan></text>
+    <circle
+       style="opacity:0.9999;mix-blend-mode:normal;fill:#ffffff;stroke:#003399;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path349-4-3"
+       cx="86.964409"
+       cy="77.200951"
+       r="5.0078735" />
+    <circle
+       r="5.0078735"
+       cy="77.200951"
+       cx="108.22669"
+       id="path349-4-3-0"
+       style="opacity:0.9999;mix-blend-mode:normal;fill:#ffffff;stroke:#3e9ade;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" />
+    <rect
+       ry="3.053802"
+       rx="2.7706447"
+       y="99.713852"
+       x="76.43689"
+       height="20.010487"
+       width="59.477165"
+       id="rect1008-9-2"
+       style="opacity:0.9999;mix-blend-mode:normal;fill:#f2f2f2;fill-rule:nonzero;stroke:#34bf49;stroke-width:0.522835;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1;paint-order:normal;fill-opacity:1" />
+    <g
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:5.33333px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';white-space:pre;shape-inside:url(#rect890-5-1);opacity:0.9999;mix-blend-mode:normal;fill:#458a4f;fill-opacity:1;stroke:none"
+       id="text888-8-1"
+       transform="matrix(0.87298613,0,0,0.87298613,65.696288,107.48543)"
+       aria-label="β1 = ">
+      <path
+         id="path1224"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Italic';fill:#458a4f;fill-opacity:1"
+         d="m 32.052734,-2.7827164 -0.25,1.2890617 h -0.48177 l 0.778645,-4.0078101 q 0.231771,-1.1874993 1.341145,-1.1874993 1.124999,0 0.934895,1.0026036 -0.130208,0.7135412 -0.63802,0.9739578 0.682291,0.2343748 0.549479,0.9296869 -0.234375,1.2369784 -1.494791,1.2343743 -0.552083,-0.0026 -0.739583,-0.2343749 z M 32.17513,-3.407716 q 0.20052,0.4531247 0.713541,0.4505205 0.749999,0 0.908854,-0.8177078 0.143229,-0.7343746 -1.075521,-0.6770829 l 0.08594,-0.4427081 q 0.942708,0.015625 1.10677,-0.8333328 0.111979,-0.5729164 -0.497396,-0.5703122 -0.682291,0 -0.838541,0.8124995 z" />
+      <path
+         id="path1226"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.66667px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';baseline-shift:sub;fill:#458a4f;fill-opacity:1"
+         d="m 36.687754,-1.536363 v -0.1446668 h -0.149333 c -0.42,0 -0.434,-0.051333 -0.434,-0.2240001 v -2.6180018 c 0,-0.1120001 0,-0.1213334 -0.107334,-0.1213334 -0.289333,0.2986669 -0.7,0.2986669 -0.849334,0.2986669 v 0.1446667 c 0.09333,0 0.368667,0 0.611334,-0.1213334 v 2.417335 c 0,0.1680001 -0.014,0.2240001 -0.434,0.2240001 h -0.149334 v 0.1446668 c 0.163334,-0.014 0.569334,-0.014 0.756001,-0.014 0.186667,0 0.592667,0 0.756,0.014 z" />
+      <path
+         id="path1228"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.33333px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';fill:#458a4f;fill-opacity:1"
+         d="m 42.692335,-4.4536946 c 0,-0.1066666 -0.101334,-0.1066666 -0.176,-0.1066666 H 39.32167 c -0.07467,0 -0.176,0 -0.176,0.1066666 0,0.1066666 0.101333,0.1066666 0.181333,0.1066666 h 3.183998 c 0.08,0 0.181334,0 0.181334,-0.1066666 z m 0,1.0346661 c 0,-0.1066666 -0.101334,-0.1066666 -0.181334,-0.1066666 h -3.183998 c -0.08,0 -0.181333,0 -0.181333,0.1066666 0,0.1066666 0.101333,0.1066666 0.176,0.1066666 h 3.194665 c 0.07467,0 0.176,0 0.176,-0.1066666 z" />
+    </g>
+    <rect
+       style="opacity:0.9999;mix-blend-mode:normal;fill:#34bf49;fill-opacity:1;fill-rule:nonzero;stroke:#34bf49;stroke-width:0;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       id="rect2987-8-3"
+       width="10"
+       height="11.670112"
+       x="121.91254"
+       y="-115.46904"
+       rx="1.3497347"
+       ry="1.4437424"
+       transform="scale(1,-1)" />
+    <rect
+       style="opacity:0.9999;mix-blend-mode:normal;fill:#f2f2f2;fill-rule:nonzero;stroke:#ff0000;stroke-width:0;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal;fill-opacity:1"
+       id="rect3003-2-4"
+       width="12"
+       height="7.999999"
+       x="120.91254"
+       y="109.79115"
+       rx="0"
+       ry="0" />
+    <g
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.93333px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';white-space:pre;shape-inside:url(#rect2964-8-5);opacity:0.9999;mix-blend-mode:normal;fill:#34bf49;fill-opacity:1;stroke:none"
+       id="text2962-2-7"
+       transform="translate(84.673847,98.441731)"
+       aria-label="savings">
+      <path
+         id="path1253"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.93333px;font-family:sans-serif;-inkscape-font-specification:sans-serif"
+         d="m 37.949478,13.621004 v 0.249219 q -0.111719,-0.05729 -0.232031,-0.08594 -0.120313,-0.02865 -0.249219,-0.02865 -0.196223,0 -0.295052,0.06016 -0.09739,0.06016 -0.09739,0.180468 0,0.09167 0.07018,0.144662 0.07018,0.05156 0.282161,0.09883 l 0.09023,0.02005 q 0.280729,0.06016 0.398177,0.170442 0.11888,0.108854 0.11888,0.305078 0,0.223437 -0.177604,0.353776 -0.176172,0.130338 -0.485546,0.130338 -0.128906,0 -0.269271,-0.02578 -0.138932,-0.02435 -0.293619,-0.07448 v -0.272135 q 0.146093,0.07591 0.28789,0.114583 0.141797,0.03724 0.280729,0.03724 0.186198,0 0.286458,-0.06302 0.10026,-0.06445 0.10026,-0.180469 0,-0.107422 -0.07305,-0.164713 -0.07162,-0.05729 -0.316537,-0.110287 l -0.09167,-0.02148 q -0.244922,-0.05156 -0.353776,-0.157552 -0.108854,-0.107422 -0.108854,-0.293619 0,-0.226302 0.160417,-0.349479 0.160416,-0.123177 0.455468,-0.123177 0.146093,0 0.275,0.02148 0.128906,0.02149 0.23776,0.06445 z" />
+      <path
+         id="path1255"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.93333px;font-family:sans-serif;-inkscape-font-specification:sans-serif"
+         d="m 39.185544,14.371524 q -0.319401,0 -0.442578,0.07305 -0.123177,0.07305 -0.123177,0.249219 0,0.140364 0.09167,0.223437 0.0931,0.08164 0.252083,0.08164 0.21914,0 0.350911,-0.154687 0.133203,-0.15612 0.133203,-0.413932 v -0.05872 z m 0.52565,-0.108854 v 0.915234 h -0.263541 v -0.24349 q -0.09023,0.146094 -0.224869,0.216276 -0.134636,0.06875 -0.329427,0.06875 -0.246354,0 -0.392448,-0.1375 -0.144661,-0.138932 -0.144661,-0.370963 0,-0.270703 0.180469,-0.408203 0.1819,-0.137499 0.541405,-0.137499 h 0.369531 v -0.02578 q 0,-0.181901 -0.120312,-0.280729 -0.11888,-0.10026 -0.335156,-0.10026 -0.1375,0 -0.267838,0.03294 -0.130339,0.03294 -0.250651,0.09883 v -0.243489 q 0.144661,-0.05586 0.280729,-0.08307 0.136067,-0.02865 0.264973,-0.02865 0.348047,0 0.519922,0.180468 0.171874,0.180469 0.171874,0.547135 z" />
+      <path
+         id="path1257"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.93333px;font-family:sans-serif;-inkscape-font-specification:sans-serif"
+         d="m 40.066402,13.573739 h 0.279297 l 0.501301,1.346352 0.501302,-1.346352 h 0.279296 l -0.601561,1.604165 h -0.358073 z" />
+      <path
+         id="path1259"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.93333px;font-family:sans-serif;-inkscape-font-specification:sans-serif"
+         d="m 41.9914,13.573739 h 0.263542 v 1.604165 H 41.9914 Z m 0,-0.624479 h 0.263542 v 0.333724 H 41.9914 Z" />
+      <path
+         id="path1261"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.93333px;font-family:sans-serif;-inkscape-font-specification:sans-serif"
+         d="m 44.138403,14.209676 v 0.968228 h -0.263541 v -0.959635 q 0,-0.227734 -0.0888,-0.340885 -0.0888,-0.113151 -0.266406,-0.113151 -0.213411,0 -0.336588,0.136068 -0.123177,0.136067 -0.123177,0.370963 v 0.90664 h -0.264974 v -1.604165 h 0.264974 v 0.249218 q 0.09453,-0.144661 0.222005,-0.216276 0.128906,-0.07161 0.296484,-0.07161 0.276432,0 0.418228,0.171875 0.141797,0.170442 0.141797,0.502734 z" />
+      <path
+         id="path1263"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.93333px;font-family:sans-serif;-inkscape-font-specification:sans-serif"
+         d="m 45.722516,14.357201 q 0,-0.286458 -0.11888,-0.444009 -0.117448,-0.157552 -0.330859,-0.157552 -0.211979,0 -0.330859,0.157552 -0.117448,0.157551 -0.117448,0.444009 0,0.285026 0.117448,0.442578 0.11888,0.157552 0.330859,0.157552 0.213411,0 0.330859,-0.157552 0.11888,-0.157552 0.11888,-0.442578 z m 0.263541,0.621614 q 0,0.409635 -0.1819,0.608724 -0.181901,0.20052 -0.557161,0.20052 -0.138932,0 -0.262109,-0.02148 -0.123177,-0.02005 -0.239193,-0.06302 v -0.25638 q 0.116016,0.06302 0.229167,0.0931 0.113151,0.03008 0.230598,0.03008 0.259245,0 0.388151,-0.136067 0.128906,-0.134636 0.128906,-0.408203 v -0.130339 q -0.08164,0.141797 -0.209114,0.211979 -0.127474,0.07018 -0.305078,0.07018 -0.295052,0 -0.47552,-0.22487 -0.180469,-0.224869 -0.180469,-0.595833 0,-0.372395 0.180469,-0.597265 0.180468,-0.224869 0.47552,-0.224869 0.177604,0 0.305078,0.07018 0.127473,0.07018 0.209114,0.211979 v -0.243489 h 0.263541 z" />
+      <path
+         id="path1265"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.93333px;font-family:sans-serif;-inkscape-font-specification:sans-serif"
+         d="m 47.55155,13.621004 v 0.249219 q -0.111718,-0.05729 -0.232031,-0.08594 -0.120312,-0.02865 -0.249218,-0.02865 -0.196224,0 -0.295052,0.06016 -0.0974,0.06016 -0.0974,0.180468 0,0.09167 0.07018,0.144662 0.07018,0.05156 0.282161,0.09883 l 0.09023,0.02005 q 0.280729,0.06016 0.398177,0.170442 0.11888,0.108854 0.11888,0.305078 0,0.223437 -0.177604,0.353776 -0.176172,0.130338 -0.485546,0.130338 -0.128907,0 -0.269271,-0.02578 -0.138932,-0.02435 -0.293619,-0.07448 v -0.272135 q 0.146093,0.07591 0.28789,0.114583 0.141797,0.03724 0.280729,0.03724 0.186197,0 0.286458,-0.06302 0.10026,-0.06445 0.10026,-0.180469 0,-0.107422 -0.07305,-0.164713 -0.07161,-0.05729 -0.316536,-0.110287 l -0.09167,-0.02148 q -0.244922,-0.05156 -0.353776,-0.157552 -0.108854,-0.107422 -0.108854,-0.293619 0,-0.226302 0.160416,-0.349479 0.160417,-0.123177 0.455469,-0.123177 0.146093,0 0.274999,0.02148 0.128906,0.02149 0.23776,0.06445 z" />
+    </g>
+    <path
+       style="opacity:0.9999;mix-blend-mode:normal;fill:#333333;stroke:#333333;stroke-width:0.219089;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 120.91266,109.7191 c 12.21411,0 11.99982,0 11.99982,0"
+       id="path2983-5-4" />
+    <path
+       id="path2983-8-3-1"
+       d="M 92.658811,108.13159 H 117.65886"
+       style="opacity:0.9998;mix-blend-mode:normal;fill:#666666;fill-opacity:1;stroke:#333333;stroke-width:0.316228;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="opacity:0.9998;mix-blend-mode:normal;fill:#666666;fill-opacity:1;stroke:#333333;stroke-width:0.316227;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 92.658811,116.99819 H 117.65886"
+       id="path2983-8-5-3-7" />
+    <g
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:5.33333px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';white-space:pre;shape-inside:url(#rect890-5-7-0);opacity:0.9998;mix-blend-mode:normal;fill:#458a4f;fill-opacity:1;stroke:none"
+       id="text888-8-36-8"
+       transform="translate(61.718091,117.02684)"
+       aria-label="β2 = ">
+      <path
+         id="path1231"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Italic';stroke-width:0.872986;fill:#458a4f;fill-opacity:1"
+         d="m 31.959789,-3.278864 -0.218246,1.125333 h -0.420579 l 0.679746,-3.4987627 q 0.202333,-1.0366704 1.170801,-1.0366704 0.982109,0 0.816151,0.875259 -0.11367,0.6229116 -0.556983,0.8502517 0.595631,0.2046059 0.479688,0.8116038 -0.204607,1.079865 -1.304932,1.0775916 -0.481961,-0.00227 -0.645646,-0.204606 z m 0.10685,-0.545616 q 0.175051,0.3955716 0.622911,0.3932981 0.654739,0 0.793417,-0.7138475 0.125037,-0.6410989 -0.938915,-0.591084 l 0.07502,-0.386478 q 0.822971,0.01364 0.966195,-0.727488 0.09776,-0.5001481 -0.43422,-0.4978747 -0.595631,0 -0.732035,0.7093008 z" />
+      <path
+         id="path1233"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.66667px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';baseline-shift:sub;fill:#458a4f;fill-opacity:1;stroke-width:0.872986"
+         d="m 36.128315,-2.89968 h -0.101847 c -0.02037,0.1222181 -0.04889,0.3014714 -0.08963,0.3625805 -0.02852,0.032591 -0.297398,0.032591 -0.387025,0.032591 h -0.733308 l 0.431837,-0.4196156 c 0.635534,-0.5622034 0.87997,-0.7821961 0.87997,-1.1895899 0,-0.4644289 -0.366654,-0.790344 -0.863675,-0.790344 -0.460354,0 -0.761826,0.3748023 -0.761826,0.7373828 0,0.2281405 0.203698,0.2281405 0.215919,0.2281405 0.06925,0 0.211845,-0.048887 0.211845,-0.2159187 0,-0.1059224 -0.07333,-0.2118448 -0.215919,-0.2118448 -0.03259,0 -0.04074,0 -0.05296,0.00408 0.0937,-0.2648061 0.313694,-0.4155417 0.549982,-0.4155417 0.370729,0 0.545908,0.3299889 0.545908,0.6640518 0,0.3259151 -0.203697,0.6477562 -0.427764,0.9003404 l -0.782195,0.8718227 c -0.04481,0.044813 -0.04481,0.052962 -0.04481,0.1507357 h 1.511432 z" />
+      <path
+         id="path1235"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.33333px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.872986;fill:#458a4f;fill-opacity:1"
+         d="m 41.248013,-4.7376048 c 0,-0.093119 -0.08846,-0.093119 -0.153645,-0.093119 h -2.788899 c -0.06518,0 -0.153645,0 -0.153645,0.093119 0,0.093118 0.08846,0.093118 0.158301,0.093118 h 2.779586 c 0.06984,0 0.158302,0 0.158302,-0.093118 z m 0,0.9032491 c 0,-0.093118 -0.08846,-0.093118 -0.158302,-0.093118 h -2.779586 c -0.06984,0 -0.158301,0 -0.158301,0.093118 0,0.093119 0.08846,0.093119 0.153645,0.093119 h 2.788899 c 0.06519,0 0.153645,0 0.153645,-0.093119 z" />
+    </g>
+    <text
+       xml:space="preserve"
+       id="text888-8-1-8"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.66667px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';white-space:pre;shape-inside:url(#rect890-5-1-8);opacity:0.9998;mix-blend-mode:normal;fill:#458a4f;fill-opacity:1;stroke:none;"
+       transform="translate(73.87958,108.64013)"><tspan
+         x="31.326172"
+         y="-3.2236897"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.66667px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';fill:#458a4f;fill-opacity:1">0.1</tspan></tspan></text>
+    <text
+       transform="translate(73.87958,117.33195)"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.66667px;line-height:1.25;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Medium';white-space:pre;shape-inside:url(#rect890-5-1-8-6);opacity:0.9998;mix-blend-mode:normal;fill:#458a4f;fill-opacity:1;stroke:none;"
+       id="text888-8-1-8-5"
+       xml:space="preserve"><tspan
+         x="31.326172"
+         y="-3.2236897"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.66667px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';fill:#458a4f;fill-opacity:1">0.1</tspan></tspan></text>
+    <g
+       aria-label="wt"
+       id="text1213-24"
+       style="font-style:normal;font-weight:normal;font-size:5.33333px;line-height:1.25;font-family:sans-serif;opacity:0.9999;mix-blend-mode:normal;fill:#0099e5;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none">
+      <path
+         d="m 83.317871,76.109322 q 0,-0.08984 0.07813,-0.277344 0.08203,-0.1875 0.21875,-0.410156 0.140625,-0.226563 0.386719,-0.394532 0.25,-0.167968 0.53125,-0.167968 0.351562,0 0.59375,0.203125 0.246094,0.199218 0.246094,0.515625 0,0.152343 -0.285157,0.90625 -0.28125,0.75 -0.28125,1.183593 0,0.34375 0.167969,0.484375 0.167969,0.140625 0.398438,0.140625 0.246093,0 0.429687,-0.226562 0.1875,-0.230469 0.1875,-0.40625 v -0.128906 q 0,-0.246094 0.242188,-1.234375 0.246093,-0.988282 0.300781,-1.085938 0.148437,-0.261719 0.433594,-0.261719 0.0039,0 0.0078,0 0.144531,0 0.25,0.09375 0.109375,0.08984 0.109375,0.242188 0,0.08984 -0.265625,1.117187 -0.261719,1.027344 -0.261719,1.296875 0,0.59375 0.511719,0.59375 0.207031,0 0.375,-0.132812 0.167969,-0.132813 0.292969,-0.40625 0.128906,-0.277344 0.214844,-0.539063 0.08594,-0.265625 0.1875,-0.675781 0.03906,-0.136719 0.03906,-0.246094 0,-0.246093 -0.25,-0.46875 -0.246094,-0.226562 -0.246094,-0.394531 0,-0.199219 0.171875,-0.386719 0.171875,-0.191406 0.40625,-0.191406 0.191407,0 0.347657,0.167969 0.15625,0.167969 0.15625,0.527344 0,0.382812 -0.222657,1.183593 -0.21875,0.800782 -0.515625,1.25 -0.398437,0.609375 -1.015625,0.609375 -0.753906,0 -1.085937,-0.410156 h -0.0078 q -0.351562,0.40625 -0.847656,0.410156 -0.558594,0 -0.945312,-0.242187 -0.382813,-0.246094 -0.382813,-0.824219 0,-0.398437 0.304688,-1.234375 0.308593,-0.835937 0.308593,-0.988281 0,-0.152344 -0.125,-0.152344 -0.160156,0 -0.34375,0.199219 -0.175781,0.199219 -0.289062,0.515625 -0.113281,0.316406 -0.121094,0.324219 -0.04687,0.05469 -0.175781,0.05469 -0.0078,0 -0.01172,0 -0.21875,0 -0.21875,-0.132812 z"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#0099e5;fill-opacity:1;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path1447" />
+      <g
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;font-family:sans-serif;white-space:pre;inline-size:11.6016;fill:#0099e5;fill-opacity:1;stroke:none"
+         id="text1123"
+         aria-label="wi">
+        <path
+           id="path1155"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold Italic';fill:#0099e5;fill-opacity:1"
+           d="m 89.040891,75.61405 c 0,-0.592 -0.36,-0.704 -0.512,-0.704 -0.28,0 -0.576,0.288 -0.576,0.576 0,0.192 0.112,0.272 0.192,0.336 0.16,0.112 0.312,0.28 0.312,0.52 0,0.12 -0.192,0.88 -0.376,1.304 -0.168,0.392 -0.4,0.664 -0.744,0.664 -0.448,0 -0.512,-0.352 -0.512,-0.6 0,-0.28 0.192,-1.016 0.408,-1.848 0.072,-0.264 0.12,-0.456 0.12,-0.536 0,-0.248 -0.192,-0.344 -0.36,-0.344 -0.392,0 -0.488,0.36 -0.52,0.512 l -0.272,1.088 c -0.08,0.32 -0.192,0.752 -0.192,0.976 0,0.08 0,0.12 0.016,0.192 -0.152,0.344 -0.36,0.56 -0.624,0.56 -0.568,0 -0.568,-0.488 -0.568,-0.624 0,-0.448 0.216,-1.008 0.464,-1.68 0.056,-0.136 0.096,-0.24 0.096,-0.376 0,-0.448 -0.408,-0.712 -0.84,-0.712 -0.832,0 -1.224,1.08 -1.224,1.248 0,0.112 0.104,0.112 0.224,0.112 0.152,0 0.192,0 0.224,-0.104 0.064,-0.208 0.28,-0.968 0.736,-0.968 0.04,0 0.112,0 0.112,0.144 0,0.168 -0.096,0.416 -0.144,0.528 -0.296,0.776 -0.472,1.256 -0.472,1.664 0,0.888 0.784,1.056 1.344,1.056 0.392,0 0.672,-0.184 0.848,-0.408 0.272,0.344 0.752,0.408 1.088,0.408 0.584,0 0.976,-0.4 1.256,-1.04 0.24,-0.552 0.496,-1.544 0.496,-1.944 z" />
+        <path
+           id="path1157"
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:65%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman,  Italic';baseline-shift:sub"
+           d="m 90.574716,79.39045 c 0,-0.052 -0.0416,-0.052 -0.078,-0.052 -0.0676,0 -0.0676,0.0104 -0.0884,0.0884 -0.0416,0.1508 -0.182,0.65 -0.4836,0.65 -0.0416,0 -0.1144,-0.0052 -0.1144,-0.1456 0,-0.1352 0.0676,-0.3068 0.1352,-0.4992 l 0.3328,-0.8892 c 0.052,-0.1508 0.0624,-0.1924 0.0624,-0.2912 0,-0.286 -0.1976,-0.416 -0.39,-0.416 -0.4888,0 -0.6656,0.7748 -0.6656,0.8008 0,0.052 0.052,0.052 0.078,0.052 0.0676,0 0.0728,-0.0104 0.0936,-0.0832 0.0468,-0.1716 0.182,-0.6552 0.4836,-0.6552 0.0572,0 0.1144,0.026 0.1144,0.1456 0,0.1248 -0.0572,0.2756 -0.0936,0.3744 l -0.156,0.4316 -0.1924,0.5148 c -0.0728,0.1976 -0.0936,0.2548 -0.0936,0.3588 0,0.2028 0.1248,0.416 0.3952,0.416 0.4888,0 0.6604,-0.78 0.6604,-0.8008 z m 0.1404,-2.4336 c 0,-0.1092 -0.078,-0.2236 -0.234,-0.2236 -0.1664,0 -0.3328,0.1612 -0.3328,0.3276 0,0.1144 0.0832,0.2236 0.234,0.2236 0.1664,0 0.3328,-0.1612 0.3328,-0.3276 z" />
+      </g>
+    </g>
+    <g
+       style="font-style:normal;font-weight:normal;font-size:5.33333px;line-height:1.25;font-family:sans-serif;opacity:0.9999;mix-blend-mode:normal;fill:#34bf49;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none"
+       id="text1213-24-2"
+       aria-label="wt"
+       transform="translate(-6.5453296,-5.3071343)">
+      <g
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;font-family:sans-serif;white-space:pre;inline-size:6.7928;fill:#34bf49;fill-opacity:1;stroke:none"
+         id="text1123-6"
+         aria-label="ci">
+        <path
+           id="path1160"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold Italic';fill:#34bf49;fill-opacity:1"
+           d="m 115.61417,83.138759 c 0,-0.064 -0.16,-0.256 -0.24,-0.256 -0.024,0 -0.056,0 -0.112,0.056 -0.592,0.664 -1.4,0.664 -1.52,0.664 -0.44,0 -0.688,-0.248 -0.688,-0.704 0,-0.312 0.224,-1.288 0.44,-1.704 0.312,-0.576 0.808,-0.696 1.048,-0.696 0.088,0 0.304,0.008 0.456,0.168 -0.4,0.144 -0.408,0.512 -0.408,0.536 0,0.12 0.064,0.368 0.4,0.368 0.336,0 0.576,-0.28 0.576,-0.624 0,-0.392 -0.352,-0.736 -1.016,-0.736 -1.52,0 -2.368,1.296 -2.368,2.336 0,0.656 0.376,1.344 1.552,1.344 0.208,0 0.704,-0.016 1.136,-0.176 0.432,-0.168 0.744,-0.48 0.744,-0.576 z" />
+        <path
+           id="path1162"
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:65%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman,  Italic';baseline-shift:sub;fill:#34bf49;fill-opacity:1"
+           d="m 117.29737,84.683159 c 0,-0.052 -0.0416,-0.052 -0.078,-0.052 -0.0676,0 -0.0676,0.0104 -0.0884,0.0884 -0.0416,0.1508 -0.182,0.65 -0.4836,0.65 -0.0416,0 -0.1144,-0.0052 -0.1144,-0.1456 0,-0.1352 0.0676,-0.3068 0.1352,-0.4992 l 0.3328,-0.8892 c 0.052,-0.1508 0.0624,-0.1924 0.0624,-0.2912 0,-0.286 -0.1976,-0.416 -0.39,-0.416 -0.4888,0 -0.6656,0.7748 -0.6656,0.8008 0,0.052 0.052,0.052 0.078,0.052 0.0676,0 0.0728,-0.0104 0.0936,-0.0832 0.0468,-0.1716 0.182,-0.6552 0.4836,-0.6552 0.0572,0 0.1144,0.026 0.1144,0.1456 0,0.1248 -0.0572,0.2756 -0.0936,0.3744 l -0.156,0.4316 -0.1924,0.5148 c -0.0728,0.1976 -0.0936,0.2548 -0.0936,0.3588 0,0.2028 0.1248,0.416 0.3952,0.416 0.4888,0 0.6604,-0.78 0.6604,-0.8008 z m 0.1404,-2.4336 c 0,-0.1092 -0.078,-0.2236 -0.234,-0.2236 -0.1664,0 -0.3328,0.1612 -0.3328,0.3276 0,0.1144 0.0832,0.2236 0.234,0.2236 0.1664,0 0.3328,-0.1612 0.3328,-0.3276 z" />
+      </g>
+    </g>
+    <g
+       style="font-style:normal;font-weight:normal;font-size:5.33333px;line-height:1.25;font-family:sans-serif;opacity:0.9999;mix-blend-mode:normal;fill:#34bf49;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none"
+       id="text1213-24-2-4-2"
+       aria-label="wt"
+       transform="translate(5.9910291,52.836523)">
+      <g
+         style="font-style:normal;font-weight:normal;font-size:9.33333px;line-height:1.25;font-family:sans-serif;fill:#34bf49;fill-opacity:1;stroke:none"
+         id="text1123-6-6-0"
+         aria-label="Hi">
+        <path
+           id="path1165"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.33333px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold Italic';fill:#34bf49;fill-opacity:1"
+           d="m 81.373423,53.599236 c 0,-0.121333 -0.102667,-0.168 -0.205334,-0.168 -0.457333,0 -0.933333,0.028 -1.399999,0.028 -0.476,0 -0.970666,-0.028 -1.437333,-0.028 -0.09333,0 -0.270666,0 -0.270666,0.270667 0,0.167999 0.158666,0.167999 0.298666,0.167999 h 0.205333 c 0.102667,0 0.345334,0.0093 0.457334,0.01867 l -0.597334,2.398666 h -2.678665 l 0.550666,-2.239999 c 0.03733,-0.14 0.04667,-0.149334 0.224,-0.168 l 0.578667,-0.0093 c 0.158666,0 0.317333,0 0.317333,-0.270666 0,-0.121333 -0.102667,-0.168 -0.205334,-0.168 -0.457333,0 -0.933333,0.028 -1.399999,0.028 -0.476,0 -0.970666,-0.028 -1.437333,-0.028 -0.09333,0 -0.270666,0 -0.270666,0.270667 0,0.167999 0.158666,0.167999 0.298666,0.167999 h 0.205333 c 0.102667,0 0.345334,0.0093 0.457334,0.01867 l -1.334667,5.338665 c -0.03733,0.130667 -0.04667,0.14 -0.214666,0.149333 -0.112,0.0093 -0.261333,0.01867 -0.373333,0.01867 h -0.205334 c -0.158666,0 -0.326666,0 -0.326666,0.270667 0,0.121333 0.102666,0.167999 0.205333,0.167999 0.457333,0 0.942666,-0.028 1.409333,-0.028 0.476,0 0.970666,0.028 1.437333,0.028 0.084,0 0.261333,0 0.261333,-0.270666 0,-0.168 -0.158667,-0.168 -0.289333,-0.168 h -0.205334 c -0.09333,0 -0.401333,-0.01867 -0.457333,-0.01867 l 0.662667,-2.650665 h 2.678665 l -0.625333,2.501332 c -0.03733,0.130667 -0.04667,0.14 -0.214666,0.149333 -0.112,0.0093 -0.261334,0.01867 -0.373333,0.01867 h -0.205334 c -0.158666,0 -0.326666,0 -0.326666,0.270667 0,0.121333 0.102666,0.167999 0.205333,0.167999 0.457333,0 0.942666,-0.028 1.409333,-0.028 0.476,0 0.970666,0.028 1.437333,0.028 0.084,0 0.261333,0 0.261333,-0.270666 0,-0.168 -0.158667,-0.168 -0.289333,-0.168 h -0.205334 c -0.09333,0 -0.401333,-0.01867 -0.457333,-0.01867 l 1.325333,-5.329331 c 0.03733,-0.14 0.04667,-0.149334 0.224,-0.168 l 0.578667,-0.0093 c 0.158666,0 0.317333,0 0.317333,-0.270666 z" />
+        <path
+           id="path1167"
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.66667px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman,  Italic';baseline-shift:sub;fill:#34bf49;fill-opacity:1"
+           d="m 82.585945,60.747233 c 0,-0.06667 -0.05333,-0.06667 -0.1,-0.06667 -0.08667,0 -0.08667,0.01333 -0.113333,0.113333 -0.05333,0.193334 -0.233334,0.833334 -0.620001,0.833334 -0.05333,0 -0.146667,-0.0067 -0.146667,-0.186667 0,-0.173333 0.08667,-0.393333 0.173334,-0.64 l 0.426667,-1.14 c 0.06667,-0.193334 0.08,-0.246667 0.08,-0.373334 0,-0.366667 -0.253334,-0.533334 -0.5,-0.533334 -0.626667,0 -0.853334,0.993334 -0.853334,1.026668 0,0.06667 0.06667,0.06667 0.1,0.06667 0.08667,0 0.09333,-0.01333 0.12,-0.106666 0.06,-0.220001 0.233333,-0.840001 0.62,-0.840001 0.07333,0 0.146667,0.03333 0.146667,0.186667 0,0.16 -0.07333,0.353333 -0.12,0.48 l -0.2,0.553334 -0.246667,0.66 c -0.09333,0.253334 -0.12,0.326667 -0.12,0.46 0,0.26 0.16,0.533334 0.506667,0.533334 0.626667,0 0.846667,-1.000001 0.846667,-1.026667 z m 0.18,-3.120002 c 0,-0.14 -0.1,-0.286667 -0.3,-0.286667 -0.213334,0 -0.426667,0.206667 -0.426667,0.420001 0,0.146666 0.106667,0.286666 0.3,0.286666 0.213334,0 0.426667,-0.206666 0.426667,-0.42 z" />
+      </g>
+    </g>
+    <g
+       transform="translate(-63.902107,38.105675)"
+       aria-label="wt"
+       id="text1213-24-2-4-2-5"
+       style="font-style:normal;font-weight:normal;font-size:5.33333px;line-height:1.25;font-family:sans-serif;opacity:0.9999;mix-blend-mode:normal;fill:#ff4c4c;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none">
+      <g
+         style="font-style:normal;font-weight:normal;font-size:9.33333px;line-height:1.25;font-family:sans-serif;fill:#ff4c4c;fill-opacity:1;stroke:none"
+         id="text1123-6-6-0-6"
+         aria-label="Gi">
+        <path
+           id="path1139"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.33333px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold Italic';fill:#ff4c4c;fill-opacity:1"
+           d="m 74.664136,39.855844 c 0,-0.056 -0.03733,-0.168 -0.186667,-0.168 -0.382666,0 -0.793333,0.028 -1.185333,0.028 -0.513333,0 -1.045333,-0.028 -1.558666,-0.028 -0.112,0 -0.289333,0 -0.289333,0.270667 0,0.168 0.168,0.168 0.298667,0.168 h 0.317333 c 0.112,0 0.56,0 0.56,0.056 0,0.03733 -0.214667,0.877333 -0.242667,0.970666 -0.158667,0.522667 -0.756,0.830667 -1.334666,0.830667 -0.569333,0 -1.045333,-0.196 -1.297333,-0.42 -0.270667,-0.252 -0.457333,-0.597333 -0.457333,-1.194666 0,-0.42 0.242666,-2.165333 1.007999,-3.154666 0.662667,-0.84 1.605333,-1.073333 2.212,-1.073333 0.961333,0 1.353333,0.774666 1.353333,1.595999 0,0.298667 -0.028,0.336 -0.028,0.410667 0,0.14 0.102666,0.14 0.289333,0.14 0.233333,0 0.252,0 0.298666,-0.186667 l 0.522667,-2.090666 c 0.03733,-0.14 0.03733,-0.177333 0.03733,-0.177333 0,-0.130667 -0.112,-0.130667 -0.252,-0.130667 l -0.802666,0.634667 c -0.588,-0.634667 -1.316,-0.634667 -1.549333,-0.634667 -2.715999,0 -4.349332,2.268 -4.349332,4.283999 0,1.745333 1.325333,2.435999 2.753333,2.435999 0.569333,0 1.278666,-0.14 1.791999,-0.597333 0.242667,0.214667 0.634666,0.438667 0.7,0.438667 0.112,0 0.130666,-0.084 0.158666,-0.196 l 0.438667,-1.782666 c 0.028,-0.130667 0.04667,-0.130667 0.112,-0.14 0.102667,-0.01867 0.205333,-0.01867 0.308,-0.01867 0.224,0 0.373333,0 0.373333,-0.270667 z" />
+        <path
+           id="path1141"
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.66667px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman,  Italic';baseline-shift:sub;fill:#ff4c4c;fill-opacity:1"
+           d="m 77.062428,43.177176 c 0,-0.06667 -0.05333,-0.06667 -0.1,-0.06667 -0.08667,0 -0.08667,0.01333 -0.113333,0.113334 -0.05333,0.193333 -0.233334,0.833333 -0.62,0.833333 -0.05333,0 -0.146667,-0.0067 -0.146667,-0.186667 0,-0.173333 0.08667,-0.393333 0.173333,-0.64 l 0.426667,-1.14 c 0.06667,-0.193334 0.08,-0.246667 0.08,-0.373334 0,-0.366667 -0.253333,-0.533333 -0.5,-0.533333 -0.626667,0 -0.853334,0.993333 -0.853334,1.026667 0,0.06667 0.06667,0.06667 0.1,0.06667 0.08667,0 0.09333,-0.01333 0.12,-0.106666 0.06,-0.22 0.233334,-0.840001 0.620001,-0.840001 0.07333,0 0.146666,0.03333 0.146666,0.186667 0,0.16 -0.07333,0.353334 -0.12,0.48 l -0.2,0.553334 -0.246667,0.66 c -0.09333,0.253334 -0.12,0.326667 -0.12,0.46 0,0.260001 0.16,0.533334 0.506667,0.533334 0.626667,0 0.846667,-1 0.846667,-1.026667 z m 0.18,-3.120002 c 0,-0.14 -0.1,-0.286666 -0.3,-0.286666 -0.213333,0 -0.426667,0.206666 -0.426667,0.42 0,0.146666 0.106667,0.286667 0.300001,0.286667 0.213333,0 0.426666,-0.206667 0.426666,-0.420001 z" />
+      </g>
+    </g>
+    <g
+       transform="translate(-78.501453,25.391991)"
+       aria-label="wt"
+       id="text1213-24-2-9"
+       style="font-style:normal;font-weight:normal;font-size:5.33333px;line-height:1.25;font-family:sans-serif;opacity:0.9999;mix-blend-mode:normal;fill:#ff4c4c;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none">
+      <g
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;font-family:sans-serif;fill:#ff4c4c;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none"
+         id="text1123-6-9"
+         aria-label="ti">
+        <path
+           id="path1170"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold Italic';fill:#ff4c4c;fill-opacity:1;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none"
+           d="m 130.2574,85.336836 c 0,-0.112 -0.104,-0.112 -0.224,-0.112 -0.176,0 -0.184,0.008 -0.248,0.136 -0.336,0.792 -0.728,0.936 -0.936,0.936 -0.072,0 -0.168,-0.008 -0.168,-0.248 0,-0.152 0.016,-0.216 0.048,-0.344 l 0.592,-2.36 h 0.64 c 0.136,0 0.272,0 0.272,-0.232 0,-0.144 -0.136,-0.144 -0.248,-0.144 h -0.568 l 0.152,-0.632 c 0.056,-0.208 0.144,-0.56 0.144,-0.624 0,-0.184 -0.136,-0.336 -0.36,-0.336 -0.104,0 -0.408,0.048 -0.504,0.424 l -0.288,1.168 h -0.648 c -0.144,0 -0.28,0 -0.28,0.232 0,0.144 0.136,0.144 0.256,0.144 h 0.576 l -0.56,2.232 c -0.032,0.128 -0.032,0.184 -0.032,0.232 0,0.504 0.456,0.776 0.936,0.776 0.92,0 1.448,-1.112 1.448,-1.248 z" />
+        <path
+           id="path1172"
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:65%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman,  Italic';baseline-shift:sub;fill:#ff4c4c;fill-opacity:1;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none"
+           d="m 131.70473,87.377236 c 0,-0.052 -0.0416,-0.052 -0.078,-0.052 -0.0676,0 -0.0676,0.0104 -0.0884,0.0884 -0.0416,0.1508 -0.182,0.65 -0.4836,0.65 -0.0416,0 -0.1144,-0.0052 -0.1144,-0.1456 0,-0.1352 0.0676,-0.3068 0.1352,-0.4992 l 0.3328,-0.8892 c 0.052,-0.1508 0.0624,-0.1924 0.0624,-0.2912 0,-0.286 -0.1976,-0.416 -0.39,-0.416 -0.4888,0 -0.6656,0.7748 -0.6656,0.8008 0,0.052 0.052,0.052 0.078,0.052 0.0676,0 0.0728,-0.0104 0.0936,-0.0832 0.0468,-0.1716 0.182,-0.6552 0.4836,-0.6552 0.0572,0 0.1144,0.026 0.1144,0.1456 0,0.1248 -0.0572,0.2756 -0.0936,0.3744 l -0.156,0.4316 -0.1924,0.5148 c -0.0728,0.1976 -0.0936,0.2548 -0.0936,0.3588 0,0.2028 0.1248,0.416 0.3952,0.416 0.4888,0 0.6604,-0.78 0.6604,-0.8008 z m 0.1404,-2.4336 c 0,-0.1092 -0.078,-0.2236 -0.234,-0.2236 -0.1664,0 -0.3328,0.1612 -0.3328,0.3276 0,0.1144 0.0832,0.2236 0.234,0.2236 0.1664,0 0.3328,-0.1612 0.3328,-0.3276 z" />
+      </g>
+    </g>
+    <g
+       style="font-style:normal;font-weight:normal;font-size:5.33333px;line-height:1.25;font-family:sans-serif;opacity:0.9999;mix-blend-mode:normal;fill:#aa5151;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none"
+       id="text1213-24-2-9-8"
+       aria-label="wt"
+       transform="translate(-85.81659,-41.781564)">
+      <g
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;font-family:sans-serif;fill:#aa5151;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none"
+         id="text1123-6-9-1"
+         aria-label="g">
+        <path
+           id="path1144"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold Italic';fill:#aa5151;fill-opacity:1;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none"
+           d="m 138.12709,89.024108 0.864,-3.464 c 0.032,-0.128 0.032,-0.192 0.032,-0.192 0,-0.184 -0.136,-0.336 -0.36,-0.336 -0.216,0 -0.304,0.088 -0.376,0.16 -0.232,-0.216 -0.488,-0.296 -0.776,-0.296 -1.36,0 -2.136,1.32 -2.136,2.352 0,0.848 0.576,1.264 1.296,1.264 0.256,0 0.504,-0.064 0.776,-0.216 l -0.136,0.568 c -0.192,0.744 -0.648,0.976 -1.08,0.976 -0.216,0 -0.4,-0.024 -0.496,-0.048 0.168,-0.136 0.224,-0.344 0.224,-0.448 0,-0.2 -0.152,-0.368 -0.4,-0.368 -0.28,0 -0.568,0.232 -0.568,0.592 0,0.496 0.632,0.56 1.224,0.56 0.968,0 1.736,-0.408 1.912,-1.104 z m -0.496,-1.448 c -0.072,0.28 -0.544,0.648 -0.928,0.648 -0.424,0 -0.464,-0.392 -0.464,-0.568 0,-0.44 0.28,-1.408 0.392,-1.688 0.264,-0.664 0.672,-0.784 0.88,-0.784 0.24,0 0.496,0.128 0.592,0.48 z" />
+      </g>
+    </g>
+    <g
+       transform="translate(-100.69564,-32.107862)"
+       aria-label="wt"
+       id="text1213-24-2-9-8-4"
+       style="font-style:normal;font-weight:normal;font-size:5.33333px;line-height:1.25;font-family:sans-serif;opacity:0.9999;mix-blend-mode:normal;fill:#aa5151;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none">
+      <g
+         style="font-style:normal;font-weight:normal;font-size:5.33333px;line-height:1.25;font-family:sans-serif;fill:#aa5151;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none"
+         id="text1123-6-9-1-4"
+         aria-label="g">
+        <path
+           id="path1147"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.33333px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold Italic';fill:#aa5151;fill-opacity:1;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none"
+           d="m 146.64651,105.13501 0.576,-2.30933 c 0.0213,-0.0853 0.0213,-0.128 0.0213,-0.128 0,-0.12267 -0.0907,-0.224 -0.24,-0.224 -0.144,0 -0.20267,0.0587 -0.25067,0.10667 -0.15467,-0.144 -0.32533,-0.19734 -0.51733,-0.19734 -0.90667,0 -1.424,0.88 -1.424,1.568 0,0.56534 0.384,0.84267 0.864,0.84267 0.17066,0 0.336,-0.0427 0.51733,-0.144 l -0.0907,0.37866 c -0.128,0.496 -0.432,0.65067 -0.72,0.65067 -0.144,0 -0.26666,-0.016 -0.33066,-0.032 0.112,-0.0907 0.14933,-0.22933 0.14933,-0.29867 0,-0.13333 -0.10133,-0.24533 -0.26667,-0.24533 -0.18666,0 -0.37866,0.15467 -0.37866,0.39467 0,0.33066 0.42133,0.37333 0.816,0.37333 0.64533,0 1.15733,-0.272 1.27466,-0.736 z m -0.33066,-0.96533 c -0.048,0.18667 -0.36267,0.432 -0.61867,0.432 -0.28267,0 -0.30933,-0.26133 -0.30933,-0.37867 0,-0.29333 0.18666,-0.93866 0.26133,-1.12533 0.176,-0.44267 0.448,-0.52267 0.58667,-0.52267 0.16,0 0.33066,0.0853 0.39466,0.32 z" />
+      </g>
+    </g>
+  </g>
+</svg>
+</div>
+
+<div id="stocks-flows">
+<div id="flows-container">
+<div class="stocks-flows-axis-title"> <b>Flows:</b> $\;\color{g} \boldsymbol{g} \;\; \color{w} \boldsymbol{w}_i \;\; \color{c} \boldsymbol{c}_i \;\; \color{t} \boldsymbol{t}_i$ </div>
+<div id="flows"></div>
+</div>
+<div id="stocks-container">
+<div class="stocks-flows-axis-title"> <b>Stocks:</b> $\;\color{F} \boldsymbol{F}_i \;\; \color{H} \boldsymbol{H}_i \;\; \color{G} \boldsymbol{G}_i$ </div>
+<div id="stocks"></div>
+</div>
+</div>
+</div>
+
+<script>
+  figure();
+</script>
+
+<h2 id="a-walk-through-different-model-states">A walk through different model states</h2>
+
+Starting from an economy with no governement expenditures, where the tax rate is 100% and where firms and households spend all their incomes and savings: 
+$$\begin{array}{ccc}
+  {\color{g} \boldsymbol{g} = 0} \quad & {\color{alpha} \alpha_1 = 1.0}  \quad & {\color{beta} \beta_1 = 1.0}\\
+  {\color{theta} \theta = 1.0}  \quad & {\color{alpha} \alpha_2 = 1.0}  \quad & {\color{beta} \beta_2 = 1.0}
+\end{array}$$
+we progressively adjust the controllable parameters to explore different states of the model.
+
+<div class="model_state">
+<img class="model_state_img" src="assets/model_state0.svg" alt="model_state0">
+<p> <b>An empty economy.</b><br> ${\color{g} \boldsymbol{g} = 0}$<br> Without government expenditures $\color{g} \boldsymbol{g}$, there is no economy.</p>
+</div>
+<div class="model_state">
+<img class="model_state_img" src="assets/model_state1.svg" alt="model_state1">
+<p> <b>The government starts spending.</b><br> ${\color{g} \boldsymbol{g} = 20}$<br> Government expenditures $\color{g} \boldsymbol{g}$ turn into wages $\color{w} \boldsymbol{w}_i$, which then turn into tax revenues $\color{t} \boldsymbol{t}_i$: spending enables taxation. </p>
+</div>
+<div class="model_state">
+<img class="model_state_img" src="assets/model_state2.svg" alt="model_state2">
+<p> <b>The government reduces the tax rate.</b><br> ${\color{theta} \theta = 0.2}$<br> Part of the wages $\color{w} \boldsymbol{w}_i$ is now used for consumption $\color{c} \boldsymbol{c}_i$ which then turns into more wages $\color{w} \boldsymbol{w}_i$ triggering a positive feedback loop.</p>
+</div>
+<div class="model_state">
+<img class="model_state_img" src="assets/model_state3.svg" alt="model_state3">
+<p> <b>Firms start saving up.</b><br> ${\color{alpha} \alpha_1 = 0.8 \quad \alpha_2 = 0.4}$<br> Part of the firms' income ${\color{g} \boldsymbol{g}} + {\color{c} \boldsymbol{c}_i}$ starts feeding into the firms' stock $\color{F} \boldsymbol{F}_i$, temporarily decreasing the wages $\color{w} \boldsymbol{w}_i$ and the tax revenues $\color{t} \boldsymbol{t}_i$, producing government debt $\color{G} \boldsymbol{G}_i$.</p>
+</div>
+<div class="model_state">
+<img class="model_state_img" src="assets/model_state4.svg" alt="model_state4">
+<p> <b>Households start saving up.</b><br> ${\color{beta} \beta_1 = 0.7 \quad \beta_2 = 0.2}$<br> Part of the households' income ${\color{w} \boldsymbol{w}_i} - {\color{t} \boldsymbol{t}_i}$ starts feeding into the households' stock $\color{H} \boldsymbol{H}_i$, temporarily decreasing the consumption $\color{c} \boldsymbol{c}_i$, the wages $\color{w} \boldsymbol{w}_i$ and the tax revenues $\color{t} \boldsymbol{t}_i$, producing more government debt $\color{G} \boldsymbol{G}_i$.</p>
+</div>
+<div class="model_state">
+<img class="model_state_img" src="assets/model_state5.svg" alt="model_state5">
+<p> <b>Firms and Households save excessively.</b><br> ${\color{alpha} \alpha_1 = \alpha_2 = 0.1} \quad {\color{beta} \beta_1 = \beta_2 = 0.1}$ <br> Most of the firms' and households' incomes feed into their respective stocks $\color{F} \boldsymbol{F}_i$ and $\color{H} \boldsymbol{H}_i$, drying up the wages $\color{w} \boldsymbol{w}_i$, the consumption $\color{c} \boldsymbol{c}_i$ and the tax revenues $\color{t} \boldsymbol{t}_i$, leading to an ever increasing government debt $\color{G} \boldsymbol{G}_i$. </p>
+</div>
+
+<h2 id="equilibrium-analysis">Equilibrium analysis</h2>
+
+<p> After exploring the model for a while, it becomes clear that the variables converge to an equilibrium state for most combinations of parameter values when given enough time. By definition, such an equilibrium state is reached when all the variables remain constant over time, satisfying:
+\begin{equation*}
+    \begin{cases}
+      {\color{t} \boldsymbol{t}_{i-1}}\\
+      {\color{w} \boldsymbol{w}_{i-1}}\\
+      {\color{c} \boldsymbol{c}_{i-1}}\\
+      {\color{F} \boldsymbol{F}_{i-1}}\\
+      {\color{H} \boldsymbol{H}_{i-1}}\\
+      {\color{G} \boldsymbol{G}_{i-1}}
+    \end{cases} 
+    = 
+    \begin{cases}
+      {\color{t} \boldsymbol{t}_i}\\
+      {\color{w} \boldsymbol{w}_i}\\
+      {\color{c} \boldsymbol{c}_i}\\
+      {\color{F} \boldsymbol{F}_i}\\
+      {\color{H} \boldsymbol{H}_i}\\
+      {\color{G} \boldsymbol{G}_i}
+    \end{cases}
+    = 
+    \begin{cases}
+      {\color{t} \boldsymbol{t}_*}\\
+      {\color{w} \boldsymbol{w}_*}\\
+      {\color{c} \boldsymbol{c}_*}\\
+      {\color{F} \boldsymbol{F}_*}\\
+      {\color{H} \boldsymbol{H}_*}\\
+      {\color{G} \boldsymbol{G}_*}
+    \end{cases} .
+    \tag{$\ast$}  
+\end{equation*}
+
+The equilibrium variables can then be expressed solely as functions of the parameters by substituting the set of equalities $(\ast)$ into equations $(0$-$6)$. For instance, equation $(6)$ becomes:
+$${\color{G} \boldsymbol{G}_*} = {\color{G} \boldsymbol{G}_*} - {\color{g} \boldsymbol{g}} + {\color{t} \boldsymbol{t}_*} \quad \Rightarrow \quad {\color{t} \boldsymbol{t}_*} = {\color{g} \boldsymbol{g}} \,.$$
+The full equilibrium state can be expressed as follow:
+$$\bbox[#fafafa, 15px, border:2px solid #e6e6e6]{
+\begin{aligned} 
+{\color{t} \boldsymbol{t}_*} &= {\color{darkG} \boldsymbol{g}} \phantom{\frac{\beta_1}{\beta_1}}\\
+{\color{w} \boldsymbol{w}_*} &= {\color{darkG} \frac{\boldsymbol{g}}{\theta}} \phantom{\frac{\beta_1}{\beta_1}}\\
+{\color{c} \boldsymbol{c}_*} &= {\color{darkG} (1-\theta) \, \frac{\boldsymbol{g}}{\theta}} \phantom{\frac{\beta_1}{\beta_1}}\\
+{\color{F} \boldsymbol{F}_*} &= {\color{darkF} \frac{1-\alpha_1}{\alpha_2}} \, {\color{darkG} \frac{\boldsymbol{g}}{\theta}} \phantom{\frac{\beta_1}{\beta_1}}\\
+{\color{H} \boldsymbol{H}_*} &= {\color{darkH} \frac{1-\beta_1}{\beta_2}} \, {\color{darkG} (1-\theta) \, \frac{\boldsymbol{g}}{\theta}} \phantom{\frac{\beta_1}{\beta_1}}\\
+{\color{G} \boldsymbol{G}_*} &= - \left[{\color{darkF} \frac{1-\alpha_1}{\alpha_2}} + {\color{darkH} \frac{1-\beta_1}{\beta_2}} \, {\color{darkG} (1-\theta)}\right] \, {\color{darkG} \frac{\boldsymbol{g}}{\theta}} 
+\end{aligned}}$$
+</p>
+
+<p> And a number of important observations can be made about this equilibrium state. </p>
+
+<p> &#8226; <em>Government expenditures finance themselves.</em> <br>
+In a closed economy at equilibrium, ${\color{t} \boldsymbol{t}_*} = {\color{darkG} \boldsymbol{g}}$. All government expenditures eventually come back in the form of tax revenues, irrespectively of the tax rate. Higher government expenditures simply generate higher tax revenues. In the long term, the tax rate does not control the amount of funding that the government is able to raise, but rather the speed with which a given expenditure comes back in the form of tax revenues. </p>
+
+<p> &#8226; <em>The government controls the size of the economy.</em> <br>
+All the variables other than the tax revenues are proportional to the ratio $\displaystyle {\color{darkG} \frac{\boldsymbol{g}}{\theta}}$, which is directly controlled by the government. The wages, consumption and all the stocks grow when government expenditures increase or the tax rate decreases (stimulus), and they all shrink when government expenditures decrease or the tax rate increases (austerity).</p>
+
+<p> &#8226; <em>The government debt depends on the saving behaviour of firms and households.</em> <br>
+The government debt ${\color{G} \boldsymbol{G}_*}$ depends on the coefficients ${\color{darkF} \frac{1-\alpha_1}{\alpha_2}}$ and ${\color{darkH} \frac{1-\beta_1}{\beta_2}}$, which are controlled by firms and households respectively. Ultimately, the government debt would vanish entirely if firms and households stopped saving: setting ${\color{alpha} \alpha_1} = {\color{beta} \beta_1} = 1$ results in ${\color{G} \boldsymbol{G}_*} = 0$. </p>
+
+<p> &#8226; <em>Taxes and spending are necessary to balance the economy.</em> <br>
+The equilibrium state is undefined if $\,{\color{theta} \theta} = 0\,$ or $\,{\color{alpha} \alpha_2} = 0\,$ or $\,{\color{beta} \beta_2} = 0$ (these values result in a division by zero). Without taxes, the government debt increases indefinitely. Less intuitively, the same happens when Firms and Household do not spend their savings. One simple policy reform that would guarantee that a small proportion of savings is always spent would be to implement a wealth tax.</p>
+
+<h2 id="going-further"> Going further </h2>
+
+<p>The model presented above is, of course, extremely simplistic. It is a variant of Model SIM: The Simplest Model with Government Money in Wynne Godley's and Marc Lavoie's textbook on <i>Monetary Economics</i> (2006), and is only meant to constitute a starting point, a student-friendly introduction to fully coherent stock-flow macroeconomics. In the words of the authors themselves, "very strong simplifying assumptions will have to be made initially and the reader is asked to suspend disbelief until more realistic systems are introduced". Such systems later include the introduction of a banking sector with private money, the consideration and adequate accounting of price inflation, as well as the consideration of open economies. Interested readers are strongly encouraged to explore the textbook further! </p>
+
+<img id="monetary-economics" class="img" src="assets/monetary_economics.jpg" alt="monetary_economics">
+
+
+
+      </d-article>
+
+      <!--<d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>-->
+
+    </div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5">
+      <div class="container">
+        Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
+
+      </div>
+    </footer>
+
+  </body>
+
+  <d-bibliography src="/assets/bibliography/">
+  </d-bibliography>
+
+  <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+</html>
