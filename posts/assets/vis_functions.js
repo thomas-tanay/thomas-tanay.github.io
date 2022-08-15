@@ -288,7 +288,7 @@ function figure(){
        .attr("step",5)
        .on("input", function() {text_e.text(parseFloat(this.value)).style("fill", colors["g"]);})
        .on("mouseup", function() {e = parseFloat(this.value);})
-       .on("ontouchend", function() {e = parseFloat(this.value);})
+       .on("touchend", function() {e = parseFloat(this.value);})
        .attr("value", e);
 
     svg.append("input")
@@ -304,7 +304,7 @@ function figure(){
        .attr("step",0.1)
        .on("input", function() {text_theta.text(parseFloat(this.value)).style("fill", colors["theta"]);})
        .on("mouseup", function() {theta = parseFloat(this.value);})
-       .on("ontouchend", function() {theta = parseFloat(this.value);})
+       .on("touchend", function() {theta = parseFloat(this.value);})
        .attr("value", theta);
 
     svg.append("input")
@@ -320,7 +320,7 @@ function figure(){
        .attr("step",0.1)
        .on("input", function() {text_alpha1.text(parseFloat(this.value)).style("fill", colors["alpha1"]);})
        .on("mouseup", function() {alpha1 = parseFloat(this.value);})
-       .on("ontouchend", function() {alpha1 = parseFloat(this.value);})
+       .on("touchend", function() {alpha1 = parseFloat(this.value);})
        .attr("value", alpha1);
 
     svg.append("input")
@@ -336,7 +336,7 @@ function figure(){
        .attr("step",0.1)
        .on("input", function() {text_alpha2.text(parseFloat(this.value)).style("fill", colors["alpha2"]);})
        .on("mouseup", function() {alpha2 = parseFloat(this.value);})
-       .on("ontouchend", function() {alpha2 = parseFloat(this.value);})
+       .on("touchend", function() {alpha2 = parseFloat(this.value);})
        .attr("value", alpha2);
 
     svg.append("input")
@@ -352,7 +352,7 @@ function figure(){
        .attr("step",0.1)
        .on("input", function() {text_beta1.text(parseFloat(this.value)).style("fill", colors["beta1"]);})
        .on("mouseup", function() {beta1 = parseFloat(this.value);})
-       .on("ontouchend", function() {beta1 = parseFloat(this.value);})
+       .on("touchend", function() {beta1 = parseFloat(this.value);})
        .attr("value", beta1);
 
     svg.append("input")
@@ -368,7 +368,7 @@ function figure(){
        .attr("step",0.1)
        .on("input", function() {text_beta2.text(parseFloat(this.value)).style("fill", colors["beta2"]);})
        .on("mouseup", function() {beta2 = parseFloat(this.value);})
-       .on("ontouchend", function() {beta2 = parseFloat(this.value);})
+       .on("touchend", function() {beta2 = parseFloat(this.value);})
        .attr("value", beta2);
   }
 
