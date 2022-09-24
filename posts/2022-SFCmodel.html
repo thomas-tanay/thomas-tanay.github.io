@@ -187,7 +187,7 @@ Government financial balance $+$ Nongovernment financial balance $=$ Zero.
 
 <img class="img" id="exhibit3" src="assets/exhibit3.jfif" alt="Exhibit 3">
 
-<p> The reverse is, of course, also true: whenever the government runs a fiscal surplus, the rest of the economy must be in deficit. And in practice, it is not obvious what determines the government's financial balance. For instance, the government might try to reduce its debt by decreasing spending and increasing taxes. But the rest of the economy might refuse&mdash;or simply be unable&mdash;to go into deficit and react by also cutting spending: wages for the firms and consumption for the households. What should the government do when this happens? Double down on national debt reduction at the risk of triggering an austerity-driven recession? </p>
+<p> The reverse is, of course, also true: whenever the government runs a fiscal surplus, the rest of the economy must be in deficit. And in practice, it is not obvious what determines the government's financial balance. For instance, the government might try to reduce its debt by decreasing spending and increasing taxes. But the rest of the economy might refuse&mdash;or simply be unable&mdash;to go into deficit and react by also cutting spending: wages for the firms and consumption for the households. What should the government do when this happens? Double down on debt reduction at the risk of triggering an austerity-driven recession? </p>
 
 <!--Or accept a certain level of deficit, helping finance firms' and households' investments?-->
 
@@ -286,7 +286,7 @@ A corrolary to which we'll come back later is that <i>a high government debt is 
 
 <h2 id="playtime">Playtime! </h2>
 
-<p> We are now equiped with a model of six recursive equations with a null initial state, and we can compute the values of the six variables $\; {\color{t} \boldsymbol{t}_i}$ $\; {\color{G} \boldsymbol{G}_i}$ $\; {\color{w} \boldsymbol{w}_i}$ $\; {\color{F} \boldsymbol{F}_i}$ $\; {\color{c} \boldsymbol{c}_i}$ $\; {\color{H} \boldsymbol{H}_i}$ at any economic cycle $i$, given predefined values of the behavioural parameters $\; \color{g} \boldsymbol{g}$ $\; \color{theta} \theta$ $\; \color{alpha} \alpha_1$ $\; \color{alpha} \alpha_2$ $\; \color{beta} \beta_1$ $\; \color{beta} \beta_2 \;$. This is what the explorable model below allows you to do in real time<d-footnote>I drew the graphical representation of the model in vector format using Inkscape, and the values of the model variables are dynamically adjusted in your browser using javascript and D3.</d-footnote>. </p>
+<p> Our model is a system of six recursive equations with a null initial state, and we can compute the values of the six variables $\; {\color{t} \boldsymbol{t}_i}$ $\; {\color{G} \boldsymbol{G}_i}$ $\; {\color{w} \boldsymbol{w}_i}$ $\; {\color{F} \boldsymbol{F}_i}$ $\; {\color{c} \boldsymbol{c}_i}$ $\; {\color{H} \boldsymbol{H}_i}$ across multiple economic cycles given predefined values of the behavioural parameters $\; \color{g} \boldsymbol{g}$ $\; \color{theta} \theta$ $\; \color{alpha} \alpha_1$ $\; \color{alpha} \alpha_2$ $\; \color{beta} \beta_1$ $\; \color{beta} \beta_2 \;$. This is what the interface below lets you explore in real time<d-footnote>I drew the graphical representation of the model in vector format using Inkscape, and the values of the model variables are dynamically adjusted in your browser using javascript and D3.</d-footnote>. </p>
 
 <p> The graphical representation <span class="lg-view">on the left</span><span class="sm-view">at the top</span> is dynamically adjusted to show the current state of each variable. The stocks are represented by vertical bars of varying heights and the flows are represented by arrows of varying widths. The variables are also plotted as functions of time <span class="lg-view">on the right</span><span class="sm-view">below</span>. </p> 
 <p> The parameters are directly controllable using sliders, and are initialized with reasonable values. The government spending is average, the tax rate is low, the firms and households spend most of their incomes and a lower proportion of their savings:
@@ -296,7 +296,7 @@ $$\quad \begin{array}{ccc}
 \end{array}\quad.$$
  </p> 
 
-<p> Go ahead and explore the model yourself! You can start by clicking on the "reset stock" button to restart the simulation and observe the model converge to its equilibrium state. Or you can increase government expenditures by moving the slider ${\color{g} \boldsymbol{g}}$ to the right and observe the model converge to a new equilibrium state, with larger flows and stocks. If you're not sure what to try, a guided tour is presented in the next section. </p>
+<p> Go ahead and explore the model yourself! You can start by clicking on the "reset stock" button to reset the simulation and observe the model converge to its equilibrium state. Or you can increase government expenditures by moving the slider ${\color{g} \boldsymbol{g}}$ to the right and observe the model converge to a new equilibrium state, with larger flows and stocks. If you're not sure what to try, a guided tour is presented in the next section. </p>
 
 <div id="figure">
 <div id="svg">
