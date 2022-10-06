@@ -165,9 +165,20 @@
       <d-title>
         <h1>How government expenditures finance themselves</h1>
         <p>And other observations from an explorable <span style="font-weight: 500; color: var(--G)">Stock</span>-<span style="font-weight: 500; color: var(--F)">Flow</span> <span style="font-weight: 500; color: var(--H)">Consistent</span> model</p>
-      </d-title>
 
+      </d-title>
       <!-- <d-byline></d-byline>-->
+
+<div id="header_figure">
+  <div id="header_figure_row1">
+    <img class="header_figure_img" src="assets/model_state1bis.svg" alt="model_state1">
+    <img class="header_figure_img" src="assets/model_state2bis.svg" alt="model_state2">
+  </div>
+  <div id="header_figure_row2">
+    <img class="header_figure_img" src="assets/model_state3bis.svg" alt="model_state3">
+    <img class="header_figure_img" src="assets/model_state4bis.svg" alt="model_state4">
+  </div>
+</div>
 
       <d-article>
 
@@ -179,7 +190,7 @@
           <nav class="l-text figcaption">
           <h3>Contents</h3>
             <div><a href="#model-description">Model description</a></div>
-            <div><a href="#playtime">Playtime!</a></div>
+            <div><a href="#playtime">Playtime</a></div>
             <div><a href="#a-walk-through-different-model-states">A walk through different model states</a></div>
             <div><a href="#equilibrium-analysis">Equilibrium analysis</a></div>
             <div><a href="#going-further">Going further</a></div>
@@ -299,7 +310,7 @@ Second, <em>the government debt is the negative of the firms' and households' sa
 $$ {\color{G} \boldsymbol{G}_i} = - {\color{F} \boldsymbol{F}_i} - {\color{H} \boldsymbol{H}_i} .$$
 A corrolary to which we'll come back later is that <i>a high government debt is not necessarily the sign of excessive government spending, but can also be the sign of excessive saving by other economic entities.</i></p>
 
-<h2 id="playtime">Playtime! </h2>
+<h2 id="playtime">Playtime </h2>
 
 <p> Our model is a system of six recursive equations with a null initial state, and we can compute the values of the six variables $\; {\color{t} \boldsymbol{t}_i}$ $\; {\color{G} \boldsymbol{G}_i}$ $\; {\color{w} \boldsymbol{w}_i}$ $\; {\color{F} \boldsymbol{F}_i}$ $\; {\color{c} \boldsymbol{c}_i}$ $\; {\color{H} \boldsymbol{H}_i}$ at any economic cycle $i$ given predefined values of the behavioural parameters $\; \color{g} \boldsymbol{g}$ $\; \color{theta} \theta$ $\; \color{alpha} \alpha_1$ $\; \color{alpha} \alpha_2$ $\; \color{beta} \beta_1$ $\; \color{beta} \beta_2$. This is what the interface below lets you explore in real time.<d-footnote>I drew the graphical representation of the model in vector format using Inkscape, and the values of the model variables are dynamically adjusted in your browser using javascript and D3.</d-footnote> </p>
 
