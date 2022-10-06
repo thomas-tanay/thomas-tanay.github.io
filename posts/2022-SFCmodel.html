@@ -170,14 +170,11 @@
       <!-- <d-byline></d-byline>-->
 
 <div id="header_figure">
-  <div id="header_figure_row1">
-    <img class="header_figure_img" src="assets/model_state1bis.svg" alt="model_state1">
-    <img class="header_figure_img" src="assets/model_state2bis.svg" alt="model_state2">
-  </div>
-  <div id="header_figure_row2">
+    <img class="header_figure_img" id="header_figure_img0" src="assets/model_state0bis.svg" alt="model_state0">
+    <img class="header_figure_img" id="header_figure_img1" src="assets/model_state1bis.svg" alt="model_state1">
+    <img class="header_figure_img" id="header_figure_img2" src="assets/model_state2bis.svg" alt="model_state2">
     <img class="header_figure_img" src="assets/model_state3bis.svg" alt="model_state3">
     <img class="header_figure_img" src="assets/model_state4bis.svg" alt="model_state4">
-  </div>
 </div>
 
       <d-article>
@@ -200,7 +197,7 @@
 
 <p> This is a popular analogy: the finances of a sovereign state's government are like the finances of a household. A government receives tax revenues and spends on expenditure programs. It runs a fiscal deficit when its expenditures exceed its revenues, and this deficit needs to be covered by some form of borrowing. New borrowings increase future expenditures and can trigger unsustainable spirals of deficits and borrowings. Responsible governments should therefore always aim to produce balanced budgets. Whenever possible, they should even aim to produce fiscal surpluses and pay back their existing debts.</p>
 
-<p> In her bestselling book <i>The Deficit Myth</i> (2020), Stephanie Kelton calls this Government-Household analogy "undoubtly the most pernicious" of all the myths surrounding fiscal deficits. This analogy is wrong, she tells us, because households are currency users while the government is the currency issuer: it spends its currency into existence. Of course, the fact that the government can manufacture its own currency does not mean there there are no limits to its spending; but deficits are not evidence of overspending, inflation is. Once we fully aknowledge the role of the government as the currency issuer, it becomes clear that the sum of all past fiscal deficits&mdash;what we call the "National Debt"&mdash;really isn't a debt in the usual sense of the term. It is "nothing more than a footprint from the past", a statement of the total amount of currency issued by the government to date. </p>
+<p> In her bestselling book <i>The Deficit Myth</i> (2020), Stephanie Kelton calls this Government-Household analogy "undoubtly the most pernicious" of all the myths surrounding fiscal deficits. This analogy is wrong, she tells us, because households are currency users while the government is the currency issuer: it spends its currency into existence. Of course, the fact that the government can manufacture its own currency does not mean that there are no limits to its spending; but deficits are not evidence of overspending, inflation is. Once we fully aknowledge the role of the government as the currency issuer, it becomes clear that the sum of all past fiscal deficits&mdash;what we call the "National Debt"&mdash;really isn't a debt in the usual sense of the term. It is "nothing more than a footprint from the past", a statement of the total amount of currency issued by the government to date. </p>
 <!--(Chapter&nbsp;1) (Chapter&nbsp;2) (Chapter&nbsp;3) (Chapter&nbsp;4)-->
 
 <p> The distinction between currency user and issuer is an important starting point, but to really understand the difference between a government's finances and those of an individual household, it is necessary to zoom out and look at the economy from the macro level. Stephanie Kelton brings us there by introducing the Stock-Flow Consistent framework pioneered by British economist Wynne Godley. This framework starts from a simple accounting axiom: "everything comes from somewhere and everything goes somewhere". Seen from the perspective of a government's finances for instance, this leads to what Godley and Kelton playfully call the "one-equation model of the world":</p>
@@ -214,8 +211,6 @@ Government financial balance $+$ Nongovernment financial balance $=$ Zero.
 <img class="img" id="exhibit3" src="assets/exhibit3.jfif" alt="Exhibit 3">
 
 <p> The reverse is, of course, also true: whenever the government runs a fiscal surplus, the rest of the economy must be in deficit. And in practice, it is not obvious what determines the government's financial balance. For instance, the government might try to reduce its debt by decreasing spending and increasing taxes. But the rest of the economy might refuse&mdash;or simply be unable&mdash;to go into deficit and react by also cutting spending: wages for the firms and consumption for the households. What should the government do when this happens? Double down on debt reduction at the risk of triggering an austerity-driven recession? </p>
-
-<!--Or accept a certain level of deficit, helping finance firms' and households' investments?-->
 
 <p> The aim of this blog post is to make this type of macroeconomic reasoning more intuitive. It goes beyond the one-equation model of the world and introduces a Stock-Flow Consistent model with six equations and six variable&mdash;a sightly modified variant of <i>Model SIM: The Simplest Model with Government Money</i> in Wynne Godley's and Marc Lavoie's textbook on <i>Monetary Economics</i> (2006). My main contribution is to make this model explorable: you will be able to control various behavioural parameters using sliders, and observe the stock and flow variables evolve to new states on a dynamic representation of the economic system. Hopefully, this will help you refine your own understanding of simple macroeconomic phenomena, and contribute to putting the tired Government-Household analogy to rest.</p>
 
