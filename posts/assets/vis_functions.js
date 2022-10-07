@@ -1,4 +1,3 @@
-//var colors = {"e": "#990000", "w": "#003399", "c": "#3e9ade", "r": "#ff9933", "G": "#f03300", "F": "#006600", "H": "#66cc33"};
 var colors = {"g": "#AA5151", 
               "w": "#0099E5",
               "c": "#34BF49",
@@ -489,47 +488,4 @@ function figure(){
     reset([e, theta, alpha1, alpha2, beta1, beta2]);
   });
 
-  //d3.select("#button0").on("click", function() {reset([0, 1.0, 1.0, 1.0, 1.0, 1.0])} )
-  //d3.select("#button1").on("click", function() {reset([20, 1.0, 1.0, 1.0, 1.0, 1.0])} )
-  //d3.select("#button2").on("click", function() {reset([20, 0.2, 1.0, 1.0, 1.0, 1.0])} )
-  //d3.select("#button3").on("click", function() {reset([20, 0.2, 0.8, 0.4, 1.0, 1.0])} )
-  //d3.select("#button4").on("click", function() {reset([20, 0.2, 0.8, 0.4, 0.7, 0.2])} )
-  //d3.select("#button5").on("click", function() {reset([20, 0.2, 0.1, 0.1, 0.1, 0.1])} )
-
-}
-
-function compute_values(){
-  G_ = 0
-  F_ = 0
-  H_ = 0
-  e_ = 20
-  theta_ = 0.2
-  alpha1_ = 0.8
-  alpha2_ = 0.4
-  beta1_ = 0.7
-  beta2_ = 0.2
-
-  for (let i = 0; i < 50; i++) {
-    w_ = (alpha1_ * beta2_ * H_ + alpha1_ * e_ + alpha2_ * F_) / (1 - alpha1_ * beta1_ * (1 - theta_));
-    c_ = beta1_ * (1 - theta_) * w_ + beta2_ * H_;
-    r_ = theta_ * w_;
-    G_ = G_ + r_ - e_;
-    F_ = F_ + c_ + e_ - w_;
-    H_ = H_ + w_ - c_ - r_;
-  }
-
-  alpha1_ = 0.1
-  alpha2_ = 0.1
-  beta1_ = 0.1
-  beta2_ = 0.1
-
-  for (let i = 0; i < 40; i++) {
-    console.log("iteration:", i, "w: ", w_, "c: ", c_, "r: ", r_, "G: ", G_, "F: ", F_, "H: ", H_)
-    w_ = (alpha1_ * beta2_ * H_ + alpha1_ * e_ + alpha2_ * F_) / (1 - alpha1_ * beta1_ * (1 - theta_));
-    c_ = beta1_ * (1 - theta_) * w_ + beta2_ * H_;
-    r_ = theta_ * w_;
-    G_ = G_ + r_ - e_;
-    F_ = F_ + c_ + e_ - w_;
-    H_ = H_ + w_ - c_ - r_;
-  }
 }
