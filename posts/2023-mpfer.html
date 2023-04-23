@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Efficient View Synthesis and 3D-based Multi-Frame Denoising with Multiplane Feature Representations</title>
+  <meta name="author" content="Thomas  Tanay" />
+  <meta name="description" content="CVPR 2023" />
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+    var u="//piwik.martinruenz.de/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💡</text></svg>">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+
+      <h1 class="title is-3 publication-title">Efficient View Synthesis and 3D-based Multi-Frame Denoising with Multiplane Feature Representations</h1>
+
+      <h2 class="title is-4 publication-subtitle">CVPR 2023</h2>
+
+      <div class="is-size-5 publication-authors">
+        <span class="author-block">
+          <a href="https://thomas-tanay.github.io">Thomas Tanay</a></span>
+        <span class="author-block">
+          <a href="https://www.cs.bham.ac.uk/~leonarda/">Ales Leonardis</a></span>
+        <span class="author-block">
+          <a href="https://scholar.google.com/citations?user=Zo97gUQAAAAJ&hl=en">Matteo Maggioni</a></span>
+      </div>
+
+      <div class="is-size-5 publication-authors">
+        <span class="author-block">Huawei Noah’s Ark Lab</span>
+      </div>
+
+      <div class="container has-text-centered">
+        <div class="publication-links">
+          <!-- PDF Link. -->
+          <span class="link-block">
+            <a href="https://arxiv.org/abs/2303.18139"
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+              </span>
+              <span>arXiv</span>
+            </a>
+          </span>
+          <!-- Video Link. 
+          <span class="link-block">
+            <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fab fa-youtube"></i>
+              </span>
+              <span>Video</span>
+            </a>
+          </span>-->
+          <!-- Code Link. -->
+          <span class="link-block">
+            <a class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fab fa-github"></i>
+              </span>
+              <span>Code (coming soon)</span>
+              </a>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="columns is-vcentered">
+      <div class="column has-text-centered">
+        <p> 4 noisy inputs </p>
+        <video poster="" autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/scene73_in.mp4" type="video/mp4" alt="scene73_in.mp4">
+        </video>
+      </div>
+      <div class="column is-two-fifths">
+        <div class="columns is-mobile has-text-centered">
+          <div class="column">
+            <p> Depth-wise encoding </p>
+          </div>
+          <div class="column">
+            <p> Multiplane Feature Representation </p>
+          </div>
+          <div class="column">
+            <p> View-wise rendering </p>
+          </div>
+        </div>
+        <img src="./static/images/teaser.png" width="100%" alt="MPFER"/>
+      </div>
+      <div class="column has-text-centered">
+        <p> Synthesized outputs </p>
+        <video poster="" autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/scene73_out.mp4" type="video/mp4" alt="scene73_out.mp4">
+        </video>
+      </div>
+    </div>
+    <h2 class="subtitle is-size-6 has-text-centered">
+      Our Multiplane Features Encoder-Renderer (MPFER) reimagines the MPI pipeline by moving the multiplane representation to feature space.<br>
+      Encoding a scene from 4 input views at 500x800 resolution takes about 1.2s on a V100 GPU. Rendering a novel view then takes about 0.01s.
+    </h2>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          While current multi-frame restoration methods combine information from multiple input images using 2D alignment techniques, recent advances in novel view synthesis
+          are paving the way for a new paradigm relying on volumetric scene representations. In this work, we introduce the first 3D-based multi-frame denoising method that significantly
+          outperforms its 2D-based counterparts with lower computational requirements. Our method extends the multiplane image (MPI) framework for novel view synthesis
+          by introducing a learnable encoder-renderer pair manipulating multiplane representations in feature space. The encoder fuses information across views and operates in a
+          depth-wise manner while the renderer fuses information across depths and operates in a view-wise manner. The two modules are trained end-to-end and learn to separate
+          depths in an unsupervised way, giving rise to Multiplane Feature (MPF) representations. Experiments on the Spaces and Real Forward-Facing datasets as well as on raw burst
+          data validate our approach for view synthesis, multi-frame denoising, and view synthesis under noisy conditions.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video.
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    / Paper video. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <h2 class="title is-3">Method</h2>
+
+    <img id="method" src="./static/images/method.png" alt="method.png"/>
+
+    <p> <strong>MPFER.</strong> Input views are forward-warped into plane sweep volumes (PSVs) which are processed depthwise by the Encoder Unet64. The resulting multiplane feature representation (MPF) can then be back-projected to an arbitrary number of novel views, or to the same views as the inputs—allowing the integration of a skip connection (illustrated here). The Renderer Unet64 processes the projected MPFs on a per-view basis, producing the final synthesised or denoised outputs.</p>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Results</h2>
+
+    <p> We evaluate our model in 4 scenarios: (1) novel view synthesis on the Spaces dataset, (2) multi-frame denoising on the Spaces dataset, (3) multi-frame denoising on the Real Forward-Facing dataset and (4) novel view synthesis under noisy conditions on the Real Forward-Facing dataset (see the paper for details). Qualitative comparisons with baseline methods are shown below. </p>
+
+    <h3 class="title is-4 results-section">Synthesis on Spaces (Large baseline)</h3>
+
+    <div id=ss_scenes class=s1>
+      <div class=label onclick="ss_load(1)">Scene_000</div>
+      <div class=label onclick="ss_load(2)">Scene_024</div>
+      <div class=label onclick="ss_load(3)">Scene_052</div>
+      <div class=label onclick="ss_load(4)">Scene_063</div>
+      <div class=label onclick="ss_load(5)">Scene_073</div>
+    </div>
+
+    <div id=ss_controls class=s6>
+      <div class=label onclick="ss_over(1)">Soft3D*</div>
+      <div class=label onclick="ss_over(2)">DeepView*</div>
+      <div class=label onclick="ss_over(3)">MPINet</div>
+      <div class=label onclick="ss_over(4)">MPINet-dw</div>
+      <div class=label onclick="ss_over(5)">MPINet-dw-it</div>
+      <div class=label onclick="ss_over(6)">MPFER</div>
+      <div class=label onclick="ss_over(7)">Ground Truth</div>
+    </div>
+
+    <div id=ss_examples class=s6>
+      <div onmousedown="ss_down()" onmouseup="ss_up()">
+        <img id="ss_img1"/>
+        <img id="ss_img2"/>
+        <img id="ss_img3"/>
+        <img id="ss_img4"/>
+        <img id="ss_img5"/>
+        <img id="ss_img6"/>
+        <img id="ss_img7"/>
+      </div>
+    </div>
+  </div>
+  <div class="container is-max-desktop">
+    <h3 class="title is-4 results-section">Denoising on Spaces (Gain 20)</h3>
+
+    <div id=sd_scenes class=s1>
+      <div class=label onclick="sd_load(1)">Scene_000</div>
+      <div class=label onclick="sd_load(2)">Scene_024</div>
+      <div class=label onclick="sd_load(3)">Scene_052</div>
+      <div class=label onclick="sd_load(4)">Scene_063</div>
+      <div class=label onclick="sd_load(5)">Scene_073</div>
+    </div>
+
+    <div id=sd_controls class=s6>
+      <div class=label onclick="sd_over(1)">Noisy</div>
+      <div class=label onclick="sd_over(2)">VBM4D</div>
+      <div class=label onclick="sd_over(3)">BPN</div>
+      <div class=label onclick="sd_over(4)">BasicVSR++ </div>
+      <div class=label onclick="sd_over(5)">DeepRep</div>
+      <div class=label onclick="sd_over(6)">MPFER</div>
+      <div class=label onclick="sd_over(7)">Ground Truth</div>
+    </div>
+
+    <div id=sd_examples class=s6>
+      <div onmousedown="sd_down()" onmouseup="sd_up()">
+        <img id="sd_img1"/>
+        <img id="sd_img2"/>
+        <img id="sd_img3"/>
+        <img id="sd_img4"/>
+        <img id="sd_img5"/>
+        <img id="sd_img6"/>
+        <img id="sd_img7"/>
+      </div>
+    </div>
+
+    <h3 class="title is-4 results-section">Denoising on Real Forward-Facing scenes (Gain 20)</h3>
+
+    <div id=rd_scenes class=s1>
+      <div class=label onclick="rd_load(1)">Fern</div>
+      <div class=label onclick="rd_load(2)">Flower</div>
+      <div class=label onclick="rd_load(3)">Fortress</div>
+      <div class=label onclick="rd_load(4)">Horns</div>
+      <div class=label onclick="rd_load(5)">Leaves</div>
+      <div class=label onclick="rd_load(6)">Orchids</div>
+      <div class=label onclick="rd_load(7)">Room</div>
+      <div class=label onclick="rd_load(8)">T-rex</div>
+    </div>
+
+    <div id=rd_controls class=s5>
+      <div class=label onclick="rd_over(1)">Noisy</div>
+      <div class=label onclick="rd_over(2)">IBRNet-N</div>
+      <div class=label onclick="rd_over(3)">NAN</div>
+      <div class=label onclick="rd_over(4)">MPFER-N</div>
+      <div class=label onclick="rd_over(5)">MPFER-C</div>
+      <div class=label onclick="rd_over(6)">Ground Truth</div>
+    </div>
+
+    <div id=rd_examples class=s5>
+      <div onmousedown="rd_down()" onmouseup="rd_up()">
+        <img id="rd_img1"/>
+        <img id="rd_img2"/>
+        <img id="rd_img3"/>
+        <img id="rd_img4"/>
+        <img id="rd_img5"/>
+        <img id="rd_img6"/>
+      </div>
+    </div>
+  </div>
+  <div class="container is-max-desktop">
+    <h3 class="title is-4 results-section">Synthesis under noisy conditions on Real Forward-Facing scenes (Gain 20)</h3>
+
+    <div id=rs_scenes class=s1>
+      <div class=label onclick="rs_load(1)">Fern</div>
+      <div class=label onclick="rs_load(2)">Flower</div>
+      <div class=label onclick="rs_load(3)">Fortress</div>
+      <div class=label onclick="rs_load(4)">Horns</div>
+      <div class=label onclick="rs_load(5)">Leaves</div>
+      <div class=label onclick="rs_load(6)">Orchids</div>
+      <div class=label onclick="rs_load(7)">Room</div>
+      <div class=label onclick="rs_load(8)">T-rex</div>
+    </div>
+
+    <div id=rs_controls class=s4>
+      <div class=label onclick="rs_over(1)">IBRNet</div>
+      <div class=label onclick="rs_over(2)">IBRNet-N</div>
+      <div class=label onclick="rs_over(3)">NAN</div>
+      <div class=label onclick="rs_over(4)">MPFER </div>
+      <div class=label onclick="rs_over(5)">Ground Truth</div>
+    </div>
+
+    <div id=rs_examples class=s4>
+      <div onmousedown="rs_down()" onmouseup="rs_up()">
+        <img id="rs_img1"/>
+        <img id="rs_img2"/>
+        <img id="rs_img3"/>
+        <img id="rs_img4"/>
+        <img id="rs_img5"/>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  var spaces_scenes = ["000","024","052","063","073"]
+  var ss_selected = 6;
+  var ss_img1 = document.getElementById('ss_img1');
+  var ss_img2 = document.getElementById('ss_img2');
+  var ss_img3 = document.getElementById('ss_img3');
+  var ss_img4 = document.getElementById('ss_img4');
+  var ss_img5 = document.getElementById('ss_img5');
+  var ss_img6 = document.getElementById('ss_img6');
+  var ss_img7 = document.getElementById('ss_img7');
+  ss_load(1);
+
+  function ss_show(n) {
+    var examples = document.getElementById('ss_examples');
+    var controls = document.getElementById('ss_controls');
+    examples.className = 's' + n;
+    controls.className = 's' + n;
+  }
+  function ss_down() {
+    ss_show(7);
+  }
+  function ss_up() {
+    ss_show(ss_selected);
+  }
+  function ss_over(n) {
+    ss_selected = n;
+    ss_show(n);
+  }
+  function ss_load(n) {
+    var ss_scenes = document.getElementById('ss_scenes');
+    ss_scenes.className = 's' + n;
+
+    ss_img1.src = "./static/images/spaces_synthesis/Large_" + spaces_scenes[n-1] + "_06_soft3d.png";
+    ss_img2.src = "./static/images/spaces_synthesis/Large_" + spaces_scenes[n-1] + "_06_DeepView.png";
+    ss_img3.src = "./static/images/spaces_synthesis/Large_" + spaces_scenes[n-1] + "_06_MpiNet.png";
+    ss_img4.src = "./static/images/spaces_synthesis/Large_" + spaces_scenes[n-1] + "_06_MpiNet-dw.png";
+    ss_img5.src = "./static/images/spaces_synthesis/Large_" + spaces_scenes[n-1] + "_06_MpiNet-dw-it.png";
+    ss_img6.src = "./static/images/spaces_synthesis/Large_" + spaces_scenes[n-1] + "_06_MPFER.png";
+    ss_img7.src = "./static/images/spaces_synthesis/Large_" + spaces_scenes[n-1] + "_06_gt.png";
+  }
+
+
+  var sd_selected = 6;
+  var sd_img1 = document.getElementById('sd_img1');
+  var sd_img2 = document.getElementById('sd_img2');
+  var sd_img3 = document.getElementById('sd_img3');
+  var sd_img4 = document.getElementById('sd_img4');
+  var sd_img5 = document.getElementById('sd_img5');
+  var sd_img6 = document.getElementById('sd_img6');
+  var sd_img7 = document.getElementById('sd_img7');
+  sd_load(1);
+
+  function sd_show(n) {
+    var examples = document.getElementById('sd_examples');
+    var controls = document.getElementById('sd_controls');
+    examples.className = 's' + n;
+    controls.className = 's' + n;
+  }
+  function sd_down() {
+    sd_show(7);
+  }
+  function sd_up() {
+    sd_show(sd_selected);
+  }
+  function sd_over(n) {
+    sd_selected = n;
+    sd_show(n);
+  }
+  function sd_load(n) {
+    var sd_scenes = document.getElementById('sd_scenes');
+    sd_scenes.className = 's' + n;
+
+    sd_img1.src = "./static/images/spaces_denoising/scene_" + spaces_scenes[n-1] + "_gain20_noisy.png";
+    sd_img2.src = "./static/images/spaces_denoising/scene_" + spaces_scenes[n-1] + "_gain20_vbm4d.png";
+    sd_img3.src = "./static/images/spaces_denoising/scene_" + spaces_scenes[n-1] + "_gain20_bpn.png";
+    sd_img4.src = "./static/images/spaces_denoising/scene_" + spaces_scenes[n-1] + "_gain20_basicvsrpp.png";
+    sd_img5.src = "./static/images/spaces_denoising/scene_" + spaces_scenes[n-1] + "_gain20_deeprep.png";
+    sd_img6.src = "./static/images/spaces_denoising/scene_" + spaces_scenes[n-1] + "_gain20_mpfer.png";
+    sd_img7.src = "./static/images/spaces_denoising/scene_" + spaces_scenes[n-1] + "_gt.png";
+  }
+
+  var llff_scenes = ["fern","flower","fortress","horns","leaves","orchids","room","trex"]
+  var rd_selected = 5;
+  var rd_img1 = document.getElementById('rd_img1');
+  var rd_img2 = document.getElementById('rd_img2');
+  var rd_img3 = document.getElementById('rd_img3');
+  var rd_img4 = document.getElementById('rd_img4');
+  var rd_img5 = document.getElementById('rd_img5');
+  var rd_img6 = document.getElementById('rd_img6');
+  rd_load(1);
+
+  function rd_show(n) {
+    var examples = document.getElementById('rd_examples');
+    var controls = document.getElementById('rd_controls');
+    examples.className = 's' + n;
+    controls.className = 's' + n;
+  }
+  function rd_down() {
+    rd_show(6);
+  }
+  function rd_up() {
+    rd_show(rd_selected);
+  }
+  function rd_over(n) {
+    rd_selected = n;
+    rd_show(n);
+  }
+  function rd_load(n) {
+    var rd_scenes = document.getElementById('rd_scenes');
+    rd_scenes.className = 's' + n;
+
+    rd_img1.src = "./static/images/llff_denoising/" + llff_scenes[n-1] + "_gain20_noisy.png";
+    rd_img2.src = "./static/images/llff_denoising/" + llff_scenes[n-1] + "_gain20_ibrnetn.png";
+    rd_img3.src = "./static/images/llff_denoising/" + llff_scenes[n-1] + "_gain20_nan.png";
+    rd_img4.src = "./static/images/llff_denoising/" + llff_scenes[n-1] + "_gain20_mpfer-n.png";
+    rd_img5.src = "./static/images/llff_denoising/" + llff_scenes[n-1] + "_gain20_mpfer-c.png";
+    rd_img6.src = "./static/images/llff_denoising/" + llff_scenes[n-1] + "_gt.png";
+  }
+
+
+  var rs_selected = 4;
+  var rs_img1 = document.getElementById('rs_img1');
+  var rs_img2 = document.getElementById('rs_img2');
+  var rs_img3 = document.getElementById('rs_img3');
+  var rs_img4 = document.getElementById('rs_img4');
+  var rs_img5 = document.getElementById('rs_img5');
+  rs_load(1);
+
+  function rs_show(n) {
+    var examples = document.getElementById('rs_examples');
+    var controls = document.getElementById('rs_controls');
+    examples.className = 's' + n;
+    controls.className = 's' + n;
+  }
+  function rs_down() {
+    rs_show(5);
+  }
+  function rs_up() {
+    rs_show(rs_selected);
+  }
+  function rs_over(n) {
+    rs_selected = n;
+    rs_show(n);
+  }
+  function rs_load(n) {
+    var rs_scenes = document.getElementById('rs_scenes');
+    rs_scenes.className = 's' + n;
+
+    rs_img1.src = "./static/images/llff_synthesis/" + llff_scenes[n-1] + "_gain20_ibrnet.png";
+    rs_img2.src = "./static/images/llff_synthesis/" + llff_scenes[n-1] + "_gain20_ibrnetn.png";
+    rs_img3.src = "./static/images/llff_synthesis/" + llff_scenes[n-1] + "_gain20_nan.png";
+    rs_img4.src = "./static/images/llff_synthesis/" + llff_scenes[n-1] + "_gain20_mpfer.png";
+    rs_img5.src = "./static/images/llff_synthesis/" + llff_scenes[n-1] + "_gt.png";
+  }
+</script>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{tanay2023efficient,
+  author    = {Tanay, Thomas and Leonardis, Ales and Maggioni, Matteo},
+  title     = {Efficient View Synthesis and 3D-based Multi-Frame Denoising with Multiplane Feature Representations},
+  journal   = {CVPR},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container has-text-centered">
+    <p>The template for this website was borrowed from <a class="link" href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and <a class="link" href="https://augmentedperception.github.io/deepview/results_spaces/index.html">DeepView</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
