@@ -104,9 +104,11 @@
   <div class="hero-body has-text-centered">
     <div class="columns is-vcentered">
       <div class="column">
-        <div id=teaser-controls class="s1">
-          <div class=label onclick="load1()">4 noisy inputs</div>
-          <div class=label onclick="load2()">12 clean inputs</div>
+        <div class=img-label>
+          <div id=teaser-controls class="s1">
+            <div class=label onclick="load1()">4 noisy inputs</div>
+            <div class=label onclick="load2()">12 clean inputs</div>
+          </div>
         </div>
         <video id=input-views autoplay muted loop playsinline width="100%">
           <source src="./static/videos/mpfer32_4_scene73_in.mp4" type="video/mp4" alt="scene73_in.mp4" fetchpriority="high">
@@ -127,7 +129,9 @@
         <img src="./static/images/teaser.png" width="100%" alt="MPFER"/>
       </div>
       <div class="column">
-        <p> Synthesized outputs </p>
+        <div class="img-label has-text-centered">
+          <p class=pt-2> Synthesized outputs </p>
+        </div>
         <video id=syntheized-outputs autoplay muted loop playsinline width="100%">
           <source src="./static/videos/mpfer32_4_scene73_out.mp4" type="video/mp4" alt="scene73_out.mp4" fetchpriority="high">
         </video>
