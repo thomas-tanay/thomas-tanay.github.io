@@ -156,6 +156,12 @@ body {
   margin-top:  30px;
 }
 
+#teaser-controls.s1 .label:nth-child(1),
+#teaser-controls.s2 .label:nth-child(2) {
+  background: #48a;
+  color: #fff;
+}
+
 #ss_scenes.s1 .label:nth-child(1),
 #ss_scenes.s2 .label:nth-child(2),
 #ss_scenes.s3 .label:nth-child(3),

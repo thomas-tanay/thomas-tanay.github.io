@@ -101,16 +101,19 @@
 </section>
 
 <section class="hero is-light">
-  <div class="hero-body">
+  <div class="hero-body has-text-centered">
     <div class="columns is-vcentered">
-      <div class="column has-text-centered">
-        <p> 4 noisy inputs </p>
-        <video poster="" autoplay muted loop playsinline width="100%">
-          <source src="./static/videos/scene73_in.mp4" type="video/mp4" alt="scene73_in.mp4">
+      <div class="column">
+        <div id=teaser-controls class="s1">
+          <div class=label onclick="load1()">4 noisy inputs</div>
+          <div class=label onclick="load2()">12 clean inputs</div>
+        </div>
+        <video id=input-views autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/mpfer32_4_scene73_in.mp4" type="video/mp4" alt="scene73_in.mp4">
         </video>
       </div>
       <div class="column is-two-fifths">
-        <div class="columns is-mobile has-text-centered">
+        <div class="columns is-mobile">
           <div class="column">
             <p> Depth-wise encoding </p>
           </div>
@@ -123,19 +126,41 @@
         </div>
         <img src="./static/images/teaser.png" width="100%" alt="MPFER"/>
       </div>
-      <div class="column has-text-centered">
+      <div class="column">
         <p> Synthesized outputs </p>
-        <video poster="" autoplay muted loop playsinline width="100%">
-          <source src="./static/videos/scene73_out.mp4" type="video/mp4" alt="scene73_out.mp4">
+        <video id=syntheized-outputs autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/mpfer32_4_scene73_out.mp4" type="video/mp4" alt="scene73_out.mp4">
         </video>
       </div>
     </div>
-    <h2 class="subtitle is-size-6 has-text-centered">
+    <h2 class="subtitle is-size-6">
       Our Multiplane Features Encoder-Renderer (MPFER) reimagines the MPI pipeline by moving the multiplane representation to feature space.<br>
-      Encoding a scene from 4 input views at 500x800 resolution takes about 1.2s on a V100 GPU. Rendering a novel view then takes about 0.01s.
+      Encoding a scene from <span id=span1>4 input views at 500x800 resolution takes about 1.2s</span> on a V100 GPU. Rendering a novel view then takes about 0.01s.
     </h2>
   </div>
 </section>
+
+<script>
+  var teaser_controls = document.getElementById('teaser-controls');
+  var vid1 = document.getElementById('input-views');
+  var vid2 = document.getElementById('syntheized-outputs');
+  var span1 = document.getElementById('span1');
+
+  function load1() {
+    vid1.src = "./static/videos/mpfer32_4_scene73_in.mp4";
+    vid2.src = "./static/videos/mpfer32_4_scene73_out.mp4";
+    teaser_controls.className = 's1';
+    //txt = document.createTextNode("4 input views at 500x800 resolution takes about 1.2s");
+    span1.innerText = "4 input views at 500x800 resolution takes about 1.2s";
+  }
+  function load2() {
+    vid1.src = "./static/videos/mpfer32_12_scene73_in.mp4";
+    vid2.src = "./static/videos/mpfer32_12_scene73_out.mp4";
+    teaser_controls.className = 's2';
+    //txt = document.createTextNode("12 input views at 500x800 resolution takes about 1.4s");
+    span1.innerText = "12 input views at 500x800 resolution takes about 1.4s";
+  }
+</script>
 
 <section class="section">
   <div class="container is-max-desktop">
