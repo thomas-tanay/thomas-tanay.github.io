@@ -363,7 +363,6 @@
   var ss_img5 = document.getElementById('ss_img5');
   var ss_img6 = document.getElementById('ss_img6');
   var ss_img7 = document.getElementById('ss_img7');
-  ss_load(1);
 
   function ss_show(n) {
     var examples = document.getElementById('ss_examples');
@@ -403,7 +402,6 @@
   var sd_img5 = document.getElementById('sd_img5');
   var sd_img6 = document.getElementById('sd_img6');
   var sd_img7 = document.getElementById('sd_img7');
-  sd_load(1);
 
   function sd_show(n) {
     var examples = document.getElementById('sd_examples');
@@ -442,7 +440,6 @@
   var rd_img4 = document.getElementById('rd_img4');
   var rd_img5 = document.getElementById('rd_img5');
   var rd_img6 = document.getElementById('rd_img6');
-  rd_load(1);
 
   function rd_show(n) {
     var examples = document.getElementById('rd_examples');
@@ -479,7 +476,6 @@
   var rs_img3 = document.getElementById('rs_img3');
   var rs_img4 = document.getElementById('rs_img4');
   var rs_img5 = document.getElementById('rs_img5');
-  rs_load(1);
 
   function rs_show(n) {
     var examples = document.getElementById('rs_examples');
@@ -527,6 +523,13 @@
     <p>The template for this website was borrowed from <a class="link" href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and <a class="link" href="https://augmentedperception.github.io/deepview/results_spaces/index.html">DeepView</a>.</p>
   </div>
 </footer>
+
+<script>
+  $(document).ready(ss_load(1));
+  $(document).ready(sd_load(1));
+  $(document).ready(rd_load(1));
+  $(document).ready(rs_load(1));
+</script>
 
 </body>
 </html>

@@ -12,7 +12,6 @@
     <title>Thomas  Tanay | publications</title>
     <meta name="author" content="Thomas  Tanay" />
     <meta name="description" content="" />
-    <meta name="keywords" content="" />
 
 
     <!-- Bootstrap & MDB -->
@@ -90,6 +89,77 @@
           <article>
             <!-- _pages/publications.md -->
 <div class="publications">
+  <h2 class="year">2023</h2>
+  <ol class="bibliography">
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">CVPR</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="tanay2023efficient" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">Efficient View Synthesis and 3D-based Multi-Frame Denoising with Multiplane Feature Representations</div>
+          <!-- Author -->
+          <div class="author">
+                  <em>Tanay, T.</em>, Leonardis, A., and Maggioni, M.
+          </div>
+
+          <!-- Journal/Book title and date -->
+          <div class="periodical">
+            <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition</em> 2023
+          </div>
+        
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+            <a href="http://arxiv.org/abs/2303.18139" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">arXiv</a>
+            <a href="https://thomas-tanay.github.io/posts/2023-mpfer" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">Website</a>
+          </div>
+
+          <!-- Hidden abstract block -->
+          <div class="abstract hidden">
+            <p>While current multi-frame restoration methods combine information from multiple input images using 2D alignment techniques, recent advances in novel view synthesis are paving the way for a new paradigm relying on volumetric scene representations. In this work, we introduce the first 3D-based multi-frame denoising method that significantly outperforms its 2D-based counterparts with lower computational requirements. Our method extends the multiplane image (MPI) framework for novel view synthesis by introducing a learnable encoder-renderer pair manipulating multiplane representations in feature space. The encoder fuses information across views and operates in a depth-wise manner while the renderer fuses information across depths and operates in a view-wise manner. The two modules are trained end-to-end and learn to separate depths in an unsupervised way, giving rise to Multiplane Feature (MPF) representations. Experiments on the Spaces and Real Forward-Facing datasets as well as on raw burst data validate our approach for view synthesis, multi-frame denoising, and view synthesis under noisy conditions.</p>
+          </div>
+        </div>
+      </div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">CVPR</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="maggioni2023tunable" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title"></div>
+          <!-- Author -->
+          <div class="author">Maggioni, M., 
+                  <em>Tanay, T.</em>, Babiloni, F., McDonagh, S., and Leonardis, A.
+          </div>
+
+          <!-- Journal/Book title and date -->
+          <div class="periodical">
+            <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition</em> 2023
+          </div>
+        
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+            <a href="http://arxiv.org/abs/2304.00898" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">arXiv</a>
+          </div>
+
+          <!-- Hidden abstract block -->
+          <div class="abstract hidden">
+            <p>Behavior of neural networks is irremediably determined by the specific loss and data used during training. However it is often desirable to tune the model at inference time based on external factors such as preferences of the user or dynamic characteristics of the data. This is especially important to balance the perception-distortion trade-off of ill-posed image-to-image translation tasks. In this work, we propose to optimize a parametric tunable convolutional layer, which includes a number of different kernels, using a parametric multi-loss, which includes an equal number of objectives. Our key insight is to use a shared set of parameters to dynamically interpolate both the objectives and the kernels. During training, these parameters are sampled at random to explicitly optimize all possible combinations of objectives and consequently disentangle their effect into the corresponding kernels. During inference, these parameters become interactive inputs of the model hence enabling reliable and consistent control over the model behavior. Extensive experimental results demonstrate that our tunable convolutions effectively work as a drop-in replacement for traditional convolutions in existing neural networks at virtually no extra computational cost, outperforming state-of-the-art control strategies in a wide range of applications; including image denoising, deblurring, super-resolution, and style transfer.</p>
+          </div>
+        </div>
+      </div>
+</li>
+</ol>
+
   <h2 class="year">2022</h2>
   <ol class="bibliography">
 <li>
@@ -121,7 +191,7 @@
 
           <!-- Hidden abstract block -->
           <div class="abstract hidden">
-            <p>Recurrent models are a popular choice for video enhancement tasks such as video denoising or super-resolution. In this work, we focus on their stability as dynamical systems and show that they tend to fail catastrophically at inference time on long video sequences. To address this issue, we (1) introduce a diagnostic tool which produces input sequences optimized to trigger instabilities and that can be interpreted as visualizations of temporal receptive fields, and (2) propose two approaches to enforce the stability of a model during training: constraining the spectral norm or constraining the stable rank of its convolutional layers. We then introduce Stable Rank Normalization for Convolutional layers (SRN-C), a new algorithm that enforces these constraints. Our experimental results suggest that SRN-C successfully enforces stablility in recurrent video processing models without a significant performance loss.</p>
+            <p>Recurrent models are a popular choice for video enhancement tasks such as video denoising or super-resolution. In this work, we focus on their stability as dynamical systems and show that they tend to fail catastrophically at inference time on long video sequences. To address this issue, we (1) introduce a diagnostic tool which produces input sequences optimized to trigger instabilities and that can be interpreted as visualizations of temporal receptive fields, and (2) propose two approaches to enforce the stability of a model during training: constraining the spectral norm or constraining the stable rank of its convolutional layers. We then introduce Stable Rank Normalization for Convolutional layers (SRN-C), a new algorithm that enforces these constraints. Our experimental results suggest that SRN-C successfully enforces stability in recurrent video processing models without a significant performance loss.</p>
           </div>
         </div>
       </div>
@@ -150,6 +220,7 @@
           <div class="links">
             <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
             <a href="http://arxiv.org/abs/2201.02625" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">arXiv</a>
+            <a href="https://ieeexplore.ieee.org/document/9881970" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">TIP</a>
           </div>
 
           <!-- Hidden abstract block -->
