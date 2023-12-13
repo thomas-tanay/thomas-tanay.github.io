@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Global Latent Neural Rendering</title>
+  <meta name="author" content="Thomas  Tanay" />
+  <meta name="description" content="arxiv 2023" />
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+    var u="//matomo.martinruenz.de/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.12.1/math.min.js"> </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] },
+      TeX: { extensions: ["color.js"] }
+    });
+  </script>
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index2.css">
+  <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💡</text></svg>">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+
+      <h1 class="title is-3 publication-title">Global Latent Neural Rendering</h1>
+
+      <h2 class="title is-4 publication-subtitle">arxiv 2023</h2>
+
+      <div class="is-size-5 publication-authors">
+        <span class="author-block">
+          <a href="https://thomas-tanay.github.io">Thomas Tanay</a></span>
+        <span class="author-block">
+          <a href="https://scholar.google.com/citations?user=Zo97gUQAAAAJ&hl=en">Matteo Maggioni</a></span>
+      </div>
+
+      <div class="is-size-5 publication-authors">
+        <span class="author-block">Huawei Noah’s Ark Lab</span>
+      </div>
+
+      <div class="container has-text-centered">
+        <div class="publication-links">
+          <!-- PDF Link. -->
+          <span class="link-block">
+            <a href="https://arxiv.org/abs/2303.18139"
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+              </span>
+              <span>arXiv</span>
+            </a>
+          </span>
+          <!-- Video Link. 
+          <span class="link-block">
+            <a href="https://youtu.be/TmLlz7yVq9w"
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fab fa-youtube"></i>
+              </span>
+              <span>Video</span>
+            </a>
+          </span>-->
+          <!-- Code Link. 
+          <span class="link-block">
+            <a class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fab fa-github"></i>
+              </span>
+              <span>Code (coming soon)</span>
+              </a>
+          </span>-->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light">
+  <div class="hero-body has-text-centered">
+    <div class="columns is-centered">
+    <div class="column is-one-fifth">
+      <p> <strong> Sparse DTU </strong> <br>
+      3 views </p>
+      <video class=teaser-video autoplay muted loop playsinline width="100%">
+        <source src="./static/videos/scan114_cropped.mp4" type="video/mp4" alt="scan114_cropped.mp4" fetchpriority="high">
+      </video>
+    </div>
+    <div class="column is-one-fifth">
+      <p> <strong> Sparse RFF </strong> <br>
+      3 views </p>
+      <video class=teaser-video autoplay muted loop playsinline width="100%">
+        <source src="./static/videos/orchids_cropped.mp4" type="video/mp4" alt="orchids_cropped.mp4" fetchpriority="high">
+      </video>
+    </div>
+    <div class="column is-one-fifth">
+      <p> <strong> Generalizable DTU </strong> <br>
+      unknown scene </p>
+      <video class=teaser-video autoplay muted loop playsinline width="100%">
+        <source src="./static/videos/scan21_cropped.mp4" type="video/mp4" alt="scan21_cropped.mp4" fetchpriority="high">
+      </video>
+    </div>
+    <div class="column is-one-fifth">
+      <p> <strong> Generalizable RFF </strong> <br>
+      known scene </p>
+      <video class=teaser-video autoplay muted loop playsinline width="100%">
+        <source src="./static/videos/trex_cropped.mp4" type="video/mp4" alt="trex_cropped.mp4" fetchpriority="high">
+      </video>
+    </div>
+    <div class="column is-one-fifth">
+      <p> <strong> ILSH </strong> <br>
+      ICCV 23 challenge </p>
+      <video class=teaser-video autoplay muted loop playsinline width="100%">
+        <source src="./static/videos/002_00_cropped.mp4" type="video/mp4" alt="002_00_cropped.mp4" fetchpriority="high">
+      </video>
+    </div>
+  </div>
+
+    <h2 class="subtitle is-size-6">
+      We present a method that can render novel views (1) of unknown scenes (2) from sparse inputs (3) with high fidelity (4) in less than a second per frame (at 375x512 resolution).
+    </h2>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          A recent trend among generalizable novel view synthesis methods is to learn a rendering operator acting over single camera rays.
+          This approach is promising because it removes the need for explicit volumetric rendering, but it effectively treats target images as collections of independent pixels.
+          Here, we propose to learn a global rendering operator acting over all camera rays jointly.
+          We show that the right representation to enable such rendering is the 5-dimensional plane sweep volume, consisting of the projection of the input images on a set of planes facing the target camera. 
+          Based on this understanding, we introduce our Convolutional Global Latent Renderer (ConvGLR), an efficient convolutional architecture that performs the rendering operation globally in a low-resolution latent space.
+          Experiments on various datasets under sparse and generalizable setups show that our approach consistently outperforms existing methods by significant margins.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video.
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    / Paper video. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <h2 class="title is-3">Method</h2>
+
+    <figure class="image">
+      <img id="method1" src="./static/images/PSV.svg" alt="PSV.svg"/>
+    </figure>
+
+    <p> <strong>The epipolar geometry of the plane sweep volume.</strong> 1. The PSV is constructed by projecting each input view on a set of planes distributed parallel to the target image plane. 2. The camera ray passing through the pixel location (h, w) in the target image plane (gray line in 1.) projects as a set of epipolar lines in the input views (white lines in 3.). 4. Moving along the depth dimension of the PSV at pixel location (h, w) is equivalent to moving along the corresponding epipolar lines for each input view. The actual depth of the object at pixel location (h, w) is found when the local image features match across views (yellow dot).</p>
+
+    <figure class="image">
+      <img id="method2" src="./static/images/overview.PNG" alt="overview.PNG"/>
+    </figure>
+
+    <p> <strong>Overview of ConvGLR.</strong> The 4D grouped PSV $\boldsymbol{X}$ is turned into a latent volumetric representation $\boldsymbol{Y}$, then rendered into a latent novel view $\boldsymbol{Z}$ and finally upsampled into the novel view $\boldsymbol{\tilde{I}}_{\!\ast}$. All the colored blocks are implemented with 2D convolutions and resblocks. Blocks with matching colors share weights.</p>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Results</h2>
+
+    <section class="hero is-light">
+      <div class="hero-body">
+        <h3 class="title is-4">ILSH</h2>
+          <video id=input-views autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/ILSH2x4.mp4" type="video/mp4" alt="ILSH2x4.mp4" fetchpriority="high">
+          </video>
+
+        <h3 class="title is-4 section-title">Generalizable RFF (known scenes)</h3>
+
+          <video id=input-views autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/RFF2x2.mp4" type="video/mp4" alt="RFF2x2.mp4" fetchpriority="high">
+          </video>
+
+        <h3 class="title is-4 section-title">Generalizable DTU (unknown scenes)</h3>
+
+          <video id=input-views autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/DTU2x2.mp4" type="video/mp4" alt="DTU2x2.mp4" fetchpriority="high">
+          </video>
+
+      </div>
+    </section>
+  </div>
+</section>
+
+
+<!--
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{tanay2023efficient,
+  author    = {Tanay, Thomas and Maggioni, Matteo},
+  title     = {Global Latent Neural Rendering},
+  journal   = {arxiv},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+-->
+
+
+</body>
+</html>
