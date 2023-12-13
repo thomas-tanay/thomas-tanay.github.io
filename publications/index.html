@@ -107,6 +107,47 @@
 <li>
 <!-- _layouts/bib.html -->
       <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">ICCV</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="tanay2023efficient" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">Adaptive Spiral Layers for Efficient 3D Representation Learning on Meshes</div>
+          <!-- Author -->
+          <div class="author">
+                  Babiloni, F., Maggioni, M., <em>Tanay, T.</em>, Deng, J., Leonardis, A., and Zafeiriou, S.
+          </div>
+
+          <!-- Journal/Book title and date -->
+          <div class="periodical">
+            <em>IEEE/CVF International Conference on Computer Vision</em> 2023
+          </div>
+        
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+            <a href="https://fb2221.github.io/" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">Website</a>
+          </div>
+
+          <!-- Hidden abstract block -->
+          <div class="abstract hidden">
+            <p>The success of deep learning models on structured data has generated significant interest in extending their application to non-Euclidean domains.
+
+In this work, we introduce a novel intrinsic operator suitable for representation learning on 3D meshes. Our operator is specifically tailored to adapt its behavior to the irregular structure of the underlying graph and effectively utilizes its long-range dependencies, while at the same time ensuring computational efficiency and ease of optimization.
+
+In particular, inspired by the framework of Spiral Convolution, which extracts and transforms the vertices in the 3D mesh following a local spiral ordering, we propose a general operator that dynamically adjusts the length of the spiral trajectory and the parameters of the transformation for each processed vertex and mesh.
+
+Then, we use polyadic decomposition to factorize its dense weight tensor into a sequence of lighter linear layers that separately process features and vertices information, hence significantly reducing the computational complexity without introducing any stringent inductive biases. Notably, we leverage dynamic gating to achieve spatial adaptivity and induce global reasoning with constant time complexity benefitting from an efficient dynamic pooling mechanism based on Summed-Area-tables.
+
+Used as a drop-in replacement on existing architectures for shape correspondence our operator significantly improves the performance-efficiency trade-off, and in 3D shape generation with morphable models achieves state-of-the-art performance with a three-fold reduction in the number of parameters required.</p>
+          </div>
+        </div>
+      </div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
         <div class="col-sm-2 abbr"><abbr class="badge">CVPR</abbr></div>
 
         <!-- Entry bib key -->
