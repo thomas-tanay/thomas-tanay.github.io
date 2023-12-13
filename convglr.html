@@ -41,19 +41,19 @@
     });
   </script>
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./posts/static/css/bulma.min.css">
+  <link rel="stylesheet" href="./posts/static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./posts/static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./posts/static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index2.css">
+  <link rel="stylesheet" href="./posts/static/css/index2.css">
   <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💡</text></svg>">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+  <script defer src="./posts/static/js/fontawesome.all.min.js"></script>
+  <script src="./posts/static/js/bulma-carousel.min.js"></script>
+  <script src="./posts/static/js/bulma-slider.min.js"></script>
+  <script src="./posts/static/js/index.js"></script>
 </head>
 <body>
 
@@ -122,35 +122,35 @@
       <p> <strong> Sparse DTU </strong> <br>
       3 views </p>
       <video class=teaser-video autoplay muted loop playsinline width="100%">
-        <source src="./static/videos/scan114_cropped.mp4" type="video/mp4" alt="scan114_cropped.mp4" fetchpriority="high">
+        <source src="./posts/static/videos/scan114_cropped.mp4" type="video/mp4" alt="scan114_cropped.mp4" fetchpriority="high">
       </video>
     </div>
     <div class="column is-one-fifth">
       <p> <strong> Sparse RFF </strong> <br>
       3 views </p>
       <video class=teaser-video autoplay muted loop playsinline width="100%">
-        <source src="./static/videos/orchids_cropped.mp4" type="video/mp4" alt="orchids_cropped.mp4" fetchpriority="high">
+        <source src="./posts/static/videos/orchids_cropped.mp4" type="video/mp4" alt="orchids_cropped.mp4" fetchpriority="high">
       </video>
     </div>
     <div class="column is-one-fifth">
       <p> <strong> Generalizable DTU </strong> <br>
       unknown scene </p>
       <video class=teaser-video autoplay muted loop playsinline width="100%">
-        <source src="./static/videos/scan21_cropped.mp4" type="video/mp4" alt="scan21_cropped.mp4" fetchpriority="high">
+        <source src="./posts/static/videos/scan21_cropped.mp4" type="video/mp4" alt="scan21_cropped.mp4" fetchpriority="high">
       </video>
     </div>
     <div class="column is-one-fifth">
       <p> <strong> Generalizable RFF </strong> <br>
       known scene </p>
       <video class=teaser-video autoplay muted loop playsinline width="100%">
-        <source src="./static/videos/trex_cropped.mp4" type="video/mp4" alt="trex_cropped.mp4" fetchpriority="high">
+        <source src="./posts/static/videos/trex_cropped.mp4" type="video/mp4" alt="trex_cropped.mp4" fetchpriority="high">
       </video>
     </div>
     <div class="column is-one-fifth">
       <p> <strong> ILSH </strong> <br>
       ICCV 23 challenge </p>
       <video class=teaser-video autoplay muted loop playsinline width="100%">
-        <source src="./static/videos/002_00_cropped.mp4" type="video/mp4" alt="002_00_cropped.mp4" fetchpriority="high">
+        <source src="./posts/static/videos/002_00_cropped.mp4" type="video/mp4" alt="002_00_cropped.mp4" fetchpriority="high">
       </video>
     </div>
   </div>
@@ -201,13 +201,13 @@
     <h2 class="title is-3">Method</h2>
 
     <figure class="image">
-      <img id="method1" src="./static/images/PSV.svg" alt="PSV.svg"/>
+      <img id="method1" src="./posts/static/images/PSV.svg" alt="PSV.svg"/>
     </figure>
 
     <p> <strong>The epipolar geometry of the plane sweep volume.</strong> 1. The PSV is constructed by projecting each input view on a set of planes distributed parallel to the target image plane. 2. The camera ray passing through the pixel location (h, w) in the target image plane (gray line in 1.) projects as a set of epipolar lines in the input views (white lines in 3.). 4. Moving along the depth dimension of the PSV at pixel location (h, w) is equivalent to moving along the corresponding epipolar lines for each input view. The actual depth of the object at pixel location (h, w) is found when the local image features match across views (yellow dot).</p>
 
     <figure class="image">
-      <img id="method2" src="./static/images/overview.PNG" alt="overview.PNG"/>
+      <img id="method2" src="./posts/static/images/overview.PNG" alt="overview.PNG"/>
     </figure>
 
     <p> <strong>Overview of ConvGLR.</strong> The 4D grouped PSV $\boldsymbol{X}$ is turned into a latent volumetric representation $\boldsymbol{Y}$, then rendered into a latent novel view $\boldsymbol{Z}$ and finally upsampled into the novel view $\boldsymbol{\tilde{I}}_{\!\ast}$. All the colored blocks are implemented with 2D convolutions and resblocks. Blocks with matching colors share weights.</p>
@@ -224,19 +224,19 @@
       <div class="hero-body">
         <h3 class="title is-4">ILSH</h2>
           <video id=input-views autoplay muted loop playsinline width="100%">
-            <source src="./static/videos/ILSH2x4.mp4" type="video/mp4" alt="ILSH2x4.mp4" fetchpriority="high">
+            <source src="./posts/static/videos/ILSH2x4.mp4" type="video/mp4" alt="ILSH2x4.mp4" fetchpriority="high">
           </video>
 
         <h3 class="title is-4 section-title">Generalizable RFF (known scenes)</h3>
 
           <video id=input-views autoplay muted loop playsinline width="100%">
-            <source src="./static/videos/RFF2x2.mp4" type="video/mp4" alt="RFF2x2.mp4" fetchpriority="high">
+            <source src="./posts/static/videos/RFF2x2.mp4" type="video/mp4" alt="RFF2x2.mp4" fetchpriority="high">
           </video>
 
         <h3 class="title is-4 section-title">Generalizable DTU (unknown scenes)</h3>
 
           <video id=input-views autoplay muted loop playsinline width="100%">
-            <source src="./static/videos/DTU2x2.mp4" type="video/mp4" alt="DTU2x2.mp4" fetchpriority="high">
+            <source src="./posts/static/videos/DTU2x2.mp4" type="video/mp4" alt="DTU2x2.mp4" fetchpriority="high">
           </video>
 
       </div>
