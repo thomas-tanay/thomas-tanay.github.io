@@ -64,8 +64,7 @@
 
       <h1 class="title is-3 publication-title">Global Latent Neural Rendering</h1>
 
-      <!--
-      <h2 class="title is-4 publication-subtitle">arxiv 2023</h2>
+      <h2 class="title is-4 publication-subtitle">CVPR 2024</h2>
 
       <div class="is-size-5 publication-authors">
         <span class="author-block">
@@ -81,8 +80,7 @@
       <div class="container has-text-centered">
         <div class="publication-links">
 
-      -->
-          <!-- PDF Link. 
+          <!-- PDF Link.--> 
           <span class="link-block">
             <a href="https://arxiv.org/abs/2312.08338"
                class="external-link button is-normal is-rounded is-dark">
@@ -91,7 +89,7 @@
               </span>
               <span>arXiv</span>
             </a>
-          </span>-->
+          </span>
           <!-- Video Link. 
           <span class="link-block">
             <a href="https://youtu.be/TmLlz7yVq9w"
@@ -173,10 +171,20 @@
         <div class="content has-text-justified">
           <p>
           A recent trend among generalizable novel view synthesis methods is to learn a rendering operator acting over single camera rays.
+
+          <figure class="image">
+            <img id="abstract1" src="./posts/static/images/abstract1.svg" alt="abstract1.svg"/>
+          </figure>
+
           This approach is promising because it removes the need for explicit volumetric rendering, but it effectively treats target images as collections of independent pixels.
           Here, we propose to learn a global rendering operator acting over all camera rays jointly.
-          We show that the right representation to enable such rendering is the 5-dimensional plane sweep volume, consisting of the projection of the input images on a set of planes facing the target camera. 
+          We show that the right representation to enable such rendering is the 5-dimensional plane sweep volume, consisting of the projection of the input images on a set of planes facing the target camera.
           Based on this understanding, we introduce our Convolutional Global Latent Renderer (ConvGLR), an efficient convolutional architecture that performs the rendering operation globally in a low-resolution latent space.
+
+          <figure class="image">
+            <img id="abstract2" src="./posts/static/images/abstract2.svg" alt="abstract2.svg"/>
+          </figure>
+
           Experiments on various datasets under sparse and generalizable setups show that our approach consistently outperforms existing methods by significant margins.
           </p>
         </div>
@@ -204,16 +212,10 @@
     <h2 class="title is-3">Method</h2>
 
     <figure class="image">
-      <img id="method1" src="./posts/static/images/PSV.svg" alt="PSV.svg"/>
+      <img id="method2" src="./posts/static/images/architecture.png" alt="architecture.png"/>
     </figure>
 
-    <p> <strong>The epipolar geometry of the plane sweep volume.</strong> 1. The PSV is constructed by projecting each input view on a set of planes distributed parallel to the target image plane. 2. The camera ray passing through the pixel location (h, w) in the target image plane (gray line in 1.) projects as a set of epipolar lines in the input views (white lines in 3.). 4. Moving along the depth dimension of the PSV at pixel location (h, w) is equivalent to moving along the corresponding epipolar lines for each input view. The actual depth of the object at pixel location (h, w) is found when the local image features match across views (yellow dot).</p>
-
-    <figure class="image">
-      <img id="method2" src="./posts/static/images/overview.PNG" alt="overview.PNG"/>
-    </figure>
-
-    <p> <strong>Overview of ConvGLR.</strong> The 4D grouped PSV $\boldsymbol{X}$ is turned into a latent volumetric representation $\boldsymbol{Y}$, then rendered into a latent novel view $\boldsymbol{Z}$ and finally upsampled into the novel view $\boldsymbol{\tilde{I}}_{\!\ast}$. All the colored blocks are implemented with 2D convolutions and resblocks. Blocks with matching colors share weights.</p>
+    <p> <strong>Overview of ConvGLR.</strong> The 4D grouped PSV $\boldsymbol{X}$ is turned into a latent volumetric representation $\boldsymbol{Y}$, then rendered into a latent novel view $\boldsymbol{Z}$ and finally upsampled into the novel view $\boldsymbol{\tilde{I}}_{\!\ast}$. The dark gray blocks are implemented with 2D convolutions and resblocks.</p>
 
   </div>
 </section>
