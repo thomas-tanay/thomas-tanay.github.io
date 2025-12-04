@@ -9,21 +9,6 @@
 
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
 
-  <script type="text/javascript">
-    var _paq = _paq || [];
-    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-    var u="//matomo.martinruenz.de/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '2']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-    })();
-  </script>
-
-  <link rel="stylesheet" href="./posts/static/css/index3.css">
   <link rel="stylesheet" href="./posts/static/css/bulma.min.css">
   <link rel="stylesheet" href="./posts/static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -52,100 +37,140 @@
     </div>
 
     <hr>
-    <h3 class="title is-3">Publications</h3>
+    <h3 class="title is-3">Selected publications</h3>
 
     <div class="columns is-mobile">
       <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/convglr_thumbnail.png" title="">
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <video autoplay muted loop playsinline preload="auto" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+            <source src="./videos/grvs_thumbnail.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column"> 
+        <div class="is-italic"> GRVS: a Generalizable and Recurrent Approach to Monocular Dynamic View Synthesis. </div>
+        <div> <span class="has-text-weight-bold">Tanay*</span>, Brahimi*, Nazarczuk, Catley‑Chandar, Moreau, Zhang and Pérez‑Pellitero </div>
+        <div class="has-text-weight-bold"> arXiv, 2025 </div>
+        <div class="buttons are-small has-text-weight-light"> 
+          <a href="" class="button is-light mt-2">Project page</a>
+          <a href="" class="button is-light mt-2">arXiv</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-mobile">
+      <div class="column is-narrow"> 
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <video autoplay muted loop playsinline preload="auto" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+            <source src="./videos/charge_thumbnail.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column"> 
+        <div class="is-italic"> Charge: A Comprehensive Benchmark and Dataset for Dynamic Novel View Synthesis. </div>
+        <div> Nazarczuk, <span class="has-text-weight-bold">Tanay</span>, Zhang and Pérez‑Pellitero </div>
+        <div class="has-text-weight-bold"> arXiv, 2025 </div>
+        <div class="buttons are-small has-text-weight-light"> 
+          <a href="https://charge-benchmark.github.io" class="button is-light mt-2">Project page</a>
+          <a href="https://huggingface.co/charge-benchmark/Charge" class="button is-light mt-2">Dataset</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-mobile">
+      <div class="column is-narrow"> 
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/better_thumbnail.png">
+        </div>
+      </div>
+      <div class="column"> 
+        <div class="is-italic"> Better Together: Unified Motion Capture and 3D Avatar Reconstruction. </div>
+        <div> Moreau, Brahimi, Shaw, Papaioannou, <span class="has-text-weight-bold">Tanay</span>, Zhang and Pérez‑Pellitero </div>
+        <div class="has-text-weight-bold"> arXiv, 2025 </div>
+        <div class="buttons are-small has-text-weight-light"> 
+          <a href="https://arxiv.org/abs/2503.09293" class="button is-light mt-2">arXiv</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-mobile">
+      <div class="column is-narrow"> 
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/vidar_thumbnail.png">
+        </div>
+      </div>
+      <div class="column"> 
+        <div class="is-italic"> ViDAR: Video Diffusion‑Aware 4D Reconstruction From Monocular Inputs. </div>
+        <div> Nazarczuk*, Catley‑Chandar*, <span class="has-text-weight-bold">Tanay</span>, Zhang, Slabaugh and Pérez‑Pellitero</div>
+        <div class="has-text-weight-bold"> NeurIPS, 2025 </div>
+        <div class="buttons are-small has-text-weight-light"> 
+          <a href="https://vidar-4d.github.io/" class="button is-light mt-2">Project page</a>
+          <a href="https://arxiv.org/abs/2506.18792" class="button is-light mt-2">arXiv</a>
+          <a href="https://github.com/vidar-4d/ViDAR" class="button is-light mt-2">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-mobile">
+      <div class="column is-narrow"> 
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/convglr_thumbnail.png">
         </div>
       </div>
       <div class="column"> 
         <div class="is-italic"> Global Latent Neural Rendering. </div>
-        <div> <span class="has-text-weight-semibold">Tanay, T.</span> and Maggioni, M. </div>
+        <div> <span class="has-text-weight-bold">Tanay</span> and Maggioni</div>
         <div class="has-text-weight-bold"> CVPR, 2024 </div>
         <div class="buttons are-small has-text-weight-light"> 
-          <a href="https://arxiv.org/abs/2312.08338" class="button is-light mt-2">arXiv</a>
           <a href="https://thomas-tanay.github.io/convglr" class="button is-light mt-2">Project page</a>
+          <a href="https://arxiv.org/abs/2312.08338" class="button is-light mt-2">arXiv</a>
         </div>
       </div>
     </div>
 
     <div class="columns is-mobile">
       <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/spiralconv_thumbnail.png" title="">
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/spiralconv_thumbnail.png">
         </div>
       </div>
       <div class="column"> 
         <div class="is-italic"> Adaptive Spiral Layers for Efficient 3D Representation Learning on Meshes. </div>
-        <div> Babiloni, F., Maggioni, M., <span class="has-text-weight-semibold">Tanay, T.</span>, Deng, J., Leonardis, A. and Zafeiriou, S.</div>
+        <div> Babiloni, Maggioni, <span class="has-text-weight-bold">Tanay</span>, Deng, Leonardis and Zafeiriou</div>
         <div class="has-text-weight-bold"> ICCV, 2023 </div>
         <div class="buttons are-small has-text-weight-light"> 
-          <a href="https://github.com/FrancescaBabiloni/adaptive_spiral" class="button is-light mt-2">Github</a>
+          <a href="https://openaccess.thecvf.com/content/ICCV2023/html/Babiloni_Adaptive_Spiral_Layers_for_Efficient_3D_Representation_Learning_on_Meshes_ICCV_2023_paper.html" class="button is-light mt-2">CVF</a>
+          <a href="https://github.com/FrancescaBabiloni/adaptive_spiral" class="button is-light mt-2">Code</a>
         </div>
       </div>
     </div>
 
     <div class="columns is-mobile">
       <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/ilsh_thumbnail.png" title="">
-        </div>
-      </div>
-      <div class="column"> 
-        <div class="is-italic"> VSCHH 2023: A Benchmark for the View Synthesis Challenge of Human Heads. </div>
-        <div> Jang, Y.K., Zheng, J., Song, J., Dhamo, H. Pérez-Pellitero, E., <span class="has-text-weight-semibold">Tanay, T.</span> et al. </div>
-        <div class="has-text-weight-bold"> ICCV workshops, 2023 (Ranked #1, oral) </div>
-        <div class="buttons are-small has-text-weight-light"> 
-          <a href="https://sites.google.com/view/vschh/home" class="button is-light mt-2">Webpage</a>
-          <a href="https://codalab.lisn.upsaclay.fr/competitions/13273" class="button is-light mt-2">CodaLab</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns is-mobile">
-      <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/dfc_thumbnail.png" title="">
-        </div>
-      </div>
-      <div class="column"> 
-        <div class="is-italic"> Factorized Dynamic Fully Connected Layers for Neural Networks. </div>
-        <div> Babiloni, F., <span class="has-text-weight-semibold">Tanay, T.</span>, Deng, J., Maggioni, M. and Zafeiriou, S. </div>
-        <div class="has-text-weight-bold"> ICCV Workshops, 2023</div>
-        <div class="buttons are-small has-text-weight-light"> 
-          <a href="https://openaccess.thecvf.com/content/ICCV2023W/RCV/html/Babiloni_Factorized_Dynamic_Fully-Connected_Layers_for_Neural_Networks_ICCVW_2023_paper.html" class="button is-light mt-2">CVF</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns is-mobile">
-      <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/mpfer_thumbnail.png" title="">
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/mpfer_thumbnail.png">
         </div>
       </div>
       <div class="column"> 
         <div class="is-italic"> Efficient View Synthesis and 3D-based Multi-Frame Denoising with Multiplane Feature Representations. </div>
-        <div> <span class="has-text-weight-semibold">Tanay, T.</span>, Leonardis, A. and Maggioni, M. </div>
+        <div> <span class="has-text-weight-bold">Tanay</span>, Leonardis, and Maggioni </div>
         <div class="has-text-weight-bold"> CVPR, 2023 </div>
         <div class="buttons are-small has-text-weight-light"> 
-          <a href="https://arxiv.org/abs/2303.18139" class="button is-light mt-2">arXiv</a>
           <a href="https://thomas-tanay.github.io/posts/2023-mpfer" class="button is-light mt-2">Project page</a>
+          <a href="https://arxiv.org/abs/2303.18139" class="button is-light mt-2">arXiv</a>
         </div>
       </div>
     </div>
 
     <div class="columns is-mobile">
       <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/tunableconv_thumbnail.png" title="">
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/tunableconv_thumbnail.png">
         </div>
       </div>
       <div class="column"> 
         <div class="is-italic"> Tunable Convolutions with Parametric Multi-Loss Optimization. </div>
-        <div> Maggioni, M., <span class="has-text-weight-semibold">Tanay, T.</span>, Babiloni, F., McDonagh, S. and Leonardis, A. </div>
+        <div> Maggioni, <span class="has-text-weight-bold">Tanay</span>, Babiloni, McDonagh, and Leonardis </div>
         <div class="has-text-weight-bold"> CVPR, 2023 </div>
         <div class="buttons are-small has-text-weight-light"> 
           <a href="https://arxiv.org/abs/2304.00898" class="button is-light mt-2">arXiv</a>
@@ -155,13 +180,13 @@
 
     <div class="columns is-mobile">
       <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/tpami_thumbnail.png" title="">
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/tpami_thumbnail.png">
         </div>
       </div>
       <div class="column"> 
         <div class="is-italic"> Diagnosing and Preventing Instabilities in Recurrent Video Processing. </div>
-        <div> <span class="has-text-weight-semibold">Tanay, T.</span>, Sootla, A., Maggioni, M., Dokania, P. K., Torr, P., Leonardis, A. and Slabaugh, G. </div>
+        <div> <span class="has-text-weight-bold">Tanay</span>, Sootla, Maggioni, Dokania, Torr, Leonardis, and Slabaugh </div>
         <div class="has-text-weight-bold"> TPAMI, 2022 </div>
         <div class="buttons are-small has-text-weight-light"> 
           <a href="https://arxiv.org/abs/2010.05099" class="button is-light mt-2">arXiv</a>
@@ -172,79 +197,31 @@
 
     <div class="columns is-mobile">
       <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/flexhdr_thumbnail.png" title="">
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/flexhdr_thumbnail.png">
         </div>
       </div>
       <div class="column"> 
         <div class="is-italic"> FlexHDR: Modelling Alignment and Exposure Uncertainties for Flexible HDR Imaging. </div>
-        <div> Catley‑Chandar, S., <span class="has-text-weight-semibold">Tanay, T.</span>, Vandroux, L., Leonardis, A., Slabaugh, G. and Pérez‑Pellitero, E. </div>
+        <div> Catley‑Chandar, <span class="has-text-weight-bold">Tanay</span>, Vandroux, Leonardis, Slabaugh, and Pérez‑Pellitero </div>
         <div class="has-text-weight-bold"> TIP, 2022 </div>
         <div class="buttons are-small has-text-weight-light"> 
+          <a href="https://perezpellitero.github.io/projects/flexhdr/" class="button is-light mt-2">Project page</a>
           <a href="https://arxiv.org/abs/2201.02625" class="button is-light mt-2">arXiv</a>
           <a href="https://ieeexplore.ieee.org/document/9881970" class="button is-light mt-2">TIP</a>
-          <a href="https://perezpellitero.github.io/projects/flexhdr/" class="button is-light mt-2">Project page</a>
         </div>
       </div>
     </div>
 
     <div class="columns is-mobile">
       <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/ntire2021_thumbnail.png" title="">
-        </div>
-      </div>
-      <div class="column"> 
-        <div class="is-italic"> NTIRE 2021 Challenge on Quality Enhancement of Compressed Video: Methods and Results. </div>
-        <div> Yang, R. et al. </div>
-        <div class="has-text-weight-bold"> CVPR Workshops, 2021 </div>
-        <div class="buttons are-small has-text-weight-light"> 
-          <a href="https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/html/Yang_NTIRE_2021_Challenge_on_Quality_Enhancement_of_Compressed_Video_Methods_CVPRW_2021_paper.html" class="button is-light mt-2">CVF</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns is-mobile">
-      <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/ntire2021_thumbnail.png" title="">
-        </div>
-      </div>
-      <div class="column"> 
-        <div class="is-italic"> NTIRE 2020 Challenge on Real Image Denoising: Dataset, Methods and Results. </div>
-        <div> Abdelhamed, A. et al. </div>
-        <div class="has-text-weight-bold"> CVPR Workshops, 2020 </div>
-        <div class="buttons are-small has-text-weight-light"> 
-          <a href="https://openaccess.thecvf.com/content_CVPRW_2020/html/w31/Abdelhamed_NTIRE_2020_Challenge_on_Real_Image_Denoising_Dataset_Methods_and_CVPRW_2020_paper.html" class="button is-light mt-2">CVF</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns is-mobile">
-      <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/vulnerabilities_thumbnail.png" title="">
-        </div>
-      </div>
-      <div class="column"> 
-        <div class="is-italic"> Built‑in Vulnerabilities to Imperceptible Adversarial Perturbations. </div>
-        <div> <span class="has-text-weight-semibold">Tanay, T.</span>, Andrews, J. T. A. and Griffin, L. D. </div>
-        <div class="has-text-weight-bold"> BMVA Technical Meeting, 2019 (oral) </div>
-        <div class="buttons are-small has-text-weight-light"> 
-          <a href="https://arxiv.org/abs/1806.07409" class="button is-light mt-2">arXiv</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns is-mobile">
-      <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/batchnorm_thumbnail.png" title="">
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/batchnorm_thumbnail.png">
         </div>
       </div>
       <div class="column"> 
         <div class="is-italic"> Batch Normalization is a Cause of Adversarial Vulnerability. </div>
-        <div> Galloway, A., Golubeva, A., <span class="has-text-weight-semibold">Tanay, T.</span>, Moussa, M., Taylor, G. W. </div>
+        <div> Galloway, Golubeva, <span class="has-text-weight-bold">Tanay</span>, Moussa and Taylor </div>
         <div class="has-text-weight-bold"> arXiv, 2019 </div>
         <div class="buttons are-small has-text-weight-light"> 
           <a href="https://arxiv.org/abs/1905.02161" class="button is-light mt-2">arXiv</a>
@@ -252,31 +229,33 @@
       </div>
     </div>
 
+    <!--
     <div class="columns is-mobile">
       <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/multiple_thumbnail.png" title="">
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/multiple_thumbnail.png">
         </div>
       </div>
       <div class="column"> 
         <div class="is-italic"> Multiple‑Identity Image Attacks Against Face‑Based Identity Verification. </div>
-        <div> Andrews, J. T. A., <span class="has-text-weight-semibold">Tanay, T.</span> and Griffin, L. D. </div>
+        <div> Andrews, <span class="has-text-weight-bold">Tanay</span> and Griffin </div>
         <div class="has-text-weight-bold"> arXiv, 2019 </div>
         <div class="buttons are-small has-text-weight-light"> 
           <a href="https://arxiv.org/abs/1906.08507" class="button is-light mt-2">arXiv</a>
         </div>
       </div>
     </div>
+    -->
 
     <div class="columns is-mobile">
       <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/adversarialtraining_thumbnail.png" title="">
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/adversarialtraining_thumbnail.png">
         </div>
       </div>
       <div class="column"> 
         <div class="is-italic"> Adversarial Training versus Weight Decay. </div>
-        <div> Galloway, A., <span class="has-text-weight-semibold">Tanay, T.</span> and Taylor, G. W. </div>
+        <div> Galloway, <span class="has-text-weight-bold">Tanay</span> and Taylor </div>
         <div class="has-text-weight-bold"> arXiv, 2018 </div>
         <div class="buttons are-small has-text-weight-light"> 
           <a href="https://arxiv.org/abs/1804.03308" class="button is-light mt-2">arXiv</a>
@@ -284,28 +263,30 @@
       </div>
     </div>
 
+    <!--
     <div class="columns is-mobile">
       <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/transfer_thumbnail.png" title="">
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/transfer_thumbnail.png">
         </div>
       </div>
       <div class="column"> 
         <div class="is-italic"> Transfer Representation‑Learning for Anomaly Detection. </div>
-        <div> Andrews, J. T. A., <span class="has-text-weight-semibold">Tanay, T.</span>, Morton, E. J. and Griffin, L. D.</div>
+        <div> Andrews, <span class="has-text-weight-bold">Tanay</span>, Morton and Griffin </div>
         <div class="has-text-weight-bold"> JMLR, 2016 </div>
       </div>
     </div>
+    -->
 
     <div class="columns is-mobile">
       <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/boundarytilting_thumbnail.png" title="">
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/boundarytilting_thumbnail.png">
         </div>
       </div>
       <div class="column"> 
         <div class="is-italic"> A Boundary Tilting Persepective on the Phenomenon of Adversarial Examples. </div>
-        <div> <span class="has-text-weight-semibold">Tanay, T.</span> and Griffin, L. D. </div>
+        <div> <span class="has-text-weight-bold">Tanay</span> and Griffin </div>
         <div class="has-text-weight-bold"> arXiv, 2016 </div>
         <div class="buttons are-small has-text-weight-light"> 
           <a href="https://arxiv.org/abs/1608.07690" class="button is-light mt-2">arXiv</a>
@@ -315,37 +296,145 @@
 
     <div class="columns is-mobile">
       <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/hex_thumbnail.png" title="">
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/hex_thumbnail.png">
         </div>
       </div>
       <div class="column"> 
         <div class="is-italic"> HeX and the Single Anthill: Playing Games with Aunt Hillary. </div>
-        <div> Bishop, J. M., Nasuto, S. J., <span class="has-text-weight-semibold">Tanay, T.</span>, Roesch, E. B. and Spencer, M. C.</div>
+        <div> Bishop, Nasuto, <span class="has-text-weight-bold">Tanay</span>, Roesch and Spencer </div>
         <div class="has-text-weight-bold"> Fundamental Issues of Artificial Intelligence, 2016 </div>
+      </div>
+    </div>
+
+    <!--
+    <div class="columns is-mobile">
+      <div class="column is-narrow"> 
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/sdst_thumbnail.png">
+        </div>
+      </div>
+      <div class="column"> 
+        <div class="is-italic"> SDST: a Swarm Intelligence Heuristic Performing Monte‑Carlo Tree Search. </div>
+        <div> <span class="has-text-weight-bold">Tanay</span>, Bishop, Nasuto, Roesch and Spencer </div>
+        <div class="has-text-weight-bold"> AISB, 2013 </div>
+      </div>
+    </div>
+    -->
+
+    <hr>
+    <h3 class="title is-3">Workshops and Challenges</h3>
+
+    <div class="columns is-mobile">
+      <div class="column is-narrow"> 
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <video autoplay muted loop playsinline preload="auto" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+            <source src="./videos/aim.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column"> 
+        <div class="is-italic"> Sparse Neural Rendering Challenge. <span class="has-text-weight-bold">(Organizer)</span> </div>
+        <div> Nazarczuk, <span class="has-text-weight-bold">Tanay</span>, Catley-Chandar, Shaw, Timofte, Pérez-Pellitero </div>
+        <div class="has-text-weight-bold"> Advances in Image Manipulation workshop, ECCV, 2024 </div>
+        <div class="buttons are-small has-text-weight-light"> 
+          <a href="https://cvlai.net/aim/2024" class="button is-light mt-2">Webpage</a>
+          <a href="https://arxiv.org/abs/2409.15041" class="button is-light mt-2">Dataset and Benchmark</a>
+          <a href="https://arxiv.org/abs/2409.15045" class="button is-light mt-2">Methods and Results</a>
+        </div>
       </div>
     </div>
 
     <div class="columns is-mobile">
       <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/sdst_thumbnail.png" title="">
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/ilsh_thumbnail.png">
         </div>
       </div>
       <div class="column"> 
-        <div class="is-italic"> SDST: a Swarm Intelligence Heuristic Performing Monte‑Carlo Tree Search. </div>
-        <div> <span class="has-text-weight-semibold">Tanay, T.</span>, Bishop, J. M., Nasuto, S. J., Roesch, E. B. and Spencer, M. C. </div>
-        <div class="has-text-weight-bold"> AISB, 2013 </div>
+        <div class="is-italic"> MPFER‑H: Multiplane Features Encoder‑Renderer for Human Heads. <span class="has-text-weight-bold">(Ranked #1)</span> </div>
+        <div> <span class="has-text-weight-bold">Tanay</span> and Maggioni </div>
+        <div class="has-text-weight-bold"> To NeRF or not to NeRF: a View Synthesis Challenge for Human Heads, ICCV, 2023 </div>
+        <div class="buttons are-small has-text-weight-light"> 
+          <a href="https://sites.google.com/view/vschh/home" class="button is-light mt-2">Webpage</a>
+          <a href="https://openaccess.thecvf.com/content/ICCV2023W/RHWC/html/Jang_VSCHH_2023_A_Benchmark_for_the_View_Synthesis_Challenge_of_ICCVW_2023_paper.html" class="button is-light mt-2">CVF</a>
+          <a href="https://codalab.lisn.upsaclay.fr/competitions/13273" class="button is-light mt-2">CodaLab</a>
+        </div>
       </div>
     </div>
+
+    <div class="columns is-mobile">
+      <div class="column is-narrow"> 
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/dfc_thumbnail.png">
+        </div>
+      </div>
+      <div class="column"> 
+        <div class="is-italic"> Factorized Dynamic Fully Connected Layers for Neural Networks. </div>
+        <div> Babiloni, <span class="has-text-weight-bold">Tanay</span>, Deng, Maggioni, and Zafeiriou. </div>
+        <div class="has-text-weight-bold">  Workshop on Resource Efficient Deep Learning for Computer Vision, ICCV, 2023</div>
+        <div class="buttons are-small has-text-weight-light"> 
+          <a href="https://openaccess.thecvf.com/content/ICCV2023W/RCV/html/Babiloni_Factorized_Dynamic_Fully-Connected_Layers_for_Neural_Networks_ICCVW_2023_paper.html" class="button is-light mt-2">CVF</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-mobile">
+      <div class="column is-narrow"> 
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/ntire2021_thumbnail.png">
+        </div>
+      </div>
+      <div class="column"> 
+        <div class="is-italic"> Multi‑scale network with deformable temporal fusion for compressed video restoration. </div>
+        <div> Song, Huang, Maggioni, Fu, Xiao, Li and <span class="has-text-weight-bold">Tanay</span> </div>
+        <div class="has-text-weight-bold"> NTIRE 2021 Challenge on Quality Enhancement of Compressed Video, CVPR, 2021 </div>
+        <div class="buttons are-small has-text-weight-light"> 
+          <a href="https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/html/Yang_NTIRE_2021_Challenge_on_Quality_Enhancement_of_Compressed_Video_Methods_CVPRW_2021_paper.html" class="button is-light mt-2">CVF</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-mobile">
+      <div class="column is-narrow"> 
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/ntire2021_thumbnail.png">
+        </div>
+      </div>
+      <div class="column"> 
+        <div class="is-italic"> Learnable Non‑local Image Denoising. </div>
+        <div> Maggioni, Marras, <span class="has-text-weight-bold">Tanay</span>, Slabaugh and Yan </div>
+        <div class="has-text-weight-bold"> NTIRE 2020 Challenge on Real Image Denoising, CVPR, 2020 </div>
+        <div class="buttons are-small has-text-weight-light"> 
+          <a href="https://openaccess.thecvf.com/content_CVPRW_2020/html/w31/Abdelhamed_NTIRE_2020_Challenge_on_Real_Image_Denoising_Dataset_Methods_and_CVPRW_2020_paper.html" class="button is-light mt-2">CVF</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-mobile">
+      <div class="column is-narrow"> 
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/vulnerabilities_thumbnail.png">
+        </div>
+      </div>
+      <div class="column"> 
+        <div class="is-italic"> Built‑in Vulnerabilities to Imperceptible Adversarial Perturbations. <span class="has-text-weight-bold">(Oral)</span> </div>
+        <div> <span class="has-text-weight-bold">Tanay</span>, Andrews and Griffin </div>
+        <div class="has-text-weight-bold"> BMVA Technical Meeting, 2019 </div>
+        <div class="buttons are-small has-text-weight-light"> 
+          <a href="https://arxiv.org/abs/1806.07409" class="button is-light mt-2">arXiv</a>
+        </div>
+      </div>
+    </div>
+
 
     <hr>
     <h3 class="title is-3">Posts</h3>
 
     <div class="columns is-mobile">
       <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/SFCmodel_thumbnail.png" title="">
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/SFCmodel_thumbnail.png">
         </div>
       </div>
       <div class="column"> 
@@ -357,8 +446,8 @@
 
     <div class="columns is-mobile">
       <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px"> 
-          <img src="./images/l2reg_thumbnail.png" title="">
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;"> 
+          <img src="./images/l2reg_thumbnail.png">
         </div>
       </div>
       <div class="column"> 
@@ -373,8 +462,8 @@
 
     <div class="columns is-mobile">
       <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/bill_thumbnail.png" title="">
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/bill_thumbnail.png">
         </div>
       </div>
       <div class="column"> 
@@ -385,8 +474,8 @@
 
     <div class="columns is-mobile">
       <div class="column is-narrow"> 
-        <div class="box p-0" style="width: 120px; height: 120px">
-          <img src="./images/gameTree_thumbnail.png" title="">
+        <div class="box p-0" style="width: 120px; height: 120px; overflow: hidden;">
+          <img src="./images/gameTree_thumbnail.png">
         </div>
       </div>
       <div class="column"> 

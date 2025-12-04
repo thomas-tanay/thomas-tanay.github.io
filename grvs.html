@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GRVS: a Generalizable and Recurrent Approach to Monocular Dynamic View Synthesis</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.12.1/math.min.js"> </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] },
+      TeX: { extensions: ["color.js"] }
+    });
+  </script>
+
+  <link rel="stylesheet" href="./assets/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./assets/js/fontawesome.all.min.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+
+      <h1 class="title is-3 publication-title">GRVS: a Generalizable and Recurrent Approach to Monocular Dynamic View Synthesis</h1>
+
+      <h2 class="title is-4 publication-subtitle">Supplementary Material</h2>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Abstract</h2>
+        <div class="content has-text-justified">
+          <p> Synthesizing novel views from monocular videos of dynamic scenes remains a challenging problem. 
+          Scene-specific methods that optimize 4D representations with explicit motion priors often break down in highly dynamic regions where multi-view information is hard to exploit. 
+          Diffusion-based approaches that integrate camera controls into large pre-trained models can produce visually plausible videos but frequently suffer from geometric inconsistencies 
+          across both static and dynamic areas. Both families of methods also require substantial computational resources. </p>
+
+          <p> Building on the success of generalizable models for static novel 
+          view synthesis, we adapt the framework to dynamic inputs and propose a new model with two key components: (1) a recurrent loop that enables unbounded and asynchronous mapping 
+          between input and target videos and (2) an efficient use of plane sweeps over dynamic inputs to disentangle camera and scene motion, and achieve fine-grained, six-degrees-of-freedom 
+          camera controls. We train and evaluate our model on the UCSD dataset and on Kubric-4D-dyn, a new monocular dynamic dataset featuring longer, higher resolution sequences with more 
+          complex scene dynamics than existing alternatives. </p>
+
+          <p> Our model outperforms three Gaussian Splatting-based scene-specific approaches, as well as two diffusion-based approaches in 
+          reconstructing fine-grained geometric details across both static and dynamic regions. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pb-5">
+  <div class="container is-max-desktop">
+
+    <h2 class="title is-3">Method</h2>
+
+    <figure class="image pb-5">
+      <img src="./assets/model.jpg"/>
+    </figure>
+
+    <p> <strong>Overview of GRVS.</strong> For a target view $\mathbf{J}_{i}$ at time $t_i$ and with camera parameters $\mathbf{Q}_{i}\,$, our Generalizable Recurrent View Synthesizer consists of 5 stages. 
+      1) The selection of $V$ input views $\mathbf{I}_{i}$ uniformly sampled around the time $t_i\,$, with corresponding camera parameters $\mathbf{P}_{i}$. 
+      2) The projection of $\mathbf{I}_{i}$ into a dynamic plane sweep volume $\mathbf{X}_{i}$ using the homographies $\mathcal{H}_{\mathbf{P}_{i} \to \mathbf{Q}_{i}}$. 
+      3) The patchification and reshaping of $\mathbf{X}_{i}$ into a downsampled tensor $\mathbf{Y}_{i}$. 
+      4) The latent rendering of $\mathbf{Y}_{i}$ into a hidden state $\mathbf{Z}_{i}$ using the recurrent hidden state $\mathbf{Z}_{i-1}$ projected using the homographies $\mathcal{H}_{\mathbf{Q}_{i-1} \to \mathbf{Q}_{i}}$. 
+      5) The decoding of $\mathbf{Z}_{i}$ into the predicted output $\mathbf{\tilde{J}}_{i}$. </p>
+
+  </div>
+</section>
+
+
+<section class="section pt-4">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Video Results</h2>
+
+    <section class="hero">
+        <h3 class="title is-4">UCSD</h2>
+
+          <p>
+            We compare our model to three recent methods based on Gaussian Splatting (GS) for monocular dynamic novel view synthesis: D-3DGS, SC-GS and 4DGS. 
+            Given a synthetic monocular sequence generated as described in the main paper, we freeze the time mid-sequence and move the camera following a spiral trajectory. 
+            We also show some input frames before and after the spiral for clarity.
+            4DGS, D-3DGS and SC-GS struggle on this task, especially on dynamic regions but also to a lesser extent on static regions, because of the sparse nature of the synthetic sequences used, 
+            where only 10 distinct viewpoints are available throughout the sequences (since there are only 10 static cameras).
+            In comparison, our approach performs remarkably well.
+          </p>
+
+          <section class="section">
+            <div class="container">
+              <!-- Carousel -->
+              <div class="carousel1">
+                <div class="carousel-item">
+                  <video autoplay muted loop playsinline preload="auto">
+                    <source src="./assets/videos/UCSD/1.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="carousel-item">
+                  <video autoplay muted loop playsinline preload="auto">
+                    <source src="./assets/videos/UCSD/2.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="carousel-item">
+                  <video autoplay muted loop playsinline preload="auto">
+                    <source src="./assets/videos/UCSD/3.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+        <h3 class="title is-4 section-title"> Kubric-4D-dyn with spiral trajectories </h2>
+
+          <p>
+            We now compare our model to the same three baselines on the Kubric-4D-dyn dataset. 
+            Again, given a synthetic monocular sequence generated as described in the main paper, we freeze the time mid-sequence and move the camera following a spiral trajectory. 
+            We also show the input sequence before and after the spiral for clarity.
+            The baselines now reconstruct the static regions well, but they still struggle on the dynamic regions.
+            In comparison, our approach is able to reconstruct both static and dynamic elements with high accuracy.
+          </p>
+
+          <section class="section">
+            <div class="container">
+              <!-- Carousel -->
+              <div class="carousel1">
+                <div class="carousel-item">
+                  <video autoplay muted loop playsinline preload="auto">
+                    <source src="./assets/videos/kubric_1/1.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="carousel-item">
+                  <video autoplay muted loop playsinline preload="auto">
+                    <source src="./assets/videos/kubric_1/2.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="carousel-item">
+                  <video autoplay muted loop playsinline preload="auto">
+                    <source src="./assets/videos/kubric_1/3.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+        <h3 class="title is-4 section-title"> Kubric-4D-dyn with gradual trajectories </h2>
+
+          <p>
+            We now compare our model to two Diffusion-based approaches: GCD and Gen3C. 
+            In this scenario, the output camera starts at the same position as the input camera in the first frame, and linearly progresses toward a certain target position reached at the last frame. 
+            The time in the output is synchronized with the input. This choice was motivated by the fact that the best performing model of GCD was trained on these types of output sequences on a Kubric variant. 
+            The output video size is based on the capacity of GCD, that can only output 14 frames with a single diffusion sample.
+            All three methods perform reasonably well, but our method reconstructs fine-grained geometric details much more accurately.
+          </p>
+
+          <section class="section">
+            <div class="container">
+              <!-- Carousel -->
+              <div class="carousel1">
+                <div class="carousel-item">
+                  <video autoplay muted loop playsinline preload="auto">
+                    <source src="./assets/videos/kubric_2/1.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="carousel-item">
+                  <video autoplay muted loop playsinline preload="auto">
+                    <source src="./assets/videos/kubric_2/2.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="carousel-item">
+                  <video autoplay muted loop playsinline preload="auto">
+                    <source src="./assets/videos/kubric_2/3.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+
+            </div>
+          </section>
+        
+        <h3 class="title is-4 section-title">Out of distribution videos (DAVIS)</h2>
+
+          <p>
+            Finally, we show output videos generated by our model on in-the-wild sequences from the DAVIS dataset. 
+            The distribution of these sequences is relatively far from the distribution of the sequences used during training.
+            The UCSD sequences consist of ``teleporting" virtual cameras moving at high velocity, only sampling a very sparse set of viewpoints (10 physical cameras). 
+            The Kubric sequences consist of rigid objects sampled from a relatively small set and disposed on a flat surface.
+            Nonetheless, our model generalizes well to these out-of-distribution sequences.  
+          </p>
+
+          <section class="section">
+            <div class="container">
+              <!-- Carousel -->
+              <div class="carousel2">
+                <div class="carousel-item">
+                  <video autoplay muted loop playsinline preload="auto">
+                    <source src="./assets/videos/DAVIS/slackline.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="carousel-item">
+                  <video autoplay muted loop playsinline preload="auto">
+                    <source src="./assets/videos/DAVIS/parkour.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="carousel-item">
+                  <video autoplay muted loop playsinline preload="auto">
+                    <source src="./assets/videos/DAVIS/lady-running.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="carousel-item">
+                  <video autoplay muted loop playsinline preload="auto">
+                    <source src="./assets/videos/DAVIS/kids-turning.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="carousel-item">
+                  <video autoplay muted loop playsinline preload="auto">
+                    <source src="./assets/videos/DAVIS/snowboard.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <h3 class="title is-4 section-title">Ablation</h2>
+
+          <h3 class="title is-4 section-title">3D Unet architecture</h2>
+
+          <p>
+            The 5D plane sweep volume is progressively turned into a 3D rendered image by applying a succession of 2D
+            convolutions and resblocks while making effective use of viewing operations and batching. Learnable blocks are emphasized in bold.
+          </p>
+
+          <figure class="image pt-5 pb-5" style="width: 700px; margin: 0 auto;">
+            <img src="./assets/3DUnet.png"/>
+          </figure>
+
+    </section>
+
+    <!-- Bulma Carousel JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel/dist/js/bulma-carousel.min.js"></script>
+
+    <script>
+      // Initialize all carousels on the page
+      window.addEventListener('load', () => {
+        bulmaCarousel.attach('.carousel1', {
+          slidesToScroll: 1,
+          slidesToShow: 1,
+          loop: true,
+          autoplay: false,
+        });
+      });
+    </script>
+
+    <script>
+      // Initialize all carousels on the page
+      window.addEventListener('load', () => {
+        bulmaCarousel.attach('.carousel2', {
+          slidesToScroll: 1,
+          slidesToShow: 2,
+          loop: true,
+          autoplay: false,
+        });
+      });
+    </script>
+
+  </div>
+</section>
+
+</body>
+</html>
