@@ -21,8 +21,32 @@ body {
   color: #8E8E8E;
 }
 
-.section-title {
-  margin-top: 40px;
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+   color: #228b22 !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right:  10px;
+  margin-top:  5px;
+  margin-bottom: 5px;
+
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
 }
 
 /* Prevent images from hitting the edges */
