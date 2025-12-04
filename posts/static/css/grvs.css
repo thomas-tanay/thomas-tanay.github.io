@@ -1,0 +1,54 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-subtitle {
+  color: #8E8E8E;
+}
+
+.section-title {
+  margin-top: 40px;
+}
+
+/* Prevent images from hitting the edges */
+.carousel1 .carousel-item video {
+  display: block;       /* treat video like a block element */
+  margin: 0 auto;       /* center horizontally */
+  width: 800px;           /* prevent overflow */
+  height: auto;         /* maintain aspect ratio */
+}
+
+.carousel2 .carousel-item video {
+  display: block;       /* treat video like a block element */
+  margin: 0 auto;       /* center horizontally */
+  width: 400px;           /* prevent overflow */
+  height: auto;         /* maintain aspect ratio */
+}
+
+/* Space arrows away from the image */
+.carousel-nav-left,
+.carousel-nav-right {
+  left: 10px !important;
+  right: 10px !important;
+  z-index: 5;
+  background: rgba(0,0,0,0.3);
+  border-radius: 50%;
+  padding: 8px;
+}
+
+
